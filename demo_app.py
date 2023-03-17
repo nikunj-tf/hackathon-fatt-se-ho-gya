@@ -18,8 +18,13 @@ newValue = st.text_input('temp', key="0")
 st.button('Try it', on_click=lambda: cookie_manager.set('uuid', newValue))
 logging.basicConfig(level=logging.INFO)
 
-HOST_NAME = "sath-me-smart.demo.truefoundry.com"
-WORKSPACE = 'demo-euwe1-production:aviso-ci-cd'
+my_env = os.environ.copy()
+my_env["PATH"] = "/usr/sbin:/sbin:" + my_env["PATH"]
+
+my_env = os.environ.copy()
+my_env["TFY_HOST"] = "https://app.devtest.truefoundry.tech/"
+my_env["WORKSPACE"] = "tfy-ctl-euwe1-devtest:fat-se-hogya"  # Can be removed if remains unused
+WORKSPACE = "tfy-ctl-euwe1-devtest:fat-se-hogya"
 
 def get_template(name):
     if name == "job":
@@ -59,7 +64,7 @@ def app():
     deploy_button = st.button("Looks great! Let's Deploy.")
     if deploy_button:
         with st.spinner("Deploying your code"):
-            subprocess.run(["python",f"deploy/{application_type}/deploy.py", "--workspace_fqn", WORKSPACE])
+            subprocess.run(["python",f"deploy/{application_type}/deploy.py", "--workspace_fqn", WORKSPACE], env=my_env)
             time.sleep(200)
             st.text("Python deployed")
 
