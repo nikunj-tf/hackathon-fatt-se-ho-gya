@@ -1,4 +1,3 @@
-
 import os
 import enum
 from pathlib import Path
@@ -18,7 +17,7 @@ uuid = cookie_manager.get('uuid')
 st.write(uuid)
 
 newValue = st.text_input('temp', key="0")
-st.button('Try it', on_click=lambda : cookie_manager.set('uuid', newValue))
+st.button('Try it', on_click=lambda: cookie_manager.set('uuid', newValue))
 logging.basicConfig(level=logging.INFO)
 
 WORKSPACE = 'demo-euwe1-production:aviso-ci-cd'
@@ -34,8 +33,7 @@ def print_count():
 print_count()
 """
 
-if deployment_type == 'Function':
-
+if deployment_type == 'Job':
     st.subheader("Use this template or add your own code to editor")
     # st.code(job_template)
     content = st_ace(language='python', theme='twilight', keybinding='vscode', value=job_template)
@@ -52,25 +50,23 @@ if deployment_type == 'Function':
     if deploy_button:
         with st.spinner("Deploying your code"):
             to_out = st.empty()
-            solver_output_filepath = f"{Path.cwd()}/data/solver_out.txt"
-            # with rd.stdout(to=to_out, to_file=solver_output_filepath, format="text", max_buffer=10000):
-            image = Build(
-                build_spec=PythonBuild(
-                    command="python script.py"
+            with rd.stdout, rd.stderr(format='code'):
+                image = Build(
+                    build_spec=PythonBuild(
+                        command="python script.py"
+                    )
                 )
-            )
-            job = Job(
-                name="test-script",
-                image=image,
-            )
-            deploy_out = job.deploy(workspace_fqn=WORKSPACE)
-            print("###########: ", deploy_out)
-            print("World")
+                job = Job(
+                    name="test-script",
+                    image=image,
+                )
+                deploy_out = job.deploy(workspace_fqn=WORKSPACE)
+                print("###########: ", deploy_out)
 
 
 elif deployment_type == 'Service':
     print("Service")
-elif deployment_type == 'Job':
+elif deployment_type == 'Function':
     print("Job")
 
 # Spawn a new ace editor
