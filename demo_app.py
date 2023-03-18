@@ -23,21 +23,21 @@ def random_str():
 cookie_manager = stx.CookieManager()
 old_uuid = cookie_manager.get('uuid')
 new_uuid = old_uuid
-st.write(new_uuid)
+# st.write(new_uuid)
 
 time.sleep(1)
 if not old_uuid:
     new_uuid = random_str()
-    print("#####: ", new_uuid)
+    # print("#####: ", new_uuid)
     cookie_manager.set('uuid', new_uuid, key="uuid")
     response = requests.post(CONTROL_PLANE_URL + '/v1/service-account/anonymous-token', data={"name": new_uuid})
-    print(f"######^^^^^^^^^  {response.json()}")
+    # print(f"######^^^^^^^^^  {response.json()}")
 
     access_token = response.json()['token']
-    print(f"#####$$$$$$$$$ {access_token}")
+    # print(f"#####$$$$$$$$$ {access_token}")
     cookie_manager.set('accessToken', access_token, key='accessToken')
-    st.write(new_uuid)
-    st.write(access_token)
+    # st.write(new_uuid)
+    # st.write(access_token)
 
 # response = requests.post(CONTROL_PLANE_URL + '/v1/service-account/anonymous-token', data={"name": new_uuid})
 # print(f"$$$$$$ {response.json()}")

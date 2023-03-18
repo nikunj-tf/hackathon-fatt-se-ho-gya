@@ -10,7 +10,7 @@ args = parser.parse_args()
 
 image = Build(
       build_spec=PythonBuild(
-        command="uvicorn app:app --port 8000 --host 0.0.0.0",
+        command="uvicorn main:app --port 8000 --host 0.0.0.0",
         requirements_path="requirements.txt",
       )
 )

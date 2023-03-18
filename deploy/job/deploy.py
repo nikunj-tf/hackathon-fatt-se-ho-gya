@@ -11,7 +11,7 @@ args = parser.parse_args()
 # First we define how to build our code into a Docker image
 image = Build(
     build_spec=PythonBuild(
-        command="python train.py",
+        command="python main.py",
         requirements_path="requirements.txt",
     )
 )

@@ -24,4 +24,3 @@ clf.fit(X_train, y_train)
 
 preds = clf.predict(X_test)
 print(classification_report(y_true=y_test, y_pred=preds))
-
