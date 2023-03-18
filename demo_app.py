@@ -44,6 +44,7 @@ def app():
         font_size=15,
         show_gutter=False,
         wrap=True,
+        auto_update=True
     )
 
     command = None
@@ -55,7 +56,7 @@ def app():
     with open(application_main_path, 'w') as f:
         f.write(code)
 
-    with st.spinner("Running your code locally"):
+    if st.button("Run your code locally"):
         print("Running script now")
         if application_type == "job":
             with rd.stdout(to=st.text("Code Output:"), format='code'):
@@ -64,12 +65,19 @@ def app():
 
         if application_type == "service":
             with rd.stdout(to=st.text("Code Output:"), format='code'):
-                results = subprocess.run(command, shell=True, capture_output=True, text=True)
-                print("Results: ", results.stdout, results.stderr)
+                proc = subprocess.Popen(command,shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+                print("Results: ", proc)
+
+                while True:
+                    line = proc.stdout.readline()
+                    if not line:
+                        break
+                    print(line, end='')
+
 
     deploy_button = st.button("Looks great! Let's Deploy.")
     if deploy_button:
-        with rd.stdout(to=st.text("Deployment Logs:")):
+        with rd.stdout(to=st.text("Deployment Logs:"), format='code'):
             proc = subprocess.Popen(["python",f"deploy/{application_type}/deploy.py", "--workspace_fqn", WORKSPACE], env=my_env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
             print("Results: ", proc)
 
