@@ -64,7 +64,13 @@ def app():
     deploy_button = st.button("Looks great! Let's Deploy.")
     if deploy_button:
         with rd.stdout(to=st.text("Deployment Logs:")):
-            results = subprocess.run(["python",f"deploy/{application_type}/deploy.py", "--workspace_fqn", WORKSPACE], env=my_env, capture_output=True, text=True)
-            print("Results: ", results)
+            proc = subprocess.Popen(["python",f"deploy/{application_type}/deploy.py", "--workspace_fqn", WORKSPACE], env=my_env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+            print("Results: ", proc)
+
+            while True:
+                line = proc.stdout.readline()
+                if not line:
+                    break
+                print(line, end='')
 if __name__ == '__main__':
     app()
