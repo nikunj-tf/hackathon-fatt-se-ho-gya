@@ -37,12 +37,21 @@ if not old_uuid:
     cookie_manager.set('uuid', rand_str, key="unique1")
     response = requests.post(CONTROL_PLANE_URL + '/api/svc/v1/service-account/anonymous-token', data={"name": rand_str})
     access_token = response.json()['token']
+    # cookie_manager.set('token', access_token, key="unique2")
     print("INSIDE THE CONDITION: ", access_token)
     if st.session_state['access_token'] is None:
         st.session_state['access_token'] = access_token
     print(access_token)
 
 print("OUTSIDE OF LOOP: ", st.session_state['access_token'])
+
+# if st.button("Go to Deployment Dashboard"):
+#     # url = endpoint.split('')[1]
+#     url = CONTROL_PLANE_URL + f'/loginsuccess?accessToken={st.session_state["access_token"]}&refreshToken=dummy'
+#     st.write(f"Here's your magic url: {url}")
+#     print(url)
+#     webbrowser.open_new_tab(url)
+
 
 def get_template(application_type, name):
     if application_type == "job":
@@ -115,7 +124,7 @@ def app():
     deploy_button = st.button("Looks great! Let's Deploy.")
     if deploy_button:
         with rd.stdout(to=st.text("Deployment Logs:"), format='code'):
-            proc = subprocess.Popen(["python",f"deploy/{application_type}/deploy.py", "--workspace_fqn", WORKSPACE], env=my_env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+            proc = subprocess.Popen(["python", f"deploy/{application_type}/deploy.py", "--workspace_fqn", WORKSPACE], env=my_env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
             print("Results: ", proc)
 
             endpoint = None
@@ -126,10 +135,15 @@ def app():
                 print(line, end='')
                 if "INFO:servicefoundry:You can find the application on the dashboard:-" in line:
                     endpoint = line.split("INFO:servicefoundry:You can find the application on the dashboard:-")[-1].strip()
+                elif "Deployment Failed. Please refer to the logs for additional details - " in line:
+                    endpoint = line.split("Deployment Failed. Please refer to the logs for additional details - ")[-1].strip()
             if endpoint:
                 st.text(endpoint)
                 if st.button("Go to Deployment Dashboard"):
-                    url = endpoint.split('')[1]
+                    # url = endpoint.split('')[1]
+                    url = CONTROL_PLANE_URL + f'/loginsuccess?accessToken={st.session_state["access_token"]}&refreshToken=dummy'
+                    st.write(f"Here's your magic url: {url}")
+                    print(url)
                     webbrowser.open_new_tab(url)
 
 
