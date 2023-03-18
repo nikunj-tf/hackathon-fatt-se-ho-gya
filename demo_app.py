@@ -1,48 +1,15 @@
+import streamlit as st
 import os
 import time
 import subprocess
 from utils import templates
-import streamlit as st
 from streamlit_ace import st_ace
 import logging
-import requests
-import extra_streamlit_components as stx
 import st_redirect as rd
-import json
-import random
-import string
 import servicefoundry as sfy
 
 # sfy.login(relogin=True, host='https://app.devtest.truefoundry.tech/')
 CONTROL_PLANE_URL = "https://app.devtest.truefoundry.tech/api/svc"
-
-def random_str():
-    return ''.join(random.choices(string.ascii_lowercase, k=10))
-
-
-# sfy.login()
-cookie_manager = stx.CookieManager()
-old_uuid = cookie_manager.get('uuid')
-new_uuid = old_uuid
-# st.write(new_uuid)
-
-time.sleep(1)
-if not old_uuid:
-    new_uuid = random_str()
-    # print("#####: ", new_uuid)
-    cookie_manager.set('uuid', new_uuid, key="uuid")
-    response = requests.post(CONTROL_PLANE_URL + '/v1/service-account/anonymous-token', data={"name": new_uuid})
-    # print(f"######^^^^^^^^^  {response.json()}")
-
-    access_token = response.json()['token']
-    # print(f"#####$$$$$$$$$ {access_token}")
-    cookie_manager.set('accessToken', access_token, key='accessToken')
-    # st.write(new_uuid)
-    # st.write(access_token)
-
-# response = requests.post(CONTROL_PLANE_URL + '/v1/service-account/anonymous-token', data={"name": new_uuid})
-# print(f"$$$$$$ {response.json()}")
-
 WORKSPACE = 'demo-euwe1-production:aviso-ci-cd'
 
 my_env = os.environ.copy()
@@ -58,8 +25,6 @@ def get_template(name):
         return templates.job_template
     elif name == "service":
         return templates.service_template
-    elif name == "model":
-        return templates.model_template
     elif name == "function":
         return templates.function_template
     else:
@@ -98,3 +63,4 @@ def app():
 
 if __name__ == '__main__':
     app()
+
