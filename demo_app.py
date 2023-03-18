@@ -1,3 +1,4 @@
+import webbrowser
 import signal
 import streamlit as st
 import os
@@ -127,7 +128,8 @@ def app():
             if endpoint:
                 st.text(endpoint)
                 if st.button("Go to Deployment Dashboard"):
-                    st.redirect(endpoint.split('')[1])
+                    url = endpoint.split('')[1]
+                    webbrowser.open_new_tab(url)
 
 
 if __name__ == '__main__':
