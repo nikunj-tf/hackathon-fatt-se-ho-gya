@@ -32,6 +32,8 @@ if 'access_token' not in st.session_state:
     st.session_state['access_token'] = None
 print("BEFORE THE LOOP: ", old_uuid)
 
+tfy_api_key = st.session_state['access_token']
+
 if not old_uuid:
     rand_str = random_str()
     cookie_manager.set('uuid', rand_str, key="unique1")

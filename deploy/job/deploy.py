@@ -19,5 +19,8 @@ job = Job(
     name="iris-train-job",
     image=image,
     resources=Resources(memory_limit=1500, memory_request=100),
+    env={
+      "TFY_API_KEY": tfy_api_key
+    }
 )
 job.deploy(workspace_fqn=args.workspace_fqn)
