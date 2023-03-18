@@ -6,10 +6,10 @@ logging.basicConfig(level=logging.INFO)
 WORKSPACE = 'tfy-ctl-euwe1-devtest:fat-se-hogya'
 
 image=Build(
-        build_spec=PythonBuild(
-          command="streamlit run demo_app.py",
-          requirements_path="requirements.txt",
-        )
+    build_spec=PythonBuild(
+      command="streamlit run demo_app.py",
+      requirements_path="requirements.txt",
+    )
 )
 service = Service(
   name="streamlitdeployquick",

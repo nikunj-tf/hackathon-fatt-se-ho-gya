@@ -33,6 +33,7 @@ if 'access_token' not in st.session_state:
 print("BEFORE THE LOOP: ", old_uuid)
 
 tfy_api_key = st.session_state['access_token']
+
 if tfy_api_key is not None:
     os.environ["tfy_api_key"] = tfy_api_key
 else:
@@ -146,14 +147,15 @@ def app():
                     endpoint = line.split("INFO:servicefoundry:You can find the application on the dashboard:-")[-1].strip()
                 elif "Deployment Failed. Please refer to the logs for additional details - " in line:
                     endpoint = line.split("Deployment Failed. Please refer to the logs for additional details - ")[-1].strip()
-            if endpoint:
-                st.text(endpoint)
-                if st.button("Go to Deployment Dashboard"):
-                    # url = endpoint.split('')[1]
-                    url = CONTROL_PLANE_URL + f'/loginsuccess?accessToken={st.session_state["access_token"]}&refreshToken=dummy'
-                    st.write(f"Here's your magic url: {url}")
-                    print(url)
-                    webbrowser.open_new_tab(url)
+
+                if endpoint:
+                    st.text(endpoint)
+    if st.button("Go to Deployment Dashboard"):
+        # url = endpoint.split('')[1]
+        url = CONTROL_PLANE_URL + f'/loginsuccess?accessToken={st.session_state["access_token"]}&refreshToken=dummy'
+        st.write(f"Here's your magic url: {url}")
+        print(url)
+        webbrowser.open_new_tab(url)
 
 
 if __name__ == '__main__':
