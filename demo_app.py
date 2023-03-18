@@ -10,11 +10,38 @@ import logging
 import servicefoundry as sfy
 import extra_streamlit_components as stx
 import st_redirect as rd
+import random
+import string
+import requests
 
 my_env = os.environ.copy()
 my_env["TFY_HOST"] = "https://app.devtest.truefoundry.tech/"
 my_env["WORKSPACE"] = "tfy-ctl-euwe1-devtest:fat-se-hogya"  # Can be removed if remains unused
 WORKSPACE = "tfy-ctl-euwe1-devtest:fat-se-hogya"
+CONTROL_PLANE_URL = 'https://app.devtest.truefoundry.tech'
+def random_str():
+     return ''.join(random.choices(string.ascii_lowercase, k=10))
+
+cookie_manager = stx.CookieManager()
+old_uuid = cookie_manager.get('uuid')
+
+time.sleep(2)
+
+if 'access_token' not in st.session_state:
+    st.session_state['access_token'] = None
+print("BEFORE THE LOOP: ", old_uuid)
+
+if not old_uuid:
+    rand_str = random_str()
+    cookie_manager.set('uuid', rand_str, key="unique1")
+    response = requests.post(CONTROL_PLANE_URL + '/api/svc/v1/service-account/anonymous-token', data={"name": rand_str})
+    access_token = response.json()['token']
+    print("INSIDE THE CONDITION: ", access_token)
+    if st.session_state['access_token'] is None:
+        st.session_state['access_token'] = access_token
+    print(access_token)
+
+print("OUTSIDE OF LOOP: ", st.session_state['access_token'])
 
 def get_template(application_type, name):
     if application_type == "job":
