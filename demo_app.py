@@ -57,16 +57,14 @@ def app():
 
     with st.spinner("Running your code locally"):
         print("Running script now")
-        result = subprocess.run(["python", application_main_path], capture_output=True, text=True)
-        print("Results: ", result)
-        st.text_area("Code Output", result.stdout + result.stderr)
+        with rd.stdout(to=st.text("Code Output:")):
+            results = subprocess.run(["python", application_main_path], capture_output=True, text=True)
+            print("Results: ", results)
 
     deploy_button = st.button("Looks great! Let's Deploy.")
     if deploy_button:
-        with st.spinner("Deploying your code"):
-            subprocess.run(["python",f"deploy/{application_type}/deploy.py", "--workspace_fqn", WORKSPACE], env=my_env)
-            time.sleep(200)
-            st.text("Python deployed")
-
+        with rd.stdout(to=st.text("Deployment Logs:")):
+            results = subprocess.run(["python",f"deploy/{application_type}/deploy.py", "--workspace_fqn", WORKSPACE], env=my_env, capture_output=True, text=True)
+            print("Results: ", results)
 if __name__ == '__main__':
     app()
