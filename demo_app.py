@@ -1,3 +1,4 @@
+import signal
 import streamlit as st
 import os
 import time
@@ -24,6 +25,7 @@ def get_template(application_type, name):
         return ""
 
 def app():
+    proc = None
     st.title("Truefoundry Demo")
     st.subheader("What do you want to deploy?")
     application_options = ["job", "service", "function"]
@@ -49,7 +51,7 @@ def app():
 
     command = None
     if application_type == "service":
-        command = st.text_input(label="Enter the command to run your service locally. Eg. uvicorn ")
+        command = st.text_input(label="Enter the command to run your service locally", value="uvicorn deploy.service.main:app --port 8000 --host 0.0.0.0")
 
 
     application_main_path = os.path.join("deploy", application_type, "main.py")
@@ -60,8 +62,8 @@ def app():
         print("Running script now")
         if application_type == "job":
             with rd.stdout(to=st.text("Code Output:"), format='code'):
-                results = subprocess.run(["python", application_main_path], capture_output=True, text=True)
-                print("Results: ", results.stdout, results.stderr)
+                proc = subprocess.run(["python", application_main_path], capture_output=True, text=True)
+                print("Results: ", proc.stdout, proc.stderr)
 
         if application_type == "service":
             with rd.stdout(to=st.text("Code Output:"), format='code'):
@@ -74,6 +76,12 @@ def app():
                         break
                     print(line, end='')
 
+        # Add "Stop Local Run" button and terminate the subprocess if it's running
+        if proc is not None:
+            if st.button("Stop Local Run"):
+                print("Stopping local run...")
+                proc.send_signal(signal.SIGTERM)
+
 
     deploy_button = st.button("Looks great! Let's Deploy.")
     if deploy_button:
@@ -81,11 +89,18 @@ def app():
             proc = subprocess.Popen(["python",f"deploy/{application_type}/deploy.py", "--workspace_fqn", WORKSPACE], env=my_env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
             print("Results: ", proc)
 
+            endpoint = None
             while True:
                 line = proc.stdout.readline()
                 if not line:
                     break
                 print(line, end='')
+                if "INFO:servicefoundry:You can find the application on the dashboard:-" in line:
+                    endpoint = line.split("INFO:servicefoundry:You can find the application on the dashboard:-")[-1].strip()
+            if endpoint:
+                st.text(endpoint)
+                if st.button("Go to Deployment Dashboard"):
+                    st.redirect(endpoint.split('')[1])
 
 
 if __name__ == '__main__':
