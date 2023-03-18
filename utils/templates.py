@@ -1,4 +1,5 @@
-job_template = """
+job_template = {
+    "ml" : """
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -24,9 +25,15 @@ clf.fit(X_train, y_train)
 
 preds = clf.predict(X_test)
 print(classification_report(y_true=y_test, y_pred=preds))
-"""
+""",
 
-service_template = """
+    "hello" : """
+print("Hello World")
+"""
+}
+
+service_template = {
+    "ml" : """
 import os
 import joblib
 import pandas as pd
@@ -48,28 +55,18 @@ def predict(
     )
     prediction = int(model.predict(pd.DataFrame([data]))[0])
     return {"prediction": prediction}
+""",
+
+    "hello" : """
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.post("/")
+def hello_world():
+    return {"message": "Hello World"}
 """
-
-function_template = """
-from typing import List
-
-import numpy as np
-
-def add(a: float, b: float): 
-    res = a + b
-    print(f"{a} + {b} = {res}")
-    return res
-    
-def multiply(a: float, b: float): 
-    res = a * b
-    print(f"{a} * {b} = {res}")
-    return res
-    
-    
-add(2, 3)
-multiply(2, 3)
-
-"""
+}
 
 deploy_message = """
 To deploy your code, click the button below to go to the Truefoundry website.
