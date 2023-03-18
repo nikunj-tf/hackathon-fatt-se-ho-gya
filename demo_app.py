@@ -79,7 +79,7 @@ def app():
 
     command = None
     if application_type == "service":
-        command = st.text_input(label="Enter the command to run your service locally", value="uvicorn deploy.service.main:app --port 8000 --host 0.0.0.0")
+        command = st.text_input(label="Enter the command to run your service locally", value="uvicorn main:app --port 8000 --host 0.0.0.0")
 
 
     application_main_path = os.path.join("deploy", application_type, "main.py")
@@ -95,7 +95,8 @@ def app():
 
         if application_type == "service":
             with rd.stdout(to=st.text("Code Output:"), format='code'):
-                proc = subprocess.Popen(command,shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+                local_command = command.replace("main", "deploy.service.main")
+                proc = subprocess.Popen(local_command,shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
                 print("Results: ", proc)
 
                 while True:
