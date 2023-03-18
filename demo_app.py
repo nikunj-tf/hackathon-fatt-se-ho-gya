@@ -1,25 +1,50 @@
 import os
 import time
-# from utils import utils
 import subprocess
 from utils import templates
 import streamlit as st
 from streamlit_ace import st_ace
 import logging
+import requests
 import extra_streamlit_components as stx
 import st_redirect as rd
-# sfy.login()
-from contextlib import contextmanager, redirect_stdout
-cookie_manager = stx.CookieManager()
-uuid = cookie_manager.get('uuid')
-st.write(uuid)
-
-newValue = st.text_input('temp', key="0")
-st.button('Try it', on_click=lambda: cookie_manager.set('uuid', newValue))
-logging.basicConfig(level=logging.INFO)
+import json
+import random
+import string
 
 HOST_NAME = "sath-me-smart.demo.truefoundry.com"
+CONTROL_PLANE_URL = "https://app.devtest.truefoundry.tech/api/svc"
+
+
+def random_str():
+    return ''.join(random.choices(string.ascii_lowercase, k=10))
+
+
+# sfy.login()
+cookie_manager = stx.CookieManager()
+old_uuid = cookie_manager.get('uuid')
+new_uuid = old_uuid
+st.write(new_uuid)
+
+time.sleep(1)
+if not old_uuid:
+    new_uuid = random_str()
+    print("#####: ", new_uuid)
+    cookie_manager.set('uuid', new_uuid, key="uuid")
+    response = requests.post(CONTROL_PLANE_URL + '/v1/service-account/anonymous-token', data={"name": new_uuid})
+    print(f"######^^^^^^^^^  {response.json()}")
+
+    access_token = response.json()['token']
+    print(f"#####$$$$$$$$$ {access_token}")
+    cookie_manager.set('accessToken', access_token, key='accessToken')
+    st.write(new_uuid)
+    st.write(access_token)
+
+# response = requests.post(CONTROL_PLANE_URL + '/v1/service-account/anonymous-token', data={"name": new_uuid})
+# print(f"$$$$$$ {response.json()}")
+
 WORKSPACE = 'demo-euwe1-production:aviso-ci-cd'
+
 
 def get_template(name):
     if name == "job":
@@ -59,9 +84,11 @@ def app():
     deploy_button = st.button("Looks great! Let's Deploy.")
     if deploy_button:
         with st.spinner("Deploying your code"):
-            subprocess.run(["python",f"deploy/{application_type}/deploy.py", "--workspace_fqn", WORKSPACE])
-            time.sleep(200)
-            st.text("Python deployed")
+            with rd.stdout, rd.stderr(format='markdown'):
+                subprocess.run(["python", f"deploy/{application_type}/deploy.py", "--workspace_fqn", WORKSPACE])
+                time.sleep(200)
+                st.text("Python deployed")
+
 
 if __name__ == '__main__':
     app()
