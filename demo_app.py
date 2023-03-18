@@ -11,8 +11,9 @@ import st_redirect as rd
 import json
 import random
 import string
+import servicefoundry as sfy
 
-HOST_NAME = "sath-me-smart.demo.truefoundry.com"
+# sfy.login(relogin=True, host='https://app.devtest.truefoundry.tech/')
 CONTROL_PLANE_URL = "https://app.devtest.truefoundry.tech/api/svc"
 
 def random_str():
@@ -84,7 +85,7 @@ def app():
         print("Running script now")
         result = subprocess.run(["python", application_main_path], capture_output=True, text=True)
         print("Results: ", result)
-        st.text_area("Code Output", result.stdout + result.stderr)
+        st.text_area("Code Output", result.stdout + result.stderr, height=500)
 
     deploy_button = st.button("Looks great! Let's Deploy.")
     if deploy_button:

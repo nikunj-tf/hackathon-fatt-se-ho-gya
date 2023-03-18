@@ -32,7 +32,7 @@ import joblib
 import pandas as pd
 from fastapi import FastAPI
 
-model = joblib.load("iris_classifier.joblib")
+model = joblib.load('/'.join(os.path.realpath(__file__).split('/')[:-1]) + "/iris_classifier.joblib")
 
 app = FastAPI(root_path=os.getenv("TFY_SERVICE_ROOT_PATH"))
 
