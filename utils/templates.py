@@ -29,7 +29,11 @@ print(classification_report(y_true=y_test, y_pred=preds))
 
     "hello" : """
 print("Hello World")
-"""
+""",
+
+    "empty": """
+""",
+
 }
 
 service_template = {
@@ -65,7 +69,10 @@ app = FastAPI()
 @app.post("/")
 def hello_world():
     return {"message": "Hello World"}
-"""
+""",
+
+    "empty": """
+""",
 }
 
 deploy_message = """

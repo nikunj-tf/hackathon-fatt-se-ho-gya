@@ -1,3 +1,4 @@
+from ...demo_app import command
 import argparse
 import logging
 from servicefoundry import Build, PythonBuild, Service, Resources
@@ -10,7 +11,7 @@ args = parser.parse_args()
 
 image = Build(
       build_spec=PythonBuild(
-        command="uvicorn main:app --port 8000 --host 0.0.0.0",
+        command=command,
         requirements_path="requirements.txt",
       )
 )
