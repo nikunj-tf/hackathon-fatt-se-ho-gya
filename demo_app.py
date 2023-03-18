@@ -1,22 +1,14 @@
+import streamlit as st
 import os
 import time
 # from utils import utils
 import subprocess
 from utils import templates
-import streamlit as st
 from streamlit_ace import st_ace
 import logging
+import servicefoundry as sfy
 import extra_streamlit_components as stx
 import st_redirect as rd
-# sfy.login()
-from contextlib import contextmanager, redirect_stdout
-cookie_manager = stx.CookieManager()
-uuid = cookie_manager.get('uuid')
-st.write(uuid)
-
-newValue = st.text_input('temp', key="0")
-st.button('Try it', on_click=lambda: cookie_manager.set('uuid', newValue))
-logging.basicConfig(level=logging.INFO)
 
 my_env = os.environ.copy()
 my_env["TFY_HOST"] = "https://app.devtest.truefoundry.tech/"
@@ -30,7 +22,6 @@ def get_template(application_type, name):
         return templates.service_template[name]
     else:
         return ""
-
 
 def app():
     st.title("Truefoundry Demo")
@@ -67,12 +58,12 @@ def app():
     with st.spinner("Running your code locally"):
         print("Running script now")
         if application_type == "job":
-            with rd.stdout(to=st.text("Code Output:")):
+            with rd.stdout(to=st.text("Code Output:"), format='code'):
                 results = subprocess.run(["python", application_main_path], capture_output=True, text=True)
                 print("Results: ", results.stdout, results.stderr)
 
         if application_type == "service":
-            with rd.stdout(to=st.text("Code Output:")):
+            with rd.stdout(to=st.text("Code Output:"), format='code'):
                 results = subprocess.run(command, shell=True, capture_output=True, text=True)
                 print("Results: ", results.stdout, results.stderr)
 
@@ -87,5 +78,7 @@ def app():
                 if not line:
                     break
                 print(line, end='')
+
+
 if __name__ == '__main__':
     app()
