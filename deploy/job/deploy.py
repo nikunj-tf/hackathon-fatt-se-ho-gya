@@ -1,3 +1,4 @@
+import os
 import argparse
 import logging
 from servicefoundry import Build, Job, PythonBuild, Resources
@@ -20,7 +21,7 @@ job = Job(
     image=image,
     resources=Resources(memory_limit=1500, memory_request=100),
     env={
-      "TFY_API_KEY": tfy_api_key
+      "TFY_API_KEY": os.environ["tfy_api_key"]
     }
 )
 job.deploy(workspace_fqn=args.workspace_fqn)

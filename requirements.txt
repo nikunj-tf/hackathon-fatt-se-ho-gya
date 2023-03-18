@@ -3,3 +3,9 @@ streamlit_ace
 servicefoundry
 extra_streamlit_components
 protobuf==3.20.*
+fastapi
+joblib
+numpy
+pandas
+scikit-learn
+uvicorn

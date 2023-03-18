@@ -1,4 +1,4 @@
-from ...demo_app import command, tfy_api_key
+import os
 import argparse
 import logging
 from servicefoundry import Build, PythonBuild, Service, Resources
@@ -11,7 +11,7 @@ args = parser.parse_args()
 
 image = Build(
       build_spec=PythonBuild(
-        command=command,
+        command=os.environ["command"],
         requirements_path="requirements.txt",
       )
 )
@@ -27,7 +27,7 @@ service = Service(
       memory_limit=1500
     ),
     env={
-      "TFY_API_KEY": tfy_api_key
+      "TFY_API_KEY": os.environ["tfy_api_key"]
     }
 )
 service.deploy(workspace_fqn=args.workspace_fqn)

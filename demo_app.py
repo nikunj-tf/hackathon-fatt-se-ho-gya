@@ -33,6 +33,7 @@ if 'access_token' not in st.session_state:
 print("BEFORE THE LOOP: ", old_uuid)
 
 tfy_api_key = st.session_state['access_token']
+os.environ["tfy_api_key"] = tfy_api_key
 
 if not old_uuid:
     rand_str = random_str()
@@ -91,6 +92,7 @@ def app():
     command = None
     if application_type == "service":
         command = st.text_input(label="Enter the command to run your service locally", value="uvicorn main:app --port 8000 --host 0.0.0.0")
+        my_env["command"] = command
 
 
     application_main_path = os.path.join("deploy", application_type, "main.py")
