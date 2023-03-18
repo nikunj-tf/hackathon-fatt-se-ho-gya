@@ -12,7 +12,7 @@ image=Build(
         )
 )
 service = Service(
-  name="streamlit",
+  name="streamlitdeployquick",
   image=image,
   ports=[{"port": 8501, "host": "app-fatt-se-ho-gya.tfy-ctl-euwe1-devtest.devtest.truefoundry.tech"}],
   resources=Resources(memory_limit=1500, memory_request=1000),
