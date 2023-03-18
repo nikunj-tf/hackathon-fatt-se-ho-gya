@@ -15,7 +15,6 @@ import string
 HOST_NAME = "sath-me-smart.demo.truefoundry.com"
 CONTROL_PLANE_URL = "https://app.devtest.truefoundry.tech/api/svc"
 
-
 def random_str():
     return ''.join(random.choices(string.ascii_lowercase, k=10))
 
@@ -45,6 +44,13 @@ if not old_uuid:
 
 WORKSPACE = 'demo-euwe1-production:aviso-ci-cd'
 
+my_env = os.environ.copy()
+my_env["PATH"] = "/usr/sbin:/sbin:" + my_env["PATH"]
+
+my_env = os.environ.copy()
+my_env["TFY_HOST"] = "https://app.devtest.truefoundry.tech/"
+my_env["WORKSPACE"] = "tfy-ctl-euwe1-devtest:fat-se-hogya"  # Can be removed if remains unused
+
 
 def get_template(name):
     if name == "job":
@@ -60,7 +66,7 @@ def get_template(name):
 
 
 def app():
-    st.title("Truefoundry Demo")
+    st.title("TrueFoundry Demo")
     st.subheader("What do you want to deploy?")
     application_options = ["job", "service", "function"]
     application_type = st.selectbox("Select an option", application_options)
@@ -70,8 +76,7 @@ def app():
     # Display the code editor when a button is clicked
     code = st_ace(language='python', theme='twilight', keybinding='vscode', value=template)
     application_main_path = os.path.join("deploy", application_type, "main.py")
-    # if not os.path.exists(application_main_path):
-    #     os.
+
     with open(application_main_path, 'w') as f:
         f.write(code)
 
