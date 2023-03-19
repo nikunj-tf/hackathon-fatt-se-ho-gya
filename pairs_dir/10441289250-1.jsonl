@@ -1,0 +1,9 @@
+{"prompt": "What is the goal of the product?", "completion": "uuid: 10441289250 The goal is to make it easy for data scientists and ML developers to test and deploy their models into production without having to depend on ML engineers or DevOps team."}
+{"prompt": "Why do data scientists and ML developers need this product?", "completion": "uuid: 10441289250 Because they often lack core engineering skill set and working with infra becomes challenging for them."}
+{"prompt": "What are the ways to deploy a model using this product?", "completion": "uuid: 10441289250 You can deploy a model using Python code, YAML, or through the UI."}
+{"prompt": "What is the platform designed to work with?", "completion": "uuid: 10441289250 The platform is designed to work with Kubernetes, which is cloud native and can be used on any cloud like AWS or GCP."}
+{"prompt": "Can you integrate your own Docker register?", "completion": "uuid: 10441289250 Yes, you can integrate your own Docker register."}
+{"prompt": "What is the purpose of integrating GitHub repositories in the platform?", "completion": "uuid: 10441289250 Integrating GitHub repositories allows you to choose options when you deploy."}
+{"prompt": "What is the purpose of creating a workspace in a cluster?", "completion": "uuid: 10441289250 To give every data scientist or team a safe space to play around with, where they can do their own deployment and not exceed beyond that."}
+{"prompt": "What are some components of the product?", "completion": "uuid: 10441289250 The product has components for tracking runs and metrics, data monitoring, and browsing through the raw data of the model."}
+{"prompt": "Will the conversation continue over email?", "completion": "uuid: 10441289250 Yes, the conversation will continue over email."}

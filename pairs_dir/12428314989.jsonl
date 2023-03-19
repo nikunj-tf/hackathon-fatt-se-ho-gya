@@ -1,0 +1,14 @@
+{"prompt": "Where is the speaker based?", "completion": "uuid: 12428314989 The speaker is based in Santa Clara."}
+{"prompt": "What time is it?", "completion": "uuid: 12428314989 It's 1130."}
+{"prompt": "Why did the speaker choose that time?", "completion": "uuid: 12428314989 It's the only time the speaker could find since the others are in IST."}
+{"prompt": "Where are the others based?", "completion": "uuid: 12428314989 The others are based in India."}
+{"prompt": "What are the two major parts that the speaker wants to cover on the call?", "completion": "uuid: 12428314989 The two major parts that the speaker wants to cover on the call are understanding the ML structure at Docusign and discussing multi cloud."}
+{"prompt": "What is the product that the speaker's team has built?", "completion": "uuid: 12428314989 The product that the speaker's team has built is called Optical Foundry."}
+{"prompt": "What is the goal of Optical Foundry?", "completion": "uuid: 12428314989 The goal of Optical Foundry is to create abstractions for developers so that they can do everything necessary to take models that they are training on local notebooks or wherever to actual real use case."}
+{"prompt": "Where is the speaker's startup registered?", "completion": "uuid: 12428314989 The speaker's startup is registered in the US."}
+{"prompt": "Where is most of the team located?", "completion": "uuid: 12428314989 Most of the team is located in India."}
+{"prompt": "Why is most of the team located in India?", "completion": "uuid: 12428314989 Tech hiring is cheaper in India."}
+{"prompt": "Has the speaker ever seen a business reason to support multicloud?", "completion": "uuid: 12428314989 No, the speaker has never seen a business reason to support multicloud."}
+{"prompt": "What is the reason that companies would rather not use a managed infra offering?", "completion": "uuid: 12428314989 Most companies prefer to have their systems internally and not be dependent on a managed infra offering."}
+{"prompt": "What is the market like for Kubernetes adoption in India?", "completion": "uuid: 12428314989 The market for Kubernetes adoption in India is quite behind, with very few companies adopting it."}
+{"prompt": "What is the goal of Banadia?", "completion": "uuid: 12428314989 The goal of Banadia is to take care of everything in terms of the platform image so that the system can be deployed to any client."}

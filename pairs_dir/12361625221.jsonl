@@ -1,0 +1,10 @@
+{"prompt": "How is Angel doing?", "completion": "uuid: 12361625221 Good."}
+{"prompt": "What is the purpose of the meeting?", "completion": "uuid: 12361625221 To summarize their understanding and walk through the major components needed for the solution."}
+{"prompt": "What are the major components needed for the solution?", "completion": "uuid: 12361625221 Architecture perspective, platform design, and APIs that can be used to expose the solution to customers."}
+{"prompt": "What is Resolve.ai providing?", "completion": "uuid: 12361625221 Support in their platform that they provide to their SaaS companies."}
+{"prompt": "What is the use case provided for Resolve.ai's platform?", "completion": "uuid: 12361625221 For example, a client called Modi uploads their knowledge bases and specific information related to their policies and ticketing system. AI will respond to the queries and if unable to, it goes to an agent."}
+{"prompt": "How is the model retrained when a customer uploads their data?", "completion": "uuid: 12361625221 The platform retrain the model and expose it as an endpoint to the customer's data."}
+{"prompt": "How is the model loaded and deployed on the platform?", "completion": "uuid: 12361625221 Using Python for serialization and mlFlow to save the models to ONNX format. It is then pushed to the model registry and can be deployed using the provided SDKs."}
+{"prompt": "How can a data scientist log in their models?", "completion": "uuid: 12361625221 They can use the provided model registry and SDKs to deploy their models and log parameters as well as datasets."}
+{"prompt": "How can a data scientist run their training job?", "completion": "uuid: 12361625221 They can use the provided API and SDKs to run the training job on the cluster."}
+{"prompt": "How does the platform handle GPU-based loads?", "completion": "uuid: 12361625221 The cluster administrator must first add a node pool with GPU. The platform uses dynamic node auto-provisioning in AWS and GKE, while pre-adding a node pool with the minimum size set to zero in Azure."}

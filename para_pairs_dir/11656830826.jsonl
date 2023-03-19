@@ -1,0 +1,10 @@
+{"prompt": "Where is Beville located?", "completion": "uuid: 11656830826 Beville's location is not mentioned in the context."}
+{"prompt": "What is the issue with Beville's Chrome?", "completion": "uuid: 11656830826 Beville cannot connect to their camera on their Chrome."}
+{"prompt": "Where is Brampton located?", "completion": "uuid: 11656830826 Brampton is located close to Toronto in Canada."}
+{"prompt": "What is the weather like in Brampton?", "completion": "uuid: 11656830826 During December to March, the weather in Brampton is very snowy. However, it is currently not a lot of snow."}
+{"prompt": "Where is the speaker, Nikki, based currently?", "completion": "uuid: 11656830826 Nikki is currently traveling in India and may take a bus soon. However, Nikki is based out of SF."}
+{"prompt": "What is Truefoundry's primary focus?", "completion": "uuid: 11656830826 Truefoundry focuses on deployment and monitoring of machine learning models."}
+{"prompt": "What cloud does Procore use?", "completion": "uuid: 11656830826 Procore primarily uses AWS."}
+{"prompt": "Where do they primarily do their machine learning?", "completion": "uuid: 11656830826 98% of machine learning work is performed on AWS."}
+{"prompt": "Does Procore use Sage Makers?", "completion": "uuid: 11656830826 They used to use Sage Makers, but they now prefer their own solutions."}
+{"prompt": "Does Procore use Kubernetes?", "completion": "uuid: 11656830826 Yes, Procore primarily uses Kubernetes for their machine learning."}

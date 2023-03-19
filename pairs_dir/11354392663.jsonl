@@ -1,0 +1,8 @@
+{"prompt": "What event is the speaker logging in from their mobile for?", "completion": "uuid: 11354392663 They are logging into a search event."}
+{"prompt": "Why is the speaker not able to connect to the internet?", "completion": "uuid: 11354392663 The speaker is not able to connect to the internet due to some issue."}
+{"prompt": "Who is the co-founder of the company that is mentioned in the conversation?", "completion": "uuid: 11354392663 The co-founder of the company mentioned in the conversation is Anurag."}
+{"prompt": "What is the goal of True Foundry?", "completion": "uuid: 11354392663 The goal of True Foundry is to make it easy for data scientists and ML engineers to take their machine learning models to production."}
+{"prompt": "What tools do the data scientists use for prototyping?", "completion": "uuid: 11354392663 The data scientists use XGBoost and PyTorch for prototyping."}
+{"prompt": "How do they extract information from the patient chart?", "completion": "uuid: 11354392663 They use NLT to extract specific data points from massive clinical documents."}
+{"prompt": "What kind of monitoring platform do they have?", "completion": "uuid: 11354392663 They have an internal monitoring platform where they maintain a representative test set that is curated with time."}
+{"prompt": "What kind of models do they deploy and where?", "completion": "uuid: 11354392663 They deploy different kinds of models and use them in production. They don't have extensive feature stores and they load the text either directly from Elastic. They deploy on EC2 machines and are currently piloting with Databricks."}

@@ -1,0 +1,10 @@
+{"prompt": "What command is used to initiate training in Python?", "completion": "uuid: 12428091307 Python command to initiate that training."}
+{"prompt": "Who takes care of creating and killing the VM during Vertex model training job?", "completion": "uuid: 12428091307 The Vertex training job takes care of creating and killing the VM."}
+{"prompt": "Where is the model stored after training in Vertex?", "completion": "uuid: 12428091307 The model is converted into PB and then stored in the model register of the Vertex."}
+{"prompt": "What kind of reports the data center can create with the data?", "completion": "uuid: 12428091307 The context does not provide enough information to determine it."}
+{"prompt": "What is Label Studio used for in object detection?", "completion": "uuid: 12428091307 Label Studio is used to scan through unauthorized data for determining its quality without worrying about it."}
+{"prompt": "Who handles the packaging and image making for on-prem deployment?", "completion": "uuid: 12428091307 The infrastructure team takes care of packaging and image making for on-prem deployment."}
+{"prompt": "What problems does Truefoundry solve in ML Ops?", "completion": "uuid: 12428091307 Truefoundry tries to empower developers, provide monitoring dashboard, and make promotion from one environment to other easier."}
+{"prompt": "Is Flight ex deployed on any on-premises?", "completion": "uuid: 12428091307 It is unclear whether Flight ex is deployed on any on-premises as per the context."}
+{"prompt": "Who is the contact person for DevOps or ML Ops in Flight ex?", "completion": "uuid: 12428091307 Nico is the contact person for DevOps or ML Ops in Flight ex."}
+{"prompt": "Who is Matt as mentioned in the conversation?", "completion": "uuid: 12428091307 Matt is the director of the speaker in the conversation."}

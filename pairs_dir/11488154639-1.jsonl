@@ -1,0 +1,10 @@
+{"prompt": "What problems did you face when getting everyone on board?", "completion": "uuid: 11488154639 Individual pairing with data scientists to get dependencies installed correctly for their chipset."}
+{"prompt": "What solution did you find to solve these problems?", "completion": "uuid: 11488154639 Dockerization."}
+{"prompt": "What tool did you use for experiment tracking?", "completion": "uuid: 11488154639 Sage Maker and Cloud Watch dashboards."}
+{"prompt": "Did you use ML flow for experiment tracking?", "completion": "uuid: 11488154639 No."}
+{"prompt": "What is the process to update a dependency with Dockerization?", "completion": "uuid: 11488154639 Update the dependency, run Docker compose build, push it to PR, and once approved, everyone will have it on their local development environment."}
+{"prompt": "What is the current deployment tool used?", "completion": "uuid: 11488154639 Team City for CI, and CD pipeline that talks to AWS to upload new docker images."}
+{"prompt": "What was the package you created to define the steps in the Sage Maker pipeline?", "completion": "uuid: 11488154639 A package that essentially wraps whatever code you want to execute out of the Sage Maker pipeline, allowing you to slot in any docker image or custom code into any number of steps that you define in Python SDK."}
+{"prompt": "What solution are you currently using for machine learning deployment?", "completion": "uuid: 11488154639 Sage Maker."}
+{"prompt": "Are there any issues with deployment?", "completion": "uuid: 11488154639 No, deployment is not a problem. There is a CI pipeline set up already."}
+{"prompt": "What is the platform you are trying to build on top of Kubernetes?", "completion": "uuid: 11488154639 A platform like Sage Maker on Kubernetes."}

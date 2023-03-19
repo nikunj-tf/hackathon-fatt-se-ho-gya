@@ -1,0 +1,8 @@
+{"prompt": "What is the first thing that needs to be set up when using Truefoundry You?", "completion": "uuid: 10443270777 The cluster setup."}
+{"prompt": "What types of machines can be added to a workspace?", "completion": "uuid: 10443270777 CPU-based or GPU-based machines."}
+{"prompt": "What is the advantage of using Kubernetes in Truefoundry You?", "completion": "uuid: 10443270777 You don't have to spin up clusters every time and can have a shared cluster."}
+{"prompt": "What is the difference between a service and a job in Truefoundry You?", "completion": "uuid: 10443270777 A service is a long-running service API endpoint or model demo, while a job is a model training job or batch inference."}
+{"prompt": "How can a developer manage their applications in Truefoundry You?", "completion": "uuid: 10443270777 They can manage their services, jobs, and deployed models with version control."}
+{"prompt": "Can a developer easily rollback to a previous version of a service?", "completion": "uuid: 10443270777 Yes, with one click they can redeploy the previous version."}
+{"prompt": "What types of metrics and logs can a developer view for their service?", "completion": "uuid: 10443270777 Metrics dashboard, log search filters, and log management."}
+{"prompt": "What types of models does Truefoundry You support and how are they deployed?", "completion": "uuid: 10443270777 They support online inference models and batch offline modules. For offline modules, you run a service that pushes data to S3 and then stores the data in some database."}

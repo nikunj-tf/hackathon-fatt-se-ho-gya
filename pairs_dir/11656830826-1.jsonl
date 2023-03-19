@@ -1,0 +1,9 @@
+{"prompt": "What was the main reason for the speaker to move on from their India centric business?", "completion": "uuid: 11656830826 They wanted to explore something newer."}
+{"prompt": "What is the objective of the speaker in reaching out to people in the industry associated with the ML Ops domain?", "completion": "uuid: 11656830826 To get to know more about the challenges faced by users in the tools they have been using."}
+{"prompt": "What is the challenge that most ML engineers face after training a model?", "completion": "uuid: 11656830826 Optimizing the model."}
+{"prompt": "What is quantization in machine learning?", "completion": "uuid: 11656830826 It means doing calculations in 16 or even 8 bits instead of Floating Point 32 bits, and helps in making the model faster. "}
+{"prompt": "Which tool did the speaker use for deployment at Procore?", "completion": "uuid: 11656830826 Selden Core."}
+{"prompt": "What was the main reason for the speaker not continuing with the support license of Selden Core?", "completion": "uuid: 11656830826 The team at Proco was confident in their competence to fix issues, and they felt the support was not providing enough value."}
+{"prompt": "Why did the speaker not go for an enterprise version of Selden Core?", "completion": "uuid: 11656830826 The manager felt building their own solution was better since the tools were not mature enough."}
+{"prompt": "What topics do the speaker want to dive deeper into in the next meeting?", "completion": "uuid: 11656830826 Sage Maker, competition with Selden, and monitoring."}
+{"prompt": "What time and day did the speaker suggest for their next meeting?", "completion": "uuid: 11656830826 Tuesday, the 17th of the next month, same time as the current meeting."}

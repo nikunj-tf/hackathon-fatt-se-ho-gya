@@ -1,0 +1,7 @@
+{"prompt": "What is the ML flow?", "completion": "uuid: 10881905316 ML Flow is a tool for tracking experiments and managing and deploying models."}
+{"prompt": "What happens when you try to log anything nonscalar with the ML flow?", "completion": "uuid: 10881905316 It fails."}
+{"prompt": "What does the Truefoundry platform offer to solve the issue of logging nonscalar values?", "completion": "uuid: 10881905316 The Truefoundry platform offers additional data logging functionality for non-scalar values."}
+{"prompt": "What is the name of the service deployed on the Truefoundry platform to demonstrate how to write FastAPI code?", "completion": "uuid: 10881905316 The service deployed is a FastAPI service."}
+{"prompt": "What is the name of the endpoint that shows the three functions deployed as part of the FastAPI service?", "completion": "uuid: 10881905316 The endpoint name is 'multiply', 'normal', and 'uniform'."}
+{"prompt": "What is the resource you need to pass to the service deployment code to specify the GPU to use?", "completion": "uuid: 10881905316 You need to pass the resources parameter to the service deployment code to specify the GPU to use."}
+{"prompt": "How can you identify the model to use in the deployment of the Iris service?", "completion": "uuid: 10881905316 You can identify the model by its fully qualified name (FQN)."}

@@ -1,0 +1,10 @@
+{"prompt": "What was the conversation about?", "completion": "uuid: 11354392663 The conversation was about the ML pipeline in Platinum and the challenges faced."}
+{"prompt": "What is EKS?", "completion": "uuid: 11354392663 EKS is a Kubernetes-based service provided by Amazon Web Services."}
+{"prompt": "Do the data scientists do the deployments?", "completion": "uuid: 11354392663 Yes, the data scientists do the deployments."}
+{"prompt": "How do the data scientists deploy their models?", "completion": "uuid: 11354392663 They would provide pickled models."}
+{"prompt": "Are the models hosted as endpoints or batched?", "completion": "uuid: 11354392663 They are hosted as live predictions on request, but they are mostly made for batch predictions."}
+{"prompt": "What was the problem that Platinum faced a year ago?", "completion": "uuid: 11354392663 The state of the prototyping instrument was very problematic, so they had trouble retaining people over it."}
+{"prompt": "What did they do about it?", "completion": "uuid: 11354392663 They put a plaster on it immediately rather than doing some kind of long overhaul."}
+{"prompt": "What is the current challenge of Platinum?", "completion": "uuid: 11354392663 They are currently scaling up the two to three minutes machine learning data sets that they deliver, and the processes don't scale very well for that."}
+{"prompt": "What is the purpose of the platform being built by the startup?", "completion": "uuid: 11354392663 The purpose of the platform is to enable data scientists to train and host models in a scalable way."}
+{"prompt": "What are the two concrete actionables that the startup proposed to Platinum?", "completion": "uuid: 11354392663 To showcase their platform to Platinum and see if there is a use case for it in their prototyping teams, and to hear from someone from the infra team and see if the platform could help solve the introduction challenges."}

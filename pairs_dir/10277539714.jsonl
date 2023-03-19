@@ -1,0 +1,8 @@
+{"prompt": "How is Nikonj doing?", "completion": "uuid: 10277539714 Nikonj is doing great."}
+{"prompt": "What time is it for Nishan?", "completion": "uuid: 10277539714 It's 10:17 a.m. for Nishan."}
+{"prompt": "What is Truefoundry building?", "completion": "uuid: 10277539714 Truefoundry is building an ML platform similar to Facebook's fi learner."}
+{"prompt": "What is Branch and what is their primary business?", "completion": "uuid: 10277539714 Branch is a micro lending app-based company primarily operating in African countries and India."}
+{"prompt": "What is the role of machine learning in Branch?", "completion": "uuid: 10277539714 Machine learning models are used for loan evaluation, credit scores, and generating offers."}
+{"prompt": "Does Branch have a separate data science team?", "completion": "uuid: 10277539714 No, the machine learning team at Branch is responsible for end-to-end work and includes feature creation and analysis."}
+{"prompt": "How many models are currently in production at Branch?", "completion": "uuid: 10277539714 At any given time, Branch has roughly 10-12 models in production for different borrower types in four countries."}
+{"prompt": "What is the workflow for training and deployment at Branch?", "completion": "uuid: 10277539714 Training happens on Sage Maker and each model is a repository where each branch is a version of the model. Deployment happens on Tactile's clusters, which have endpoint endpoints for different use cases."}

@@ -1,0 +1,10 @@
+{"prompt": "Where is the person based?", "completion": "uuid: 12428091030 The person is based in Canada."}
+{"prompt": "How long have they been in Canada?", "completion": "uuid: 12428091030 They have been in Canada for almost six years."}
+{"prompt": "What is the goal of the call?", "completion": "uuid: 12428091030 The goal of the call is to understand more about the company's data science initiatives, use cases and structure, the tools they use, key priorities, and any challenges they are experiencing."}
+{"prompt": "Who are the co-founders of Truefoundry?", "completion": "uuid: 12428091030 The co-founders of Truefoundry are Rogue, Abishek and Nikonju."}
+{"prompt": "What is the goal of Truefoundry?", "completion": "uuid: 12428091030 The goal of Truefoundry is to help companies in their journey of machine learning operationalization."}
+{"prompt": "What internal system did Facebook build that inspired Truefoundry?", "completion": "uuid: 12428091030 Facebook built an internal system called Bill on Earth which allowed ML developers to be quite independent and abstracted out many pieces of infrastructure."}
+{"prompt": "What previous experience does the speaker have?", "completion": "uuid: 12428091030 The speaker worked for six years with a hedge fund, using data to build trading strategies and also did portfolio management for worldwide."}
+{"prompt": "How many people are on the ML team at Son of C?", "completion": "uuid: 12428091030 The ML team at Son of C has grown to almost 350 people."}
+{"prompt": "What tool stack do they use?", "completion": "uuid: 12428091030 They use Eks for provisioning resources, Kubernetes and Terraform for deployment, Snowflake for data storage and Selden for logging model metrics."}
+{"prompt": "Who is responsible for deploying the models?", "completion": "uuid: 12428091030 The ML engineering team is responsible for deploying the models."}

@@ -1,0 +1,14 @@
+{"prompt": "Who is addressing whom at the beginning of the conversation?", "completion": "uuid: 12249629853 Hey punit addressing someone"}
+{"prompt": "What is the response to the initial greeting?", "completion": "uuid: 12249629853 Hi is the response"}
+{"prompt": "Who else is on the call besides the speakers?", "completion": "uuid: 12249629853 Rog is on the call"}
+{"prompt": "What is the speaker's response when asked how they are doing?", "completion": "uuid: 12249629853 I'm doing well, thank you."}
+{"prompt": "Why is one of the speakers not able to see the other?", "completion": "uuid: 12249629853 It seems like they are using a different platform, Teams instead of Meat."}
+{"prompt": "What is the speaker's question about the platform they are using?", "completion": "uuid: 12249629853 Is it like the video?"}
+{"prompt": "What does the speaker say about the platform being discussed?", "completion": "uuid: 12249629853 The platform being discussed is Meat Wrapped Around Teams."}
+{"prompt": "What happens when someone else tries to join the call?", "completion": "uuid: 12249629853 The speaker forwards the invite to others so they can join."}
+{"prompt": "What does one of the speakers suggest when someone else is unable to join the call?", "completion": "uuid: 12249629853 Create a separate link from their enterprise account."}
+{"prompt": "How does one of the speakers suggest they deal with the issue of others not being able to join?", "completion": "uuid: 12249629853 By creating a separate link and asking others to join that."}
+{"prompt": "Who is mentioned as possibly being the main audience for the call?", "completion": "uuid: 12249629853 The speaker's team is mentioned."}
+{"prompt": "What do the speakers plan to do when someone else is ready to join the call?", "completion": "uuid: 12249629853 They will join the link Punit creates."}
+{"prompt": "How does one of the speakers say they joined the call?", "completion": "uuid: 12249629853 They joined using their mobile app instead of the laptop."}
+{"prompt": "What is one of the speaker's response when told others are waiting for them?", "completion": "uuid: 12249629853 They express their willingness to wait for Punit's link to join the call."}

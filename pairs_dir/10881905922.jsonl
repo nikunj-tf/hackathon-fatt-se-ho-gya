@@ -1,0 +1,7 @@
+{"prompt": "What is the broad objective of the call?", "completion": "uuid: 10881905922 To understand the ML process and pain points and get to know each other."}
+{"prompt": "Where is Vivek based now?", "completion": "uuid: 10881905922 He is based in Bangalore."}
+{"prompt": "What is True Foundry and what are they building?", "completion": "uuid: 10881905922 True Foundry is a startup building a platform for machine learning teams. They focus on model deployment and are working with design partners."}
+{"prompt": "How is Freshworks' ML team structured?", "completion": "uuid: 10881905922 Freshworks has a monolithic code base with a separate team maintaining infrastructure. Their ML team operates with a layer that abstracts the application from the ML service, and ML services are specific to each account."}
+{"prompt": "Where are the models stored for inference?", "completion": "uuid: 10881905922 Models are stored in an S3 model registry for inference."}
+{"prompt": "What is the main focus of True Foundry's platform?", "completion": "uuid: 10881905922 The main focus is on model deployment, enabling teams to deploy and monitor their machine learning models quickly."}
+{"prompt": "How does Freshworks guarantee performance for as many models as possible?", "completion": "uuid: 10881905922 They have a custom-designed app with caching built in that ensures calls for a particular inference from a particular account meet certain SLA parameters."}

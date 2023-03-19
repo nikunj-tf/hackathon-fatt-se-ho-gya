@@ -1,0 +1,7 @@
+{"prompt": "Who is introducing themselves on the call?", "completion": "uuid: 12339422352 Jimmy is introducing himself on the call."}
+{"prompt": "Do they have a product already or are they still trying to figure it out?", "completion": "uuid: 12339422352 They do have a product and platform, and they also have a few customers."}
+{"prompt": "What is Liquin Bhajaj's background?", "completion": "uuid: 12339422352 Liquin Bhajaj comes from a machine learning background and has worked at Facebook and Reflection before co-founding Truefoundry."}
+{"prompt": "What cloud provider does Make My Trip use primarily?", "completion": "uuid: 12339422352 Make My Trip primarily uses AWS as their cloud provider."}
+{"prompt": "Who writes the Airflow jobs for the model deployment?", "completion": "uuid: 12339422352 The ML engineer or data scientist writes the Airflow jobs for the model deployment."}
+{"prompt": "What is the hand off process from the machine learning team to the intra team that's managing it?", "completion": "uuid: 12339422352 The hand off process involves using a standard recipe for deployment and making changes as needed for the specific model."}
+{"prompt": "What platformization journey is Truefoundry on?", "completion": "uuid: 12339422352 Truefoundry is working on platformizing multi-arm bandit, making it more accessible for non data scientists."}

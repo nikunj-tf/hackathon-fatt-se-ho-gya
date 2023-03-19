@@ -1,0 +1,10 @@
+{"prompt": "What are the services deployed in production that are sitting under some namespace?", "completion": "uuid: 12428091030 Let's say the services that are deployed in production."}
+{"prompt": "Do data scientists have any access to those services?", "completion": "uuid: 12428091030 Yes, they do have access, but to their own namespace."}
+{"prompt": "What metrics were being logged for measuring data drift?", "completion": "uuid: 12428091030 There were no drift monitoring metrics being logged before onboarding Selden."}
+{"prompt": "Why did they onboard Selden?", "completion": "uuid: 12428091030 One reason was for drift monitoring, but also because Selden provides features beyond just model serving."}
+{"prompt": "How did the process of initiation of a new software procurement start?", "completion": "uuid: 12428091030 The machine learning engineers proposed the idea of drift monitoring, spoke to coworkers, manager, product owner, and data scientists, and after everyone liked the idea, it went to the higher-up for final approval."}
+{"prompt": "Did they evaluate any other vendors besides Selden for model monitoring?", "completion": "uuid: 12428091030 Yes, they also evaluated Evidently."}
+{"prompt": "What is the main purpose of the system they have built?", "completion": "uuid: 12428091030 The system is built on top of Kubernetes and supports all three clouds. It has workspaces for training and production, allows logging of offline metrics, has version comparison, integration with CI/CD for auto scaling, and monitoring for drift and predictions using the same stack."}
+{"prompt": "What is the primary reason for onboarding Selden?", "completion": "uuid: 12428091030 Drift monitoring."}
+{"prompt": "Which workflow management systems have they worked with?", "completion": "uuid: 12428091030 Airflow 2.0 and Argo workflows."}
+{"prompt": "What do they plan to do during the next demo call?", "completion": "uuid: 12428091030 They plan to show a demo of their platform and learn from each other."}

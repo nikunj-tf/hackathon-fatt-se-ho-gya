@@ -1,0 +1,7 @@
+{"prompt": "What are the different levels at which access control can be added to the platform?", "completion": "uuid: 12044422040 Access control can be added at the cluster level, workspace level, and individual service level."}
+{"prompt": "Can access control be added at the deployment level?", "completion": "uuid: 12044422040 Yes, access control can be added at the deployment level."}
+{"prompt": "What APIs are exposed for logging metrics and data?", "completion": "uuid: 12044422040 APIs for logging parameters, data, and metrics are exposed."}
+{"prompt": "What is the Model Registry?", "completion": "uuid: 12044422040 The Model Registry is a feature that allows for easy logging and deployment of models in different versions."}
+{"prompt": "Where can models be stored?", "completion": "uuid: 12044422040 Models can be stored either on the cluster's cloud or on the user's cloud."}
+{"prompt": "What is the pricing structure for the platform?", "completion": "uuid: 12044422040 The platform charges by the number of users, with a minimum of ten users at $150 per user per month. Pricing can be discussed and adjusted based on individual requirements."}
+{"prompt": "What is the next step after the call?", "completion": "uuid: 12044422040 The next step is an internal discussion on Friday, followed by a larger team demo and setting up trial accounts after defining objectives and a start and end date for the trial."}

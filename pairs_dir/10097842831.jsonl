@@ -1,0 +1,9 @@
+{"prompt": "What was the reason for being on mute during the call?", "completion": "uuid: 10097842831 In case IBM was audible."}
+{"prompt": "Was the person audible during the call?", "completion": "uuid: 10097842831 Yes."}
+{"prompt": "Where is the person based out of?", "completion": "uuid: 10097842831 They are based in Singapore."}
+{"prompt": "What is the main focus of Turtlemint?", "completion": "uuid: 10097842831 It is a fintech company primarily focusing on insure tech."}
+{"prompt": "How big is the data science team at Turtlemint?", "completion": "uuid: 10097842831 It is a single digit team, less than ten people."}
+{"prompt": "What technology stack does Turtlemint use for machine learning?", "completion": "uuid: 10097842831 They use Kubernetes for deployment and are primarily on the AWS stack."}
+{"prompt": "How is model deployment handled at Turtlemint?", "completion": "uuid: 10097842831 Deployment is handled using Kubernetes pods and services."}
+{"prompt": "Does Turtlemint use Sage Maker for machine learning?", "completion": "uuid: 10097842831 Not yet, but they have tried it in the past and may combine it with ML flow in the future."}
+{"prompt": "What challenges might arise as Turtlemint's machine learning processes grow?", "completion": "uuid: 10097842831 ML observability may become a crucial challenge in the future as operations become more complex."}

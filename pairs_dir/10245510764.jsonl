@@ -1,0 +1,16 @@
+{"prompt": "What is the context about?", "completion": "uuid: 10245510764 A conversation between a group of people discussing an ML platform"}
+{"prompt": "What is the name of the ML platform being discussed?", "completion": "uuid: 10245510764 Truefoundry"}
+{"prompt": "Where is the speaker currently located?", "completion": "uuid: 10245510764 Indonesia"}
+{"prompt": "Where will the speaker be going back to after three weeks?", "completion": "uuid: 10245510764 South Africa"}
+{"prompt": "Who is Uri?", "completion": "uuid: 10245510764 One of their ML engineers"}
+{"prompt": "What are they planning to show Alyssa?", "completion": "uuid: 10245510764 A demo of the Truefoundry platform"}
+{"prompt": "What is the focus of the platform?", "completion": "uuid: 10245510764 Deployment side of things"}
+{"prompt": "What are some of the features that are still in development?", "completion": "uuid: 10245510764 A lot of features and other things"}
+{"prompt": "What can be seen in the integration tab?", "completion": "uuid: 10245510764 Clusters that can be connected to"}
+{"prompt": "What are workspaces?", "completion": "uuid: 10245510764 Separations within the cluster where you can deploy different things"}
+{"prompt": "What is the importance of resource limits?", "completion": "uuid: 10245510764 To make sure that a particular service does not take up more than a certain amount of the resource that are available"}
+{"prompt": "How can a job be triggered?", "completion": "uuid: 10245510764 Manually or on a schedule"}
+{"prompt": "What is a function service?", "completion": "uuid: 10245510764 It takes any function and converts it to API"}
+{"prompt": "What is Iris data set?", "completion": "uuid: 10245510764 A data set that contains four parameters"}
+{"prompt": "What is ML Foundry?", "completion": "uuid: 10245510764 A library from Autofound"}
+{"prompt": "What is the log model feature of ML Foundry?", "completion": "uuid: 10245510764 To log model objects so that you don't have to write custom codes to store your artifacts and can just use the log model command."}

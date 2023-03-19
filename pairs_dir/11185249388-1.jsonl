@@ -1,0 +1,10 @@
+{"prompt": "What is the only way to scale the data according to the context?", "completion": "uuid: 11185249388 Cache the data."}
+{"prompt": "What service is used for caching the data for runtime?", "completion": "uuid: 11185249388 Redis Elasticsearch."}
+{"prompt": "What type of server layer is used for the models?", "completion": "uuid: 11185249388 Fast API."}
+{"prompt": "Has the team tried using any model servers like TF Server or Todd Serve?", "completion": "uuid: 11185249388 No, the team has not tried using any model servers."}
+{"prompt": "How is the machine learning team structured?", "completion": "uuid: 11185249388 There is a DevOps team that handles network and container setup, data science team that does ML Ops with the help from the DevOps and data science vertical teams."}
+{"prompt": "What are the steps involved in building a custom model at DMV?", "completion": "uuid: 11185249388 Select a model type, select what aspect of risk you are looking for, provide the required data from s3 bucket or purchased DNB data, wait for the model to be deployed and get data science metrics to evaluate the model."}
+{"prompt": "What is the cost for operationalizing machine learning for a startup like Netomi?", "completion": "uuid: 11185249388 No more than $100,000 for two people in India."}
+{"prompt": "What is the main source of revenue for the product according to the context?", "completion": "uuid: 11185249388 The real money is in the peak of a database and insurance companies who may want to pay for building their own models using DMV data and deploying it on the DMV site."}
+{"prompt": "What is the priority for the company according to Bobby?", "completion": "uuid: 11185249388 The priority is to build models and think about new ways of doing things."}
+{"prompt": "What is Bobby's feedback on potentially working with tools to optimize dev workflows?", "completion": "uuid: 11185249388 It has not been a priority currently but he would be happy to provide feedback and try it out later."}

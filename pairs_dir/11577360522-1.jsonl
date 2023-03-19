@@ -1,0 +1,6 @@
+{"prompt": "What is the major challenge for machine learning in healthcare according to the context?", "completion": "uuid: 11577360522 Multiple versions of the truth exist."}
+{"prompt": "What is the difference between feature-based models and deep learning models in the pipeline?", "completion": "uuid: 11577360522 Deep learning models do not need feature definition."}
+{"prompt": "What tools are used for monitoring the models?", "completion": "uuid: 11577360522 Grafana is used for visualization of metrics on Azure logging metrics, and models on Grafana for model performance."}
+{"prompt": "What kind of ML models are deployed in the customer environment?", "completion": "uuid: 11577360522 Stateless models are deployed in the customer environment."}
+{"prompt": "What is the plan for ML ops adoption for the company?", "completion": "uuid: 11577360522 The company plans to adopt an ML Ops platform in 2023 for consistency in engineering, infrastructure, quality, quantity, and monitoring."}
+{"prompt": "What is the team's comfort level with Kubernetes?", "completion": "uuid: 11577360522 They are comfortable with deploying Kubernetes clusters and services, but are not yet using Kubeflow for model deployment."}

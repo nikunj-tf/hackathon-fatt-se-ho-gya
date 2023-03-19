@@ -1,0 +1,5 @@
+{"prompt": "What is the platform that is being discussed?", "completion": "uuid: 11354392885 The platform being discussed is a Kubernetes based ML deployment platform."}
+{"prompt": "What is auto node provisioning?", "completion": "uuid: 11354392885 Auto node provisioning is a recommended feature on AWS and GCP where a node will be automatically joined to the cluster when someone tries to deploy on a specific cluster."}
+{"prompt": "What is the reason for reusing hardware in their approach?", "completion": "uuid: 11354392885 They reuse their hardware again and again to avoid incurring costs for provisioning new hardware every time. They have found that GCP's pay on demand provisioning is not reliable for GPUs."}
+{"prompt": "What is the reason for using triton as the multimodal server?", "completion": "uuid: 11354392885 Triton is the only open source multimodal server available that provides efficient deployment and inference graph."}
+{"prompt": "What is OCR?", "completion": "uuid: 11354392885 OCR stands for Optical Character Recognition, and they have recently been working on this model for efficient deployment on their platform."}

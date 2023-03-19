@@ -1,0 +1,10 @@
+{"prompt": "What are the names of the two people mentioned who were at Facebook?", "completion": "uuid: 9984644130 Nikhunja and Aviate"}
+{"prompt": "Which companies did the rest of the team come from?", "completion": "uuid: 9984644130 Gojek, Amazon Reserve Postman"}
+{"prompt": "Who is the founder of Kegle and Abyssia, and what was his role at Facebook?", "completion": "uuid: 9984644130 Anthony, he was the first creator of the FP Learner platform within Facebook for productionizing of models"}
+{"prompt": "What is the goal of the platform?", "completion": "uuid: 9984644130 To enable teams to get models to production faster and reduce the time to value, allowing more time to focus on building different models rather than worrying about infrastructure and coordinating with different teams"}
+{"prompt": "What are the design principles that the system adheres to?", "completion": "uuid: 9984644130 Everything is API driven, treated as GitHub in terms of configuration, self serve, access control, cost insight, reproducible"}
+{"prompt": "What is the central infrastructure of the system?", "completion": "uuid: 9984644130 The deployment infrastructure"}
+{"prompt": "What are some of the deployment use cases shown on the system?", "completion": "uuid: 9984644130 Deploying a model as a fast API, training job, batch inference, model with artifacts, multiple microservices"}
+{"prompt": "What is the monitoring system used by the platform?", "completion": "uuid: 9984644130 The system monitoring provided by the platform itself"}
+{"prompt": "Can the system schedule batch jobs or training jobs?", "completion": "uuid: 9984644130 Yes, it is supported and can be accessed through the beta product"}
+{"prompt": "How can the platform be used to update models?", "completion": "uuid: 9984644130 Training can be scheduled and tracked through the platform's experiment tracking system, and a manual approval loop can be triggered to deploy the new model, with capabilities for automated retention being developed"}

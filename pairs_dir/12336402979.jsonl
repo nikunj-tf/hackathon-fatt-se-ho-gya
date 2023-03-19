@@ -1,0 +1,10 @@
+{"prompt": "Who is speaking in the conversation?", "completion": "uuid: 12336402979 Lida and the other person (not specified by name) are speaking."}
+{"prompt": "Where is Lida spending some time now?", "completion": "uuid: 12336402979 Lida is spending some time in India."}
+{"prompt": "What was the other person's experience at Kora?", "completion": "uuid: 12336402979 It is not stated in the context."}
+{"prompt": "What cloud setup does Kora use?", "completion": "uuid: 12336402979 Kora mostly uses AWS, but has a small footprint on GCP."}
+{"prompt": "What is the reason Kora is using GCP?", "completion": "uuid: 12336402979 Kora uses GCP for training a particular model using TPU and for using some of Google's ML API for image and text processing."}
+{"prompt": "What do they use for ML workflow orchestration?", "completion": "uuid: 12336402979 They mostly use their in-house platform built on Kubernetes."}
+{"prompt": "Do they use Qflow?", "completion": "uuid: 12336402979 No, they don't use Qflow."}
+{"prompt": "What do they use instead of Qflow?", "completion": "uuid: 12336402979 They have their own in-house platform built on Kubernetes."}
+{"prompt": "What language do they use for building their oxidation workflow?", "completion": "uuid: 12336402979 They use Python, which is the preferred language in the ML domain."}
+{"prompt": "Do they provide a UI for developers to visualize the logs?", "completion": "uuid: 12336402979 Developers can view the logs from the airflow UI."}

@@ -1,0 +1,9 @@
+{"prompt": "What is the main concern in regards to having a loss?", "completion": "uuid: 12362155036 The manual work involved in maintaining models, metadata, and everything."}
+{"prompt": "What is the desired solution to the concern over manual work?", "completion": "uuid: 12362155036 Having a tool that can automate the maintenance of models, metadata, and everything."}
+{"prompt": "What kind of tool is needed to automate maintenance of models?", "completion": "uuid: 12362155036 Any tool that can automate the maintenance of models, metadata, and everything."}
+{"prompt": "What are some examples of tools that have already helped in the maintenance of models?", "completion": "uuid: 12362155036 Docker, OCD pipelines."}
+{"prompt": "What is the process of building and deploying models in the Merlin team?", "completion": "uuid: 12362155036 Extract data > Build models > Demo models to product manager > Develop API > Input Java integration link > Predictions go back to Java layer > Displayed on UI."}
+{"prompt": "How is the Merlin team structure organized?", "completion": "uuid: 12362155036 Based on use cases, AI expertise is not relevant. There are DevOps teams for all five AI teams and they have the same process."}
+{"prompt": "What is the process for introducing new technologies in the Merlin team?", "completion": "uuid: 12362155036 Experimentation within the AI team followed by the involvement of DevOps consultants for implementation."}
+{"prompt": "Who is responsible for driving engagement with consultants when introducing new technology in the Merlin team?", "completion": "uuid: 12362155036 The DevOps leads."}
+{"prompt": "Is the move to Kubernetes only for the ML team or for the entire company?", "completion": "uuid: 12362155036 The move to Kubernetes is for the entire company."}

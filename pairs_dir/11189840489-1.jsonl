@@ -1,0 +1,6 @@
+{"prompt": "What are some benefits of using the platform for running jobs?", "completion": "uuid: 11189840489 Saves infrastructure costs, provides remote logs for visualization, displays system level metrics, and provides version control for deployments."}
+{"prompt": "Can you run jobs locally instead of using the platform's machines?", "completion": "uuid: 11189840489 Yes, it is possible to run jobs on your local machine and track results on the dashboard."}
+{"prompt": "Is the platform a good fit for every use case?", "completion": "uuid: 11189840489 No, the platform is being used selectively to ensure immediate value is added for users."}
+{"prompt": "What kind of companies are targeted by the platform?", "completion": "uuid: 11189840489 Companies facing challenges with their current solution or have a need for a new solution."}
+{"prompt": "What is the purpose of the newsletter?", "completion": "uuid: 11189840489 To provide updates on the company's developments and to share relevant content with readers."}
+{"prompt": "Can you provide an example of a possible newsletter topic?", "completion": "uuid: 11189840489 The use cases of OCR text summarization as a team-developed software."}

@@ -1,0 +1,8 @@
+{"prompt": "Who did the person speak with on phone?", "completion": "uuid: 12339423649 Siddharth"}
+{"prompt": "Who is the uncle mentioned in the conversation?", "completion": "uuid: 12339423649 Not specified."}
+{"prompt": "What are the two teams mentioned by Siddharth?", "completion": "uuid: 12339423649 AI team and Empora."}
+{"prompt": "What questions has the person not sent to Siddharth?", "completion": "uuid: 12339423649 Multicloud questions."}
+{"prompt": "What is Truefoundry's motivation behind the call with Stryker?", "completion": "uuid: 12339423649 To understand the problems faced by companies that are multicloud by design, and to understand their demo pipeline."}
+{"prompt": "What is Stryker's current AI structure like?", "completion": "uuid: 12339423649 Stryker has formed a central AI hub, which includes an AI research group, AI systems group responsible for deployment and monitoring, an AI application team, and a bit of analytics."}
+{"prompt": "What is the goal of the model building process in Truefoundry's system?", "completion": "uuid: 12339423649 The goal is to go from building a model to deploying it to production, including basic monitoring."}
+{"prompt": "What happens after the researcher finishes a training run in Truefoundry's system?", "completion": "uuid: 12339423649 The system will automatically shut it down and return all the logs needed to select and launch it, deploy it to a test environment, or create a basic front end demo."}

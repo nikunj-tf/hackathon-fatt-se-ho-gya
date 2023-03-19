@@ -1,0 +1,16 @@
+If ChatGPT is the iPhone, then the AppStore is yet to be built- and that will be a suite of vertical applications built on top of it. Every industry, every business, every individual is going to build these applications in small and big ways. Starting from building a healthcare or a manufacturing specific ChatGPT, to writing domain specific emails for marketing, to answering enterprise specific questions from internal knowledge-base, to even building personal search engines to answer questions like- what is John’s address or when is my mother-in-law’s birthday? We wrote a bunch of examples here in our previous blog post.  
+
+Why is ChatGPT not enough in itself for these vertical applications? 
+
+To understand this, its important to understand clear vs deep web= 
+
+Clear Web- publicly accessible web pages indexed by search engines. e.g. wikipedia, books, social media posts
+Deep Web- part of internet that is behind an authentication system. e.g your email, or SaaS platforms. This constitutes 96% of the web. 
+
+Models like ChatGPT are trained on massive dataset but all that available on the clear web. So you can’t ask it a question whose answer depends on anything on deep web like your email or private docs. However, in the process of learning from the massive clear web dataset, models like ChatGPT build so much intelligence about the language & semantics that it’s much easier for it to learn new information from small quantities of data for a specific task. 
+
+Come in fine-tuning. 
+
+Fine-tuning is a powerful technique that allows us to leverage the knowledge and learning of a pre-trained model like ChatGPT to improve the performance of the model on a new task by training it on a smaller, task-specific dataset. Example, let’s say you want to build a Question answering system for your internal company docs stored in Confluence. You can pass all the text content from your confluence and fine tune a GPT model with them. 
+
+

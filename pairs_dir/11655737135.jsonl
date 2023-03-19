@@ -1,0 +1,5 @@
+{"prompt": "What is True Foundry building?", "completion": "uuid: 11655737135 A reliable ML platform to facilitate the deployment of ML models, making it simple and enforcing best practices."}
+{"prompt": "What is the goal of True Foundry's platform?", "completion": "uuid: 11655737135 To enable deployment of ML models at all stages, from running training jobs to deploying to production spaces, while enforcing best engineering and SRE principles."}
+{"prompt": "What is the system built on?", "completion": "uuid: 11655737135 Kubernetes as the PaaS."}
+{"prompt": "What is the Python library used for?", "completion": "uuid: 11655737135 To enable Data Scientists to deploy their models without needing knowledge of Kubernetes."}
+{"prompt": "What principles are enforced in the system?", "completion": "uuid: 11655737135 Best engineering and SRE principles such as authentication, secret management, and monitoring."}

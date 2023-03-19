@@ -1,0 +1,9 @@
+{"prompt": "What is the purpose of Truefoundry?", "completion": "uuid: 11564066567 To build a startup in the machine learning domain, helping companies build out ML platforms."}
+{"prompt": "What is the main problem that Truefoundry is trying to solve?", "completion": "uuid: 11564066567 To help companies get the level of productivity without the actual internal tooling by building an ML platform."}
+{"prompt": "Who are the companies that Truefoundry is currently working with?", "completion": "uuid: 11564066567 A few companies like Early Enterprises."}
+{"prompt": "What type of machine learning problems is Ravi looking to understand?", "completion": "uuid: 11564066567 Machine learning problems that major companies face, what's top of mind for them from a modeling and infrastructure perspective and how do they get business outcomes from machine learning?"}
+{"prompt": "What is the issue with ML in the fintech space?", "completion": "uuid: 11564066567 The regulatory hold on explainability of ML models is much greater because of lending and insurance's need to have a very clear explainability."}
+{"prompt": "Are there use cases where regulatory hold is not that great?", "completion": "uuid: 11564066567 Yes, in marketing there is less regulatory hold."}
+{"prompt": "What kind of models are typically used at Lending Club?", "completion": "uuid: 11564066567 Risk models, which are mostly decision trees, are used."}
+{"prompt": "What is the role of data scientists at LC?", "completion": "uuid: 11564066567 They build the models and the next generation six to twelve months out once they have more fresh data."}
+{"prompt": "What does LC do with the models after they are built?", "completion": "uuid: 11564066567 The data engineers do the deployment, testing, launch, and maintenance. They manage the one version in production while the data scientists keep looking for more data and keep refreshing the buyer in progress."}

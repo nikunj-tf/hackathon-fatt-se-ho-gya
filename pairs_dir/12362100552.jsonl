@@ -1,0 +1,12 @@
+{"prompt": "What is the first sentence in the context?", "completion": "uuid: 12362100552 Are you in midst of travel?"}
+{"prompt": "What is the issue with the voice on the call?", "completion": "uuid: 12362100552 Hello? It's very bleak. Like the voice is breaking out."}
+{"prompt": "What does the speaker ask after the issue with the voice is resolved?", "completion": "uuid: 12362100552 Is it better now?"}
+{"prompt": "What is the purpose of the call?", "completion": "uuid: 12362100552 So Kalan, just to kind of I think from the email thread basically we were connected by Adithta caldro who is actually one of our advisors and angels."}
+{"prompt": "Who are the three co-founders of Truefoundry?", "completion": "uuid: 12362100552 Nick Kunj, Abhishek and myself"}
+{"prompt": "What was the first startup that the founders built in the talent space?", "completion": "uuid: 12362100552 an Entire"}
+{"prompt": "What did the founders discuss while building models for matching candidates and resumes?", "completion": "uuid: 12362100552 the systems that existed at Facebook at that time and Vishik and Nicole mentioned about Epiler, which is their internal ML platform."}
+{"prompt": "What is the goal of Truefoundry?", "completion": "uuid: 12362100552 to build a multi cloud system on top of Kubernetes, wherein it's very easy for data scientists and ML engineers to quickly take their models tested and then deployed in production in a reliable and cost effective manner."}
+{"prompt": "What is Kalyan's role in InMobi?", "completion": "uuid: 12362100552 I look into the ML platforms in mobile over here and at the same time I also work with one of our business units, demand side platform which is heavy, and data science in general."}
+{"prompt": "What external capabilities and tools do they use in Inmobi?", "completion": "uuid: 12362100552 only data bricks notebooks, that is primarily for data analysis also, any idea purposes?"}
+{"prompt": "What internal capabilities are used in Inmobi?", "completion": "uuid: 12362100552 the ref framework and feature store on top of Databrick feature store."}
+{"prompt": "What is the latency requirement for running the models in Inmobi?", "completion": "uuid: 12362100552 We have around 20 milliseconds to run all of our models, right. In a request request path."}

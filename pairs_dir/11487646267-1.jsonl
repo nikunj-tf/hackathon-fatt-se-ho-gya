@@ -1,0 +1,7 @@
+{"prompt": "What has changed in the dynamic between data scientists and ML engineers over time?", "completion": "uuid: 11487646267 Data scientists needed less and less help from ML engineers as they became more mature"}
+{"prompt": "What was the hard part of putting data jobs into production?", "completion": "uuid: 11487646267 Serving layer, API changes, and ensuring platform resources could support the model"}
+{"prompt": "What specific task did data scientists need to verify before putting models into production?", "completion": "uuid: 11487646267 Ensuring the real time production features were the same as the features used to train the model"}
+{"prompt": "What framework does the team use for TensorFlow models?", "completion": "uuid: 11487646267 They use the TensorFlow serving framework"}
+{"prompt": "How many people are on the platform team?", "completion": "uuid: 11487646267 Roughly 6 people are on the platform team"}
+{"prompt": "What is a key challenge the team is facing with onboarding data scientists?", "completion": "uuid: 11487646267 Making it easy to onboard data scientists onto the platform and reducing the need for MLE involvement"}
+{"prompt": "Is the team currently using any monitoring for models in production?", "completion": "uuid: 11487646267 They have some qualitative monitoring available but it's not fully matured as a standard platform feature"}

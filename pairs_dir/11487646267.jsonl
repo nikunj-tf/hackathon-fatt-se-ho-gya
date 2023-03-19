@@ -1,0 +1,14 @@
+{"prompt": "What was the first thing the speaker said to begin the conversation?", "completion": "uuid: 11487646267 Thank you."}
+{"prompt": "What did the speaker ask when they couldn't hear the other person?", "completion": "uuid: 11487646267 Hi, can you hear me?"}
+{"prompt": "What was the response to the speaker's question about being on the road?", "completion": "uuid: 11487646267 Yeah."}
+{"prompt": "What was the reason for the call?", "completion": "uuid: 11487646267 To learn more about the specific problems that Priyanka's team is trying to solve within Zulili."}
+{"prompt": "What are the three broad business cases that Zulili's platform is used for?", "completion": "uuid: 11487646267 Personalization and recommendation, forecasting, and supply chain."}
+{"prompt": "What are some technologies that Zulili's platform is built on?", "completion": "uuid: 11487646267 Fiest for feature store, Qflow for training platform, and Model DB for tracking experiments."}
+{"prompt": "What was the speaker's role in the previous startup with Nikonj and the two co-founders?", "completion": "uuid: 11487646267 Part of the founder's office and worked with Nikonj and the other co-founders in the HR tech space."}
+{"prompt": "What is Priyanka's timezone?", "completion": "uuid: 11487646267 US PST timezone."}
+{"prompt": "What university did Akshay attend for his master's degree?", "completion": "uuid: 11487646267 UC Berkeley."}
+{"prompt": "What are the two clouds that Zulili uses and why were they chosen?", "completion": "uuid: 11487646267 AWS and GCP, because GCP had good data management capabilities and AWS had good real-time production services."}
+{"prompt": "What tool does Zulili use to track experiments?", "completion": "uuid: 11487646267 Model DB."}
+{"prompt": "What was a challenge with using Kubeflow as a training platform?", "completion": "uuid: 11487646267 It heavily favors TensorFlow as a training platform, but there are other libraries that may do better, like for example training GBA decision trees."}
+{"prompt": "Who manages the Kubernetes clusters at Zulili?", "completion": "uuid: 11487646267 The platform team."}
+{"prompt": "What teams work together to put models into production in Zulili's platform?", "completion": "uuid: 11487646267 Data scientists and applied MLE teams."}

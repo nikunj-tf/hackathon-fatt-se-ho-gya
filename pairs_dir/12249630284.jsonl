@@ -1,0 +1,23 @@
+{"prompt": "What link are they referring to?", "completion": "uuid: 12249630284 Unknown"}
+{"prompt": "What is the name of the dock that they are discussing?", "completion": "uuid: 12249630284 Unknown"}
+{"prompt": "What is the thing they just put on WhatsApp?", "completion": "uuid: 12249630284 Unknown"}
+{"prompt": "When will they put their five minutes back?", "completion": "uuid: 12249630284 Unknown"}
+{"prompt": "What report did they find?", "completion": "uuid: 12249630284 Multicloud report"}
+{"prompt": "Who did they thank for tips on Telegram?", "completion": "uuid: 12249630284 Muthu"}
+{"prompt": "What did the tips on Telegram help the person achieve?", "completion": "uuid: 12249630284 Visa for Singapore"}
+{"prompt": "What was the advice that people gave the person about applying for a visa in Singapore?", "completion": "uuid: 12249630284 Not to risk it as they were going to India anyway"}
+{"prompt": "What did the person do instead of going to Singapore for a visa?", "completion": "uuid: 12249630284 Applied through Telegram groups and got slots in 2023"}
+{"prompt": "Where is the person currently located?", "completion": "uuid: 12249630284 Bay Area"}
+{"prompt": "Who welcomed Muthu on board and to what?", "completion": "uuid: 12249630284 Unknown"}
+{"prompt": "What hypothesis are they trying to learn about?", "completion": "uuid: 12249630284 Whether their platform can serve the needs of companies deploying across multiple clouds"}
+{"prompt": "What specific domain is Balbix in?", "completion": "uuid: 12249630284 Cybersecurity quantification domain"}
+{"prompt": "What are the targets for companies that Balbix is interested in?", "completion": "uuid: 12249630284 Companies with a minimum requirement of 15,000 devices"}
+{"prompt": "What ML platform does Truefoundry deal with?", "completion": "uuid: 12249630284 Unknown"}
+{"prompt": "How many clouds is Truefoundry serving currently?", "completion": "uuid: 12249630284 Three clouds"}
+{"prompt": "What was the focus of the team in the last year?", "completion": "uuid: 12249630284 Data platform and operationalization of machine learning"}
+{"prompt": "What is the current process of deployment for training?", "completion": "uuid: 12249630284 Train models in GPU node and store in the history packets"}
+{"prompt": "What was Airflow used for?", "completion": "uuid: 12249630284 Jobs and orchestration of work"}
+{"prompt": "What graph database are they using?", "completion": "uuid: 12249630284 Neo4J"}
+{"prompt": "What is next on their list for deployment?", "completion": "uuid: 12249630284 Jupyter Hub"}
+{"prompt": "How do developers currently run notebooks?", "completion": "uuid: 12249630284 Through GPU node and access from local host"}
+{"prompt": "Do developers submit jobs as scripts or through notebooks?", "completion": "uuid: 12249630284 Both"}

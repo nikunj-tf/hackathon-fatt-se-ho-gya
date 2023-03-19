@@ -1,0 +1,10 @@
+{"prompt": "What is Richard's role at Wayve?", "completion": "uuid: 10441289250 Richard is responsible for all tooling around ML ops at Wayve."}
+{"prompt": "How did Richard learn about Pro Foundry?", "completion": "uuid: 10441289250 Richard learned about Pro Foundry through an email newsletter alert."}
+{"prompt": "What kind of models does Wayve work with?", "completion": "uuid: 10441289250 Wayve works with models that deal with image and video data."}
+{"prompt": "What is Richard's biggest time sink in the pipeline?", "completion": "uuid: 10441289250 Richard's biggest time sink is having a tight feedback loop of bugs occurring on road deployment and fixing them effectively."}
+{"prompt": "Does Wayve use open source tools for building their pipeline?", "completion": "uuid: 10441289250 Wayve mostly develops their tools internally due to the lack of off the shelf products for the autonomous driving industry."}
+{"prompt": "How many people are on Wayve's ML engineering team?", "completion": "uuid: 10441289250 Around 60-70 people on Wayve's ML engineering team, which comprises around a third of the company's employees."}
+{"prompt": "What is Wayve's approach for building autonomous vehicles?", "completion": "uuid: 10441289250 Wayve's approach is focused on entering machine learning for this problem area, developing off internal fleets and retrofitting vehicles with their technology."}
+{"prompt": "What kind of data monitoring does Wayve do?", "completion": "uuid: 10441289250 Wayve mostly monitors for major data distribution shifts, data drift in the model and major bugs that occur on road deployments."}
+{"prompt": "Does Wayve export data out from the vehicles for further analysis?", "completion": "uuid: 10441289250 Wayve ingests offline data from the vehicles for analysis on further retraining."}
+{"prompt": "Is there a live update from the models in Wayve's pipeline?", "completion": "uuid: 10441289250 No, there are no live updates from the models for Wayve's pipeline as the model is directly deployed on the vehicle itself."}

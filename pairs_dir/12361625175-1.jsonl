@@ -1,0 +1,9 @@
+{"prompt": "Why do companies have a multi-cloud environment?", "completion": "uuid: 12361625175 It takes several years to migrate everything and sometimes it's easier to keep a 50-50 split on both clouds."}
+{"prompt": "Was this the case at Ross?", "completion": "uuid: 12361625175 The speaker has seen this in at least three big companies, one of which is Roche."}
+{"prompt": "How is Roche's approach different from Novartis'?", "completion": "uuid: 12361625175 In Novartis, there is a tool set to be followed, while in Roche, every project has a different tool set."}
+{"prompt": "Why was Sage Maker chosen over other tools?", "completion": "uuid: 12361625175 Someone decided to use it three years ago and now people don't want to migrate everything. Additionally, using only one tool helps avoid the need to maintain different tools."}
+{"prompt": "Who is the decision maker when it comes to choosing tools?", "completion": "uuid: 12361625175 The speaker does not know and usually people in big companies attribute these decisions to others."}
+{"prompt": "Do multi-cloud systems have any benefits for compliance or security?", "completion": "uuid: 12361625175 From a security perspective, it may be difficult to handle, but the speaker is not a security expert."}
+{"prompt": "Who is the target user for Proof Only?", "completion": "uuid: 12361625175 ML Ops people, but the speaker suggests targeting data scientists as their user pool is much larger."}
+{"prompt": "How can data scientists use Proof Only without deploying anything?", "completion": "uuid: 12361625175 They can use the UI and request deployment without touching AWS as an aspirational option."}
+{"prompt": "Can Peter try out Proof Only offline?", "completion": "uuid: 12361625175 Yes, the speaker is willing to try it on his private machine and provide feedback."}

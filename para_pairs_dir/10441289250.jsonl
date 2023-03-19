@@ -1,0 +1,8 @@
+{"prompt": "What is the name of the person being addressed in the conversation?", "completion": "uuid: 10441289250 Richard/Anurag/ANU/Anna"}
+{"prompt": "What is Richard responsible for at Wayve?", "completion": "uuid: 10441289250 Richard is responsible for the tooling in all ML operations at Wayve, developing better workflows for model developers and measuring improved driving quality on the vehicles."}
+{"prompt": "How many people are there in the ML engineering team at Wayve?", "completion": "uuid: 10441289250 Around 60-70 people for a company of 200."}
+{"prompt": "What external tooling is used by Wayve for experimentation?", "completion": "uuid: 10441289250 Wayve uses Weights and Biases and Azure for training and experimentation workflows."}
+{"prompt": "What is the biggest time sink in Wayve's pipeline that they want to improve?", "completion": "uuid: 10441289250 The biggest time sink is the feedback loop for identifying bugs and fixing issues during the deployment of models."}
+{"prompt": "What is the ideal solution for the problem that Richard faces?", "completion": "uuid: 10441289250 Richard would like a way to identify bugs in the model during deployment, understand the issues that the model has during deployment and how to fix those issues."}
+{"prompt": "What is the mode of engagement for the company?", "completion": "uuid: 10441289250 The company works with a few companies closely and builds a product along the way, instead of working with a lot of customers."}
+{"prompt": "What can the other company provide to Wayve?", "completion": "uuid: 10441289250 The other company can provide clarity on what the product might look like based on Wayve's use case, and they can think about a co-development project if it's necessary."}

@@ -1,0 +1,10 @@
+{"prompt": "What is the speaker's plan for December 7th?", "completion": "uuid: 12150828333 The speaker starts working full time on that day."}
+{"prompt": "What is the idea behind the speaker's startup?", "completion": "uuid: 12150828333 They are trying to build a YouTube-like platform for comics using generative AI."}
+{"prompt": "What is the speaker's goal for a universe of models?", "completion": "uuid: 12150828333 They want at least 40-50 models that can serve the universe of comic creation."}
+{"prompt": "What is the speaker's plan for allowing users to fine-tune their model?", "completion": "uuid: 12150828333 They plan on allowing it but are still figuring out the commercials."}
+{"prompt": "What is the speaker's multi-cloud strategy for hosting their product?", "completion": "uuid: 12150828333 They use a multi-cloud Kubernetes strategy with multiple nodes in a single Kubernetes cluster."}
+{"prompt": "What is the speaker's plan for model versioning?", "completion": "uuid: 12150828333 They plan on building a detailed pipeline to reduce manual parameter tuning."}
+{"prompt": "What is the role of the control plane in the speaker's infrastructure?", "completion": "uuid: 12150828333 It helps to talk to the Kubernetes control plane and allows for cluster instance types to be decided automatically across namespaces."}
+{"prompt": "What metrics can the speaker auto-log in their system?", "completion": "uuid: 12150828333 They can log CPU, module type, and image metrics."}
+{"prompt": "What is True Foundry's role in the speaker's deployment process?", "completion": "uuid: 12150828333 They can allow for the deployment of two services as a canary and can change parameters for each service."}
+{"prompt": "How much of the GPU does each model take up in the speaker's system?", "completion": "uuid: 12150828333 They have three models that share the 16 GPU memory and all three are shifted into the GPU at once."}

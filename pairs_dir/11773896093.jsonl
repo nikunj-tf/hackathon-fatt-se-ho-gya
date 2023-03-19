@@ -1,0 +1,12 @@
+{"prompt": "Can you hear me okay?", "completion": "uuid: 11773896093 Yeah, I can hear you."}
+{"prompt": "Can you see me?", "completion": "uuid: 11773896093 Yeah, I can."}
+{"prompt": "What happened when the video did not load?", "completion": "uuid: 11773896093 Yusuf disconnected and rejoined to figure out the problem."}
+{"prompt": "What was the goal of the meeting with Yusuf?", "completion": "uuid: 11773896093 To get feedback on his ML pipeline, challenges, use cases, and infrastructure and to get to know him better."}
+{"prompt": "What is Yusuf's background?", "completion": "uuid: 11773896093 Co-founder and CEO of Truefoundry, worked at Facebook in conversational AI, was leading the ML team at a startup called Reflection, did a masters at UC Berkeley and undergrad at an IT school in India."}
+{"prompt": "What type of work does Yusuf do now?", "completion": "uuid: 11773896093 Building a platform to enable other companies to build, deploy and monitor their models faster."}
+{"prompt": "What is Pay You and what does Yusuf lead there?", "completion": "uuid: 11773896093 Pay You is a lending business, Yusuf leads the credit side of the business."}
+{"prompt": "What is the team size of Yusuf's machine learning team?", "completion": "uuid: 11773896093 Around 40-45 people including data science team."}
+{"prompt": "What cloud provider does Yusuf's team use?", "completion": "uuid: 11773896093 AWS."}
+{"prompt": "Does the team use Sage Maker?", "completion": "uuid: 11773896093 Initially they did, but stopped using it."}
+{"prompt": "How long does it take to deploy a model?", "completion": "uuid: 11773896093 It depends on many factors such as fintech audit approvals, feature pipelines, etc., but once all systems are in place, it should not take more than a week or two weeks."}
+{"prompt": "How does the team request for infrastructure/resources?", "completion": "uuid: 11773896093 They ask DevOps and they do it for them."}

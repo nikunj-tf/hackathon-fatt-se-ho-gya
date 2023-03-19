@@ -1,0 +1,10 @@
+{"prompt": "Who is leading the call?", "completion": "uuid: 11354403912 The person says they are happy to lead the call."}
+{"prompt": "What kind of approach does the leader want to take?", "completion": "uuid: 11354403912 The leader wants to try to lead through the floor on the user flow."}
+{"prompt": "Who is joining the call?", "completion": "uuid: 11354403912 Michelle is joining the call."}
+{"prompt": "What is Michelle's background?", "completion": "uuid: 11354403912 Michelle was working at Times Square as the head of engineering before being acquired by Delivery Hero. Before this, she worked with startups in various engineering roles."}
+{"prompt": "What is Proof.Truefoundry presenting?", "completion": "uuid: 11354403912 Proof.Truefoundry is presenting an ML platform focused on model deployment that can ease the process for enterprises."}
+{"prompt": "What kind of use cases does TabSquare work on?", "completion": "uuid: 11354403912 TabSquare works with restaurants, providing an integration for their menus and helping manage online and offline orders."}
+{"prompt": "What is the team size for TabSquare?", "completion": "uuid: 11354403912 TabSquare has around 15 people on their data science team and around 120 people on their product engineering team."}
+{"prompt": "Where is TabSquare's data stored?", "completion": "uuid: 11354403912 TabSquare's data is stored in GCP, including their analytics database and ML models."}
+{"prompt": "What tool is TabSquare using for monitoring?", "completion": "uuid: 11354403912 TabSquare is using Data Dog for monitoring."}
+{"prompt": "Who writes the YAML configuration for TabSquare's infrastructure?", "completion": "uuid: 11354403912 The DevOps team writes the YAML configuration, but the engineering team writes the Docker files for their services."}

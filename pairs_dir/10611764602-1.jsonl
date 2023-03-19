@@ -1,0 +1,10 @@
+{"prompt": "What is the front end feature?", "completion": "uuid: 10611764602 The context does not provide a clear answer."}
+{"prompt": "What kind of productionization is being discussed in the context?", "completion": "uuid: 10611764602 Productionization using sage maker endpoints."}
+{"prompt": "Has the team faced any challenges in serving the front end system?", "completion": "uuid: 10611764602 Yes, challenges like making the model responsive and optimizing other factors."}
+{"prompt": "What is the desired response time for front end system?", "completion": "uuid: 10611764602 The desired response time is within milliseconds."}
+{"prompt": "What is the performance goal for the front end facing feature?", "completion": "uuid: 10611764602 The goal is to achieve a P9 of 45 milliseconds."}
+{"prompt": "Who does the deployment for the front end facing feature?", "completion": "uuid: 10611764602 The ML engineer handles the deployment."}
+{"prompt": "Is there a custom deployment made for each model?", "completion": "uuid: 10611764602 No, the deployments are standard."}
+{"prompt": "What is the data platform journey of the ML and data science team described as?", "completion": "uuid: 10611764602 The team is at a stage of proving the ROI and transitioning into optimization."}
+{"prompt": "What is the difference between Truefoundry and other ML platform offerings?", "completion": "uuid: 10611764602 The differentiation lies in the developer experience, cost advantages, and ability to be multicloud."}
+{"prompt": "Where is the Truefoundry platform hosted?", "completion": "uuid: 10611764602 The platform can be hosted on Truefoundry's own infrastructure or in the customer's VPC."}

@@ -1,0 +1,5 @@
+{"prompt": "What is the main focus of this demo?", "completion": "uuid: 10455870769 The main focus of this demo is on the deployment piece of the machine learning workflow."}
+{"prompt": "What are the two ways in which people typically deploy their models?", "completion": "uuid: 10455870769 People typically deploy their models either as an API entrypoint or by dumping the results to a database."}
+{"prompt": "What is the core problem that Truefoundry is trying to solve?", "completion": "uuid: 10455870769 Truefoundry is trying to solve the problem of managing all aspects of model deployment in one place."}
+{"prompt": "How long would it typically take to launch a feature change on Truefoundry?", "completion": "uuid: 10455870769 It would typically take around 15-20 minutes to launch a feature change on Truefoundry as long as it's not a completely new data pipeline."}
+{"prompt": "Is infrastructure a concern for users of Truefoundry?", "completion": "uuid: 10455870769 No, infrastructure is not a concern as Truefoundry offers abstractions that allow users to move much faster than they would by operating raw Kubernetes."}

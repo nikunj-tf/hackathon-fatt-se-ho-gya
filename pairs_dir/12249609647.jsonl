@@ -1,0 +1,9 @@
+{"prompt": "What is the infra that here?", "completion": "uuid: 12249609647 Probably they are using some challenges that they are facing."}
+{"prompt": "What are the challenges they are facing?", "completion": "uuid: 12249609647 Ankit did not specify any challenges in particular."}
+{"prompt": "What are some of the use cases that Locus is focusing on?", "completion": "uuid: 12249609647 The team is currently working on improving geocoding and have other use cases like transaction time, premium pricing, and value-based pricing."}
+{"prompt": "What is geocoding and what are some challenges in dealing with it?", "completion": "uuid: 12249609647 Geocoding is converting textual address into latitude and longitude. It requires preprocessing like standardizing the address and spell correction."}
+{"prompt": "What is the team structure at Locus?", "completion": "uuid: 12249609647 There are one to two data engineers, one data analyst, and six data scientists."}
+{"prompt": "What libraries and frameworks does the team primarily use?", "completion": "uuid: 12249609647 The team primarily uses PyTorch."}
+{"prompt": "What is the data lake that Locus is using?", "completion": "uuid: 12249609647 Locus is currently storing their data in S3 file storage, but they may explore using other tools in the future."}
+{"prompt": "Are the models primarily batch-based or real-time?", "completion": "uuid: 12249609647 It depends on the use case, but the model can be used for both batch and real-time predictions."}
+{"prompt": "What type of data does Locus primarily work with?", "completion": "uuid: 12249609647 Locus works primarily with structured data, although the address is the only unstructured data that they deal with."}

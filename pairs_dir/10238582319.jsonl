@@ -1,0 +1,18 @@
+{"prompt": "Where is the person based?", "completion": "uuid: 10238582319 In India."}
+{"prompt": "Where is their home located?", "completion": "uuid: 10238582319 In Punjab."}
+{"prompt": "Is the person part of a remote team?", "completion": "uuid: 10238582319 Yes."}
+{"prompt": "Do some team members still join the office?", "completion": "uuid: 10238582319 Yes, a few."}
+{"prompt": "Is joining the office mandatory?", "completion": "uuid: 10238582319 No, it's not mandatory."}
+{"prompt": "What is the person's background?", "completion": "uuid: 10238582319 Machine learning."}
+{"prompt": "Where did the person previously work?", "completion": "uuid: 10238582319 At Facebook."}
+{"prompt": "What are some of the projects the person worked on?", "completion": "uuid: 10238582319 Conversational AI."}
+{"prompt": "What did the person build at Reflection?", "completion": "uuid: 10238582319 A horizontal ML platform."}
+{"prompt": "What is the mission of the company?", "completion": "uuid: 10238582319 To bring Facebook-level systems to all companies."}
+{"prompt": "What type of customers does Mathew have?", "completion": "uuid: 10238582319 State agencies in the United States."}
+{"prompt": "What are some of the problems with working with state agencies?", "completion": "uuid: 10238582319 Data privacy, model hosting at scale, data and model resiliency."}
+{"prompt": "What are some of Mathew's products?", "completion": "uuid: 10238582319 AI products for clinical trials, intelligent document processing."}
+{"prompt": "Do the pharma companies use generic models?", "completion": "uuid: 10238582319 No, they use custom models."}
+{"prompt": "What is used to deploy and scale the machine learning models?", "completion": "uuid: 10238582319 Kubernetes."}
+{"prompt": "Does Mathew use multi-cloud?", "completion": "uuid: 10238582319 Yes, since customers have different cloud preferences."}
+{"prompt": "How is resource allocation handled?", "completion": "uuid: 10238582319 Engineers access their own AI servers before handing off to DevOps team."}
+{"prompt": "Are there permission controls on the machines and models?", "completion": "uuid: 10238582319 Yes, there are various permissions and authentication controls."}

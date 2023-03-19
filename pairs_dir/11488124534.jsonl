@@ -1,0 +1,6 @@
+{"prompt": "What does Carlos ask and what is the response?", "completion": "uuid: 11488124534 Carlos asks if he can be heard, and the response is yes."}
+{"prompt": "What do Carlos and the other person discuss after confirming the audio is okay?", "completion": "uuid: 11488124534 They discuss their whereabouts and travel plans."}
+{"prompt": "What is the other person's profession and what team do they manage?", "completion": "uuid: 11488124534 The other person manages an ML team and manages the back end team."}
+{"prompt": "What is Truefoundry and how long has the other person been on an entrepreneurial journey?", "completion": "uuid: 11488124534 Truefoundry is a startup and the person has been on an entrepreneurial journey since quitting Facebook."}
+{"prompt": "What is the focus of Truefoundry and what are they building?", "completion": "uuid: 11488124534 Truefoundry is building a platform similar to the predictor service at Facebook for companies that want to build and deploy ML models."}
+{"prompt": "Which cloud providers do they use and why do they use two different ones?", "completion": "uuid: 11488124534 They primarily use AWS, but also use Azure for speech recognition because of a strong partnership and technical capabilities."}

@@ -1,0 +1,8 @@
+{"prompt": "What is the purpose of the call?", "completion": "uuid: 11942287761 To understand more about Soroco and Truefoundry and see how they can potentially help each other."}
+{"prompt": "What does George mention about the companion mode?", "completion": "uuid: 11942287761 George mentions that he just learned about it and that his audio is always better through his phone."}
+{"prompt": "What is Soroco's goal?", "completion": "uuid: 11942287761 Soroco aims to help organizations understand how work gets done globally through collecting data points and analyzing patterns in the data."}
+{"prompt": "What is an example of a real use case of Soroco's analysis?", "completion": "uuid: 11942287761 A real use case is when Soroco worked with a large supply chain customer to improve their purchasing process."}
+{"prompt": "How does Soroco deploy their models?", "completion": "uuid: 11942287761 Soroco puts the model into a Blob store location and when the product gets deployed, they are fetched by the product and then loaded locally."}
+{"prompt": "What cloud platforms does Soroco use?", "completion": "uuid: 11942287761 Soroco uses Azure and AWS."}
+{"prompt": "Does Soroco plan to migrate to GCP soon?", "completion": "uuid: 11942287761 No, Soroco does not see any current customers on GCP."}
+{"prompt": "Does Soroco use Kubernetes?", "completion": "uuid: 11942287761 Yes, Soroco does use Kubernetes."}

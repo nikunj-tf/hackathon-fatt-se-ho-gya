@@ -1,0 +1,9 @@
+{"prompt": "What question did Stevetha ask first?", "completion": "uuid: 11185249632 How are you?"}
+{"prompt": "What did Stevetha ask next and what was the response?", "completion": "uuid: 11185249632 Stevetha asked if Sivasa could see them and Sivasa responded that he couldn't see them yet."}
+{"prompt": "Who did Sivasa say was with him and what was his role?", "completion": "uuid: 11185249632 Sivasa said Vishak was with him and he was a hands-on data scientist who was an AutoML platform's hands-on practitioner perspective also."}
+{"prompt": "What is the goal of Truefoundry platform?", "completion": "uuid: 11185249632 The goal of Truefoundry platform is to build a platform for enabling companies to test out and deploy models seamlessly."}
+{"prompt": "What kind of problems and use cases does Maverick deal with?", "completion": "uuid: 11185249632 Maverick deals with problems around banking, including predicting default for loans, predicting home prices in the US, cross-sell and up-sell for customers, and marketing analytics for wealth management firms."}
+{"prompt": "What AutoML platform does Maverick primarily use?", "completion": "uuid: 11185249632 Maverick primarily uses Data IQ for its AutoML platform."}
+{"prompt": "How does Data IQ handle preprocessing and postprocessing functions?", "completion": "uuid: 11185249632 Data IQ has recipes for transformations and can handle preprocessing and postprocessing functions."}
+{"prompt": "What is the size of the ML team at Maverick?", "completion": "uuid: 11185249632 The ML team at Maverick is about 40-45 people, including data analysts and table specialists, while the data validation team is around 150 people and the rest is made up of ETL, data engineering, and other staff."}
+{"prompt": "What is the revenue of Data IQ?", "completion": "uuid: 11185249632 Data IQ is a $100 million revenue company with global customers and is the second-largest AutoML platform."}

@@ -1,0 +1,10 @@
+{"prompt": "What is the goal of the system that they are building?", "completion": "uuid: 10611764294 To give control to the ML team and deploy models in a more systematic and optimized way with SRE practices and cost efficiency."}
+{"prompt": "What kind of environments can be deployed with this system?", "completion": "uuid: 10611764294 Testing, production or staging environments."}
+{"prompt": "What complex use cases are supported by the system?", "completion": "uuid: 10611764294 Traffic splitting, shadow testing for models, and auto scaling."}
+{"prompt": "What kind of machines can be used for different deployments?", "completion": "uuid: 10611764294 Certain kinds of machines can be restricted or used for different deployments."}
+{"prompt": "How is monitoring enabled for automatic deployment?", "completion": "uuid: 10611764294 With a few lines of code the platform automatically generates a monitoring dashboard."}
+{"prompt": "What helps optimize costs with this system?", "completion": "uuid: 10611764294 The way the system is structured."}
+{"prompt": "What type of companies are they looking to work with?", "completion": "uuid: 10611764294 Companies with mid level or advanced ML pipelines."}
+{"prompt": "What is the process for working with companies and solving their problem statements?", "completion": "uuid: 10611764294 Working closely to understand the problem statement, doing a POC to prove value, and customizing specific things for the company."}
+{"prompt": "When will they schedule a meeting to discuss more in depth?", "completion": "uuid: 10611764294 Next week, on Thursday or Friday at 04:00. An invite will be sent."}
+{"prompt": "What will be sent to the person to help them understand more about Two Foundation?", "completion": "uuid: 10611764294 A small deck that will give an overview of the company and their use cases."}

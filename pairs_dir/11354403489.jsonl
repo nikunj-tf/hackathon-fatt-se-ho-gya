@@ -1,0 +1,9 @@
+{"prompt": "What is the context of the conversation?", "completion": "uuid: 11354403489 A discussion between two individuals about their work in machine learning and data science."}
+{"prompt": "Who is involved in the conversation?", "completion": "uuid: 11354403489 Two individuals, possibly working in the field of data science or machine learning."}
+{"prompt": "What is the seniority level of one of the individuals?", "completion": "uuid: 11354403489 The junior individual is not very junior, but is not a decision maker."}
+{"prompt": "What is the focus of the conversation?", "completion": "uuid: 11354403489 They are discussing how they can potentially add value to the machine learning pipeline of companies that use data science and machine learning."}
+{"prompt": "What is Netradyne?", "completion": "uuid: 11354403489 A company that produces products for monitoring roads and drivers, which uses deep learning models."}
+{"prompt": "What are some of the features of Netradyne's products?", "completion": "uuid: 11354403489 Detection of road signals, lanes, and driver drowsiness among other facial expressions."}
+{"prompt": "What kind of products does Netradyne have?", "completion": "uuid: 11354403489 They have three different products, including NVDI based products and Qualcomm based products."}
+{"prompt": "What deployment pipelines do Netradyne's products use?", "completion": "uuid: 11354403489 For Qualcomm based products, they use a pipeline provided by Snappy while for Nvidia, they use Tensor RT."}
+{"prompt": "Is the conversation being recorded?", "completion": "uuid: 11354403489 No, it is not."}

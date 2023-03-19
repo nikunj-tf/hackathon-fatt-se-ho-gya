@@ -1,0 +1,7 @@
+{"prompt": "What is the broad objective of the call?", "completion": "uuid: 10881905922 To understand the ML process and pain points while getting to know each other."}
+{"prompt": "What is the current location of the person on the call?", "completion": "uuid: 10881905922 The person is currently located in Bangalore."}
+{"prompt": "What is the focus of the startup?", "completion": "uuid: 10881905922 The startup's main focus is on the platform for machine learning teams and optimizing model deployment and monitoring."}
+{"prompt": "What is the company's stage?", "completion": "uuid: 10881905922 The product is in pre-launch, with a seed round of funding, a small full-time team, and working with design partners."}
+{"prompt": "What is Freshworks' machine learning engineering charter?", "completion": "uuid: 10881905922 They are verticalized and cover the full gamut of one particular thing, with a large part being machine learning engineering and some regular application type engineering."}
+{"prompt": "How does the machine learning team work at Freshworks?", "completion": "uuid: 10881905922 They maintain their own infrastructure and have a layer that abstracts the application from the ML service. The service is stateless with different models for each account loaded from S3."}
+{"prompt": "Does Freshworks use Kubernetes or Sage Maker?", "completion": "uuid: 10881905922 Freshworks does not use Sage Maker, but they do use Kubernetes for their infrastructure."}

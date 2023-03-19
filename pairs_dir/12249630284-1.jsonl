@@ -1,0 +1,9 @@
+{"prompt": "What is the typical approach for development?", "completion": "uuid: 12249630284 Start with notebooks and then move forward with different use cases such as microservices, exploratory data analysis, and model training."}
+{"prompt": "How do developers handle microservices use cases?", "completion": "uuid: 12249630284 They handle it differently, and don't needed to document it. They rely on exploratory phase perspective."}
+{"prompt": "What tools do they use for distributed processing?", "completion": "uuid: 12249630284 They use Spark for distributed processing, and EKS or something like that."}
+{"prompt": "How do they store and query data for microservices?", "completion": "uuid: 12249630284 They store data in structured format in Snowflake, so they don't need to write a job as the data is in their data lake. They use a data pipeline for faster and specific data query."}
+{"prompt": "What is the usage of notebooks today?", "completion": "uuid: 12249630284 Notebooks are mostly used for training purposes."}
+{"prompt": "Are notebooks running over Kubernetes cluster?", "completion": "uuid: 12249630284 Yes, they are running over a Kubernetes cluster."}
+{"prompt": "What are the two things that caught their attention?", "completion": "uuid: 12249630284 Jupyter notebook thing and Airflow adoption."}
+{"prompt": "How do developers conduct tests on trained models?", "completion": "uuid: 12249630284 Developers use a shadow model approach where they flip the switch when new model performs better. They also use Prometheus and Grafana open source tool for publishing metrics."}
+{"prompt": "How do they handle cost perspective with developers using a lot of notebooks?", "completion": "uuid: 12249630284 DevOps team control resource allocation to developers to restrict their memory and CPU usage. Resources are limited by the underlying node and new resources are allocated only when required."}

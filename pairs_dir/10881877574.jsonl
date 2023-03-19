@@ -1,0 +1,7 @@
+{"prompt": "What did Peter mention about being late?", "completion": "uuid: 10881877574 Running two minutes late."}
+{"prompt": "What was the age of Peter's baby?", "completion": "uuid: 10881877574 Four months."}
+{"prompt": "How many kids does the person speaking to Peter have?", "completion": "uuid: 10881877574 Three."}
+{"prompt": "What was the person speaking to Peter's previous work experience?", "completion": "uuid: 10881877574 Leading one of the conversation AI efforts at Poland and building personalization algorithms for the ecommerce industry at a startup called Reflection."}
+{"prompt": "What is the goal of the machine learning platform that Truefoundry is building?", "completion": "uuid: 10881877574 To make it easy for internal platform teams to build on top of and scale up their platform while minimizing resources needed to continue building internal dev tooling."}
+{"prompt": "What are some challenges in machine learning experimentation that the person speaking to Peter mentioned?", "completion": "uuid: 10881877574 Speed of testing models, visibility of experiments conducted, and iteration speed and quality."}
+{"prompt": "What is the person speaking to Peter's approach to reducing the cost of experimentation?", "completion": "uuid: 10881877574 Building a platform that captures learnings and applies them from one project to the other while providing enough flexibility for teams to build whatever they want on top of the platform."}

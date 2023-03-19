@@ -1,0 +1,10 @@
+{"prompt": "What was the reason for Simon's absence?", "completion": "uuid: 9984747349 Simon was in the hospital for something related to his baby for checkup treatment."}
+{"prompt": "What is the goal of the startup Netaling?", "completion": "uuid: 9984747349 To make it simple for data scientists and ML engineers to deploy models to products in a faster way."}
+{"prompt": "What is the purpose of the call?", "completion": "uuid: 9984747349 To understand Commerce IQ's ML stack and the challenges they face on a day to day basis."}
+{"prompt": "What is Commerce IQ's solution mostly based on?", "completion": "uuid: 9984747349 Sage maker and they automate those pipelines."}
+{"prompt": "How do they store the model?", "completion": "uuid: 9984747349 They store the model on S3."}
+{"prompt": "Is any of these models being used or called in real time?", "completion": "uuid: 9984747349 No, they do a batch processing."}
+{"prompt": "How is the model improved in iterations?", "completion": "uuid: 9984747349 By giving some manual inputs and there are clashes between the classification."}
+{"prompt": "How does Commerce IQ track models?", "completion": "uuid: 9984747349 For the existing mature sales estimation model, they don't need to keep track. But for the classification model, they are making version two and will track them for improvement."}
+{"prompt": "What is the platform the speaker is introducing?", "completion": "uuid: 9984747349 It is a platform to deploy models in various ways including endpoints, services and pipelines."}
+{"prompt": "Are both Pythonic and YML ways supported?", "completion": "uuid: 9984747349 Yes, they are supported."}

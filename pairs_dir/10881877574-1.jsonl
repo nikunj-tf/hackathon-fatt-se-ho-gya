@@ -1,0 +1,10 @@
+{"prompt": "Who is Mike Boufford?", "completion": "uuid: 10881877574 Unknown"}
+{"prompt": "Who is the CTO of Greenhouse?", "completion": "uuid: 10881877574 Unknown"}
+{"prompt": "What is the speaker's experience working with startups?", "completion": "uuid: 10881877574 The speaker is still working with startups."}
+{"prompt": "What is the speaker's view on innovation?", "completion": "uuid: 10881877574 Innovation happens when there are different problems and the speaker needs to talk to new people to understand those problems."}
+{"prompt": "What is the speaker's view on the future of machine learning?", "completion": "uuid: 10881877574 Adoption of machine learning is contingent on how easy it is and it is going to happen. It is important to make it 100x easier for mass adoption."}
+{"prompt": "What are some of the lessons the speaker learned from Facebook?", "completion": "uuid: 10881877574 The speaker learned that Facebook had different tools built out for each part of the ML development lifecycle, deployment was done seamlessly and parallel computation should be used to solve resource allocation problems."}
+{"prompt": "What simple tweak did Facebook do to reduce unnecessary computing costs?", "completion": "uuid: 10881877574 Facebook showed developers the cost of each training run, which made them more conscious of their computing usage."}
+{"prompt": "How did the speaker and their team incorporate lessons learned from Facebook into their platform?", "completion": "uuid: 10881877574 The speaker and their team are trying to incorporate Facebook's lessons one by one into their platform."}
+{"prompt": "What kind of experience is the speaker trying to build for developers?", "completion": "uuid: 10881877574 The speaker is trying to build a more developer-friendly experience."}
+{"prompt": "How did the speaker schedule a call with the person they were speaking with?", "completion": "uuid: 10881877574 The speaker shared their calendar link and will email the person to set up a call with RC together."}

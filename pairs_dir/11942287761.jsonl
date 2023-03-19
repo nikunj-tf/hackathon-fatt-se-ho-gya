@@ -1,0 +1,10 @@
+{"prompt": "What does the speaker ask when they first connect with George?", "completion": "uuid: 11942287761 Hey, can you hear me?"}
+{"prompt": "What is the response given by George?", "completion": "uuid: 11942287761 Yes, I can hear you."}
+{"prompt": "What is the purpose of the companion mode that they discuss?", "completion": "uuid: 11942287761 To join both audio and video from the phone and laptop."}
+{"prompt": "What is George's background and where did he work before Soroco?", "completion": "uuid: 11942287761 He has a PhD in Computer Science from Carnegie Mellon and previously worked at Harvard."}
+{"prompt": "What is Soroco's goal and how do they achieve it?", "completion": "uuid: 11942287761 To help organizations understand how work gets done and they do it by collecting digital interactions that happen between individuals."}
+{"prompt": "How do Soroco's machine learning models help improve business processes?", "completion": "uuid: 11942287761 By allowing organizations to understand where inefficiencies are in the process."}
+{"prompt": "What is the size of Soroco's team?", "completion": "uuid: 11942287761 The team size is between five to ten."}
+{"prompt": "How does Soroco ensure consistency between their training and serving code?", "completion": "uuid: 11942287761 They ensure the version of the product and the pipeline that basically takes the data, preprocesses, etc., is all lined up with the model that will ship in production."}
+{"prompt": "Do Soroco use Kubernetes?", "completion": "uuid: 11942287761 Yes."}
+{"prompt": "What is the purpose of Truefoundry and how does it work?", "completion": "uuid: 11942287761 The speaker will share an overview of what Troop Onto is doing, where they are, and what are the next steps they can decide."}

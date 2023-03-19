@@ -1,0 +1,15 @@
+{"prompt": "What is an end point in this context?", "completion": "uuid: 10881905922 An end point is a model application."}
+{"prompt": "Does every model created serve as an end point?", "completion": "uuid: 10881905922 No, not each model itself is an end point."}
+{"prompt": "What creates a single endpoint for the product?", "completion": "uuid: 10881905922 The service that was built creates a single endpoint for the product."}
+{"prompt": "What are the parameters used in the endpoint?", "completion": "uuid: 10881905922 The parameters used are the account name and certain other things."}
+{"prompt": "What does the account name tell us in this context?", "completion": "uuid: 10881905922 The account name tells us which model to use in which context."}
+{"prompt": "What tool is used for tracking experiments?", "completion": "uuid: 10881905922 ML Flow is used to track experiments."}
+{"prompt": "What kind of metrics are tracked in ML Flow?", "completion": "uuid: 10881905922 Metrics such as accuracy, improvements in search or classification, and drifter are tracked in ML Flow."}
+{"prompt": "Is the model registry used in ML Flow?", "completion": "uuid: 10881905922 No, the model registry is not used in ML Flow."}
+{"prompt": "Which companies are focused on drift tracking?", "completion": "uuid: 10881905922 Fiddler is a company that is focused on drift tracking."}
+{"prompt": "What is the primary importance of the company at this point?", "completion": "uuid: 10881905922 At this point, getting things up is of primary importance."}
+{"prompt": "What would the speaker do differently if they were starting today?", "completion": "uuid: 10881905922 If they were starting today, they would look at using Fiddler or Tuhu and using what Databrick has."}
+{"prompt": "What is a challenge in maintaining a multi-tenant system?", "completion": "uuid: 10881905922 Managing these hundreds or thousands of models depending on the number of customers is a challenge in maintaining a multi-tenant system."}
+{"prompt": "What is the speaker's take on building a vector database?", "completion": "uuid: 10881905922 The speaker believes that it is best to take something from outside and use it instead of building a vector database."}
+{"prompt": "What is a concern around sending data to a third party?", "completion": "uuid: 10881905922 Sending data to a third party is not permitted by a larger syntax and is legally difficult to differentiate."}
+{"prompt": "What technology was used that caused pushback from customers?", "completion": "uuid: 10881905922 One technology that was sending some metadata outside of the customer thing caused pushback from customers and had to be changed."}

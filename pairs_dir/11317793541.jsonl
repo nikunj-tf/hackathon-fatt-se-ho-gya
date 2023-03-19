@@ -1,0 +1,8 @@
+{"prompt": "What is being discussed in the context?", "completion": "uuid: 11317793541 Control plane installation and service deployment, building infrastructure for Dream Eleven platform, overview of data pipeline and distributed training."}
+{"prompt": "How many ML models are deployed in the environment that is being discussed?", "completion": "uuid: 11317793541 Around 10,000."}
+{"prompt": "What is the role of Bharat in the project?", "completion": "uuid: 11317793541 Building the entire infrastructure from the ML side."}
+{"prompt": "What is the goal of the project for Dream Eleven?", "completion": "uuid: 11317793541 To give a detailed overview of the platform from a technical and product perspective, including AB testing."}
+{"prompt": "What is the focus on regarding the CI CD system?", "completion": "uuid: 11317793541 Making the system robust from an engineering perspective for scale."}
+{"prompt": "What is the request count for Dream Eleven?", "completion": "uuid: 11317793541 10 million requests by 1 million users daily."}
+{"prompt": "What is the topic of discussion for the 5-10 minutes overview?", "completion": "uuid: 11317793541 The stack being used for the data pipeline and distributed training."}
+{"prompt": "What is the time limit for the call?", "completion": "uuid: 11317793541 The call needs to be wrapped up in 5 to 10 minutes."}

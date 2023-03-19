@@ -1,0 +1,7 @@
+{"prompt": "What is the goal of the pipeline described in the conversation?", "completion": "uuid: 12339423649 The goal of the pipeline is to optimize multi-cloud deployment environment for best output and low cost."}
+{"prompt": "What parts of the system have not been built yet?", "completion": "uuid: 12339423649 The cost optimization across cloud and AB testing automation retraining have not been built yet."}
+{"prompt": "What is the recommended focus of the company?", "completion": "uuid: 12339423649 Specialization for one vertical may make more sense in general."}
+{"prompt": "How does the company interface with new people?", "completion": "uuid: 12339423649 The company does customized demos."}
+{"prompt": "What is the main area of focus for this AI system?", "completion": "uuid: 12339423649 The major focus is multi-cloud deployment environment which is more systems-oriented."}
+{"prompt": "What is the team using for managing the intra for research?", "completion": "uuid: 12339423649 There is no orchestration layer like Kubernetes being used. Every developer has their own choices to make."}
+{"prompt": "How does the team manage the resources for on-prem research?", "completion": "uuid: 12339423649 The team buys new servers for research which is cheaper than going on cloud."}

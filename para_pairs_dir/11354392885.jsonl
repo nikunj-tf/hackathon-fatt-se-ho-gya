@@ -1,0 +1,11 @@
+{"prompt": "Who is joining the call?", "completion": "uuid: 11354392885 Abhishek and Sabnesh"}
+{"prompt": "What is Abhishek's background?", "completion": "uuid: 11354392885 Abhishek graduated from IT in 2013 with a degree in Computer Science and worked at Facebook for around 5 and a half years. During his time at Facebook, he worked on different teams like the Distributed Caching System team, leading a mobile performance team, and eventually leading the business organization there."}
+{"prompt": "What does Trip Foundry focus on?", "completion": "uuid: 11354392885 Trip Foundry is focused on solving the ML deployment platform."}
+{"prompt": "What is the main infrastructure used in the company?", "completion": "uuid: 11354392885 The main infrastructure used in the company is GKE-based."}
+{"prompt": "What is used for the feature store?", "completion": "uuid: 11354392885 Feast is used for the feature store."}
+{"prompt": "What is used for scale-to-zero things?", "completion": "uuid: 11354392885 CSI driver is used for scale-to-zero things."}
+{"prompt": "What is used for monitoring?", "completion": "uuid: 11354392885 Google's internal monitoring tool is used for monitoring."}
+{"prompt": "What is the purpose of Pub Sub Enabled Cloud Function?", "completion": "uuid: 11354392885 The Pub Sub Enabled Cloud Function is used to send requests to cases and provides throughput control so that it does not choke like Kubernetes chokes."}
+{"prompt": "What is the name of the multimodel server used?", "completion": "uuid: 11354392885 The name of the multimodel server used is Triton."}
+{"prompt": "What is the purpose of OCR model?", "completion": "uuid: 11354392885 The purpose of the OCR model is to efficiently deploy it on the infrastructure without incurring additional GPU costs."}
+{"prompt": "What is the purpose of using Secret Manager?", "completion": "uuid: 11354392885 The purpose of using Secret Manager is to store the secrets permanently and securely, and not rely on Kubernetes to store the secrets."}

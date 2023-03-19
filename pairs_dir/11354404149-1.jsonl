@@ -1,0 +1,10 @@
+{"prompt": "What aspect of ML Flow did the speaker use in model building and tracking?", "completion": "uuid: 11354404149 experiment tracking piece"}
+{"prompt": "Was the experiment tracking aspect of ML Flow effective?", "completion": "uuid: 11354404149 Yes, it worked pretty well."}
+{"prompt": "Why did the speaker and their team move away from using ML Flow?", "completion": "uuid: 11354404149 To reduce maintenance overhead and free up time."}
+{"prompt": "What was the reason for wanting to move towards a managed service like SageMaker?", "completion": "uuid: 11354404149 To further reduce overhead."}
+{"prompt": "Did SageMaker provide an adequate experiment tracking interface?", "completion": "uuid: 11354404149 It was a little clunky and the team is still figuring out how to fully replace ML Flow."}
+{"prompt": "What practices important to SRE does the speaker's team implement, and how do they do it?", "completion": "uuid: 11354404149 The speaker mentions CI/CD, authentication, and secrets management, which are implemented through GitLab, SageMaker, and other systems."}
+{"prompt": "What is the speaker's company building?", "completion": "uuid: 11354404149 They are building a deployment platform for ML models."}
+{"prompt": "What is the core feature of the speaker's deployment platform?", "completion": "uuid: 11354404149 The ability to quickly and easily deploy models while also following SRE best practices and running on the same infrastructure as software."}
+{"prompt": "How does the platform ensure reproducibility of models?", "completion": "uuid: 11354404149 The platform provides a model registry for versioning, but users can also track versions in the deployed tab."}
+{"prompt": "What is the purpose of workspaces in the speaker's platform?", "completion": "uuid: 11354404149 Workspaces are smaller groups for developer teams to work on, each with resource limits and proper access control."}

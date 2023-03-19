@@ -1,0 +1,10 @@
+{"prompt": "What is the potential issue with the GPU and CPU usage when deploying services?", "completion": "uuid: 10097873824 The GPU may consume more capacity compared to the CPU."}
+{"prompt": "What is the level of protection provided by the HTTP connection pool?", "completion": "uuid: 10097873824 The HTTP connection pool provides some level of protection when setting up auto scaling."}
+{"prompt": "Which Framework is used for writing the rest service?", "completion": "uuid: 10097873824 They have mostly used either Flask or Falcon server."}
+{"prompt": "How much is the cloud cost?", "completion": "uuid: 10097873824 The cloud cost ranges around 1.5 lakh or $1500 to $2000 in INR."}
+{"prompt": "Are they currently receiving cloud credits?", "completion": "uuid: 10097873824 No, they have already used up the two years worth of free credits."}
+{"prompt": "Do they anticipate their cloud costs increasing?", "completion": "uuid: 10097873824 No, as they do not foresee their costs increasing by a lot in the next year or year and a half at least."}
+{"prompt": "What is the advantage of building the stack on top of Kubernetes from day zero?", "completion": "uuid: 10097873824 It simplifies the DevOps process and allows for easier migration to Kubernetes in the future."}
+{"prompt": "What is the main orchestrator for deployment?", "completion": "uuid: 10097873824 The main orchestrator for deployment is Kubernetes."}
+{"prompt": "What is the main functionality of the platform?", "completion": "uuid: 10097873824 The platform provides deployment, monitoring, auto scaling, model traffic splitting, and cost optimization functionalities."}
+{"prompt": "Is there a way to run pipelines and automate the training?", "completion": "uuid: 10097873824 The team is currently building a way to run pipelines and automate the training when new data comes in."}

@@ -1,0 +1,6 @@
+{"prompt": "What does the speaker mention about heavy computations?", "completion": "uuid: 11185249632 Do it on your own machine or your own database."}
+{"prompt": "According to the context, what is the process of running a computation on a specific server?", "completion": "uuid: 11185249632 You can just point to all those servers and make a connection."}
+{"prompt": "What does the speaker say about pushing computation to Data IQ?", "completion": "uuid: 11185249632 For big data sets, it's a bit of a trouble."}
+{"prompt": "Which industries can benefit from AutoML models according to the speaker?", "completion": "uuid: 11185249632 Retail, ecommerce, and OTT companies"}
+{"prompt": "What does the speaker say about the cloud providers' AutoML solutions in comparison to their platform?", "completion": "uuid: 11185249632 From an economic standpoint, the AutoML guys provide some of these, but just because something is free doesn't mean it works."}
+{"prompt": "What does the speaker suggest at the end of the conversation?", "completion": "uuid: 11185249632 The speaker suggests testing their platform by taking any of their models or even basic models and trying to see if they are actually able to use the platform to deploy and if they like the process."}

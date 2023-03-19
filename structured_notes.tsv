@@ -1,0 +1,1294 @@
+Record ID	Company	Who took the call	Person 	Linkedin Profile	DS/ML/Leader	Phase in ML Journey	Brief background (if discussed)	Use Cases for ML - types of models (Is monitoring important etc?)	Current Stack for ML Deployments and pipeline	Problems being faced where looking for solutions	Questions asked wrt Product	Feedback wrt Product - what would make them possibly adopt it	Concrete Next Steps	Call Link
+123456789	Plume Design	Anuraag	Shreyas Rewagad		Senior ML Engineer			1) One of the projects I am working on - if connecting to internet using Wifi => would like to know what device we are having and every detail on that. + would also like to learn the difference between IPhone12 or IPhone13 etc. Would want to have feedback loops. Some statistics on models will be difficult to deliver. Some sort of annotation tool => feedback tool.	"- [ ] TECH STACK: Python/Scala => Make a package => Push that to artefactory (Frog repository - internalised) 
+
+- [ ] In both of these places => 1st job had a platform to launch the model. 2nd place had data bricks to help with compute, had to do own version controlling etc and all the pipelining that will be in AWS and Azure. 2 Cloud providers. Everything will be partitioned into WorkSpaces => before prod, there will be diff stages. It did;t matter much for us. A/B Testing was not very important for us. 
+
+- [ ] There are few things that are vital: Model Monitoring, Feature Monitoring, Data Monitoring.  (MLFlow or some version of that) => Model objects in place etc. Some visualisation for the same. Discrepancy between multiple records => all will be pushed into DAG. 
+- [ ] We use MLFlow but not for model versioning. It is taken care by us using Artefactory. Some of the deep learning models are too big. Only use for performance tracking the model. All KPIs etc. Anything that is data intensive => directly goes into the artefactory. Docker also artefactory. 
+- [ ] Version control - release process, Jenkins. 
+- [ ] DAG: use airflow for triggering things. Cronjob that runs that. Data Curation to model building etc has to be in another thing. One Airflow Dag. 
+- [ ] Its how the leadership deals with utility providers - earlier Azure, then AWS. 
+- [x] Velocity: In my 1st job, basically created a DAG structure. Every node would be some compute => data transformation etc. Entire structure would be created in R => make the DAGs. and then encapsulate all data requirements as Class objects in R. Not utilising airflow or anything. Gave very nice performance improvements. (PROBIA)"	"* Cost Optimization 
+"	"* Would you help with optimizing the Cost for training? Because if the Training is non-optimal, it would eat a lot of cost. 
+* Is there a way to know if the model is eating too much cost - don't want to be monitoring the UI 24*7 (- [ ] One project at Velocity - one model ran us 1000$ a night and we were not optimised. We want to know when not doing great. Can’t keep on monitoring that UI 24*7. 
+)
+
+* How do you guys Manage Artfacts? Important for Deep learning models. Also data logging is a problem for Deep Learning Models. WanDB has a good solution around it
+
+* If I have to switch from the current system to your, would it be a seamless switch or integration? i.e. just adding some Boiler plate code and it will work?
+
+* How much have you thought of IP? How do you protect it? When we say these are loosely coupled => we give onus on the MLOps person to be able to stitch these things together => HAVE TO EXPOSE APIs in some capacity. Because of APIs, has access to some code. How do you limit that?"	"- [ ] Would you be able to add annotations? Spacy etc. Brainless integrations. IF some model training where there is very few data points. We would not know every time what the final label is. In the inference thing if we surface the records up, 2 things can happen: * Could go into retraining * Add annotations 
+
+- [ ] SERVICE FOUNDRY FEEDBACK: Its Basically - borrowing functionalities from cloud Providers. Something that is on mind for few years. Say we know there’s one DAG that is supposed to run and you want to somehow optimise the cost of it. Because of running this workflow, you want to optimise the cost in terms of load balancing etc that needs to happen. If not rely on kubernetes, the problem is there is this gap. AWS - Actual compute and DataBricks to utilise the compute. I know I could use like 30 nodes, 40 nodes, 100 nodes => and i want to scale up and Spark is good at that. I also want to optimise on the code being written. But we could surface that: If you are running a Spark job utilising the Kubernetes - can tell real time stats. HOW much of CPU is utilised, how much multi-threading you are doing etc. Because of this, you reduce the cost. SURFACING that would be nice. If we have this capability, smaller companies that are in crunch of money. Get a HSTOP output and surface it in a nice UI. Grid Map or HeatMap somewhere that if your process ran for 20 mins, what is the distribution plot => First 100 processors or first X processors to tell that the engineer has to optimise."	"* Set-up a follow-up call in 2 weeks including Abhishek and Nikunj to show real live Product Demo
+
+* Also to go over questions that were brought up in the 1st call wrt Cost, wrt Deep Learning models in Exp tracking"	
+7677698187	YellowAI	Anuraag	Apoorva 		"VP, Engineer"			"Conversational AI Platform - automate conversations that Enterprises are having with consumers. SDK that can go inside Apps, etc. Along with the bot building platform, complementary product for Contact center agent. 
+Outbound communication - Campaign Mgmt etc and personalisations => Campaigns can be delieered "	"100 Member Engg team, 10 member DS Team - 3 persons more on research and remaining doing both research and engineering.
+Models: BERT and fine tune it for our use case. Also create classifications model. Bot level models are there - which sentence lead to what.
+Using Collab, have custom dashboards where pump in data into Open search. Deployments are all containerised - Kubernetes and cloud - GPU based. Support all 3 clouds - because of data localizations and loss in diff geographies, have to support all clouds.
+DevOps team maintain kubernetes cluster and developers have access to it. Healing etc are taken care of by DevOps. For CI/CD pipelines => all the code goes into BigBucket => Container registry and then Jenkins triggers the rest. Thinking of using ArgoCD.
+EKL Jobs - are based on AirFlow => data goes into blob stores for Azure and S3 for AWS. So far, have exposed spark clusters. Experimenting with SnowFlake - it can be the tool that other teams can use to extract data for needs.  
+
+They were trying versioning using MLFlow => but it hasn't been operationalised. It was a need. Once model is built, ML Engineering team converts the model into services.
+
+For DB Mgmt and Kubernetes monitoring => L1 alerts from NewRelic. Kubernetes metrics - go into Prometheus. Model Performance => how diff versions are working, for that, we are pumping data into Open sEARCH and have built custom logs. 
+
+Have one common Jenkins to control all regions. Prometheus - data is stored separately. Thinking of making the entry points common. Open Search - they are currently different."	"They were trying versioning using MLFlow => but it hasn't been operationalised. It was a need. Once model is built, ML Engineering team converts the model into services.
+
+* A lot of 0 to 1 thing happened before I joined. Building repeatable flow would have taken 6-9 months. Automation keeps on taking the backseat. A lot of things we haven't handled => Drift analysis eg. (KUBERNETES ADOPTION - We started doing in 2019) => Developers were facing challenges in scaling up and down. Microservices side and it got propagated to ML Side. 
+
+* Currently struggling to be GDPR Compliant. If they have to rely on us to expose all the controls, it will become difficult for them. 
+
+* HIGH USE CASE: Real time Monitoring for a Real-time use Case. Have only real time. Batch use cases are not there."	"* Is Deployment FastAPI based or FlaskAPI? You can use anything like PytoRCHServe, TensorFLowServe etc
+* Every single Deployment => you can deploy wherever you want. 
+* We can expose the part of cluster creation automatically => want a cluster in XYZ. SLEEP WorkSpace => its constantly incurring cost. It will re-start the machines as well. Each Dev can also track the billing part of it. 
+* Are the deployments happening in our Kubernetes cluster or TF Cluster? (Collab ++ Kind of thing => You can do whatever you want). You can get a copy of the entire Infra on your own cloud => Only your own workloads on your side. 
+* 2ND QUESTION: Let's say we have currently 6 different regions: Will we need to have 6 diff dashboards or could I go to one single UI and see? There will be a clusters tab => There is a Control Plane. You deploy CP on one of the clusters. CLUSTER LEVEL Access and WORKSPACE Level access.
+* What is the current Stability of the Product say, a hem chart you have to install 
+* Will MLFoundry only work in training? Or even after depoyment, you can continuously keep tracking. Real time inference monitoring will not be handled by this"			
+8811616336	Pencil	Anuraag	Sumukh	"sumukh@trypencil.com
+"	CTO			"SaaS platform => Companies can geenrate content using AI Algos. Generative kind of models - not a GAN. Very hard to get perfect fidelity.
+Multiple AI Models which do different things. We don't scale very well: 1) Narrativ Model - what's the narrative telling to users. 2) What kind of content should go into what sequence"	"Predictive system => The ad which the system has proposed : Is it going to be a winner?
+Off the shelf solutions. 
+Even in these, its not 1 Uber Model. There is a model from our side which works from our side. Lots of decisions coming from different things. 
+
+AI Pipeline: Small and niche: 1) Pytorch 2) Tight control on what kind of models we develop. 3) Have own way of versioning the models and things. 4) How do you deploy? AWS mostly but most solutions are not asynchronous. Its not a HTTP Kind of time frame or response time. Job is created => job runs, soluton space exploration. Simple EC2 machines through Kubernetes.
+
+Is it mostly batch inference on the models: Actors come on what kind of space we explore. Models give decisons on discrete points on the space. Do a guided generation. Push the models towards certain areas in the space. 
+Training is offline, GPUs in office. System itself has a large re-inforcement loop. Re-inforcement learning at a higher level. 
+
+** A lot of things we have done is manual - everything is not automated. Collectively brainstorm => we compare -> etc. What I see imissing is DATA VERSIONING For reproducibility."	"* Lots of good solutons for Model Mgmt and deployment => Hard challenge is taking it all the way from tracking, Experimentation and then documenting it. Have to do it manually and post production model including traffic etc. Still feels too much hassle."	"* Where do you host the model and load it? Model stored and hosted in S3. By the time model is laoded, it seems the model is not responding to health checks. S3 becomes too slow to pull the model and load it from there. What we have done is we use EFS and mount directly on to the machines. And then you have to do a lot of jugglery to get the model to be loaded. (HEALTH CHECK TIMING is customizable - AWS will not wait, AWS API Gate will crash)
+
+* Inferencing Code: We could write anything in the inference code? There is a lot of pre-inference call that needs to be done. It runs through a pipeline of things and then take a decision."	"* What I see imissing is DATA VERSIONING For reproducibility.  How is the data changing etc? Need to connect the loop back => how do you connect the data, how do you loop back to the model.
+
+* There seems to be a bias that every model is a classification model => Eg- generative and ranking models which are hard to fit. The thing is most teams tend to have logging and monitoring by themselves? If this can fit into existing workflow, then it becomes easy. When you have an issue, you don't want to be scrambling here and there.
+ 
+* If you have issues, you don't want to be keeping track of service or model. Right now, the dashboard feels a bit of flat. If you want to be dealing with 4-5 projects within it, it might be easier to visualize it. And then again you are lost. 
+
+* When you say Service foUNDRY, or could you configure it to deploy in our own VPC? We can ship it as a Helm chart and you can put in your own Kubernetes cloud. Not grant public access etc. How do you do security? How would you configure those scenarios? If you are already using VPN, all endpoints are in your cluster. We are using ISTIO as a load balancer."	"We are not a very good fit. Our Product has reached a stable changes - not looking for algo level changes. Integrations etc. Still a very small team => don't want to fix it. 
+
+As a founder to founder to have a clear idea of Pricing. Get a good handle of pricing => its a very powerful tool. We are going to start is 3rd week. ASK MY ENGINEER: Start using and deploy with it. Think of pricing or even Per User. 
+
+Can connect you to people who are more early stage - stable and haven't changed the generative model. One project coming up soon. Unified Prediction Model => Its a predicton model. What is your pricing on?
+
+hAVE TO WORK WITH THE MODEL SIZE: We can work with the same. For training time, its a slightly sensitive data. Actual ad spend and money => touchy feel.  
+
+NEW WORK: Trying to pool across all data from FB Ads, split by sector etc. Cold Start Problem. Data is n number of frames. Waht will be interesting is to see => if it's Image data, how do you comparisons or visualize where is the issue or Outlier."	
+6688307367	Capillary	Anuraag	"Piyush, Saurabh"		CTO					"* We are a Multi-tenanted system => User see only models triggered on their side of the system. 
+
+* Operators see all the side of the system"	"* What volume of data is your platform capable of handling?
+* Is there a dashboard where we can correlate - outputs and also comparing with different ORGS or diffeerent verticals? (Is there we can compare different points)
+* Could we compare the data statistics between models and see?
+* Is there a way to get holistic view of alerts in terms of training? 
+* Purely in terms of Pipelines? AUTO-RECOVERY => infra level re-price => We don't control any of that."	"* We have a model that does Propensity calculation => Example which customer has higher propensity. Want to enable brand users to see. There have to be a MLOps pipeline that makes it self-serve for the user? If it fails for some reason => what all feedback will go back to the user.
+
+* Prediction to show how much time the model will take to learn? User is running a long user call. Feedback to the user => Expose the APIs from our system. 
+
+* Why is it a long running job? Because its not just model inferencing that is happening. But there will be training process also initiated. Whether the process is successful.
+
+* If N is running, X is failed => We can do easily.  "	"* In terms of tech metrics => Holistic view will help debug. Collective View. 
+* We cannot get rid of the DB and the API Layer. 
+
+* CORE OF THE VALUE PROP: 1) What are you optimsing for? 
+FRom environment perspective.
+
+* There is an opportunity cost of trying something out: Explain and run a bunch of these things => Discuss with Saurav and we can see. Can bring in value."	
+6688331933	Intellect	"Anuraag, Nikunj"	"Vinay, Anurag"		Data Analytics Lead			"* Building Recommender Systems => Understanding and seeing the data, how it is organized etc.
+* Track which tab to tab do they travel? Learning path could have audios, etc. Try and maintain a flow of where the user has stopped. 
+* We also have Logical profile of the users => psychological metrics. "	"DATA STACK: As I told, we are still not there - transactional data etc. But don't have Data Warehouse set-up. Trying airbyte to create different schema which could be used for analysis and creating models. 
+
+Data Stack: It's currently at 0. Where is the data getting stored? Its in 2 phases => MySQL and some part of data is in MongoDB. 
+What kind of analytics are we working on? Mental Health company => people can come and do self care sessions, speak to counsellors etc.
+
+* When user signs up, we have all of these things in the app. We have an initial understanding from psychometric tests. Conclude User profile based on 4-5 parameters. 1) PERSONALISED Tab for them => Whatever goals they have chosen => these are the 1st few things you have to do. 2) MOOD Ratings of the user => Recommendation based on what user is feeling day to day. And what you have been doing about it. 
+
+* Can't be build like a normal Recommendation system: If 2 people are doing a stress related path, it doesn't mean they have the similar problem. CONTEXTUAL Information in place."	"Have a huge User base growing everyday => Can help the user become better ==> Little Personalised.
+* Is there any model already? Build something that is clinical efficacy. Doing research as to how physical and mental data be correlated.
+
+* From a data standpoint, what distinguishes these folks? Mood Rating.
+
+* Most companies try to think of it is the trending items? I want to keep the baseline better. User Cohorting => it helps group users. Age, Geography, state etc. 1) USER PROFILE => Changing 2) COLD START PROBLEM: Bayesian => Learning pathway is well defined?"			"* Some Next Steps: Sample all possible data and Size of data. ENTIRE DATA DUMP
+* Additional outside data for offline ways ==> 1) Mood Check-in /// 2) Partnered with 3rd party that has built out API with fitness smart watches.
+* Try out the Intellect App: Week by Week plan, How to keep Engage.
+* What are the assumptions? 
+
+* WANT TO START WITH THE 1ST USER INTERACTION, 2ND REPEAT METHOD => ALIGNED TO THIS. What's the best for the users? Activation to start with and then retention. Unsupervised model is easy to build. User journeys that have been taken. SHOULD DO v/s WHAT YOU DID?"	"Cloud devoted to start-ups building Machine Learning. Jupyter notebook and can be comprehensive as a full fledged ML Pipeline
+
+* Brainstorming sessions: How could we help? 1) Scoring System - baseline score and validate if the user becomes better or not 2) Initial Parameters User have selected - what should they be doing? 3) myself"
+9591002216	IN-D.ai 1	Anuraag	Samy	Close to 25 years of experience	CTO - Headquartered in Chennai			"Intelligent Document processing - Medical invoices, Loan documents, etc. Classify, extract the information.
+Monitoring is most important. 
+
+They provide intelligent Document processing for Industry Applications. "	"They wanted to use MLOps for Deployment and Monitoring - 100% will happen only based on data confirmed by customers. 
+We are using VMs => trying to move towards Kubernetes based solution. 
+Showed a small demo where uploading an income statement, able to extract entities out of it and mark if correct or not. 
+
+80-90% Use cases are NLP"				* Get the Pricing Page built and send it out to them	
+9591062320	iSchoolConnect	Anuraag	Himanshu Maurya		Senior ML Engineer			"215 People team in iSchoolConnect. WebDev - 25 members, ML Engineers - 15 Engineers. + Huge data annotation team. 
+
+In 2020, very few companies working in inference side of things: 
+1) Candidate Recommendation Engine: 2 sides - * When students come, similar to what Yocket has. Where you are likely to get admitted.
+Currently, 5 verticals that work on ML.
+2) Search: 
+3) VIA: Video interviewing analyser => Better speaker in interviews etc.
+4) DWM: I lead currently. Document writing mentor. For admission purposes, students hvae to write essays.
+5) Proctering Engine: Eg - GRE etc.  When Covid hit, all the businesses went online - ETS. 30 Mn students apply every year. The entire load came to us. Built the systems, scale them. 10Mn load. 3RD Party to Procter U. All the load that came - backend went to us. 
+6) Analytics: How products are doing in market etc"	"Started in 2017 and been here since the beginning of iSchoolConnect.
+Most of the things are in GCP => We are official Google partners. We don't have internal platforms.
+
+We used to use VMs earlier, now making move to VertexAI. 
+1) For Model training, we use VMs. We don't have to train models so frequently. 
+2) For serving, depending on use case => * Recommendation engine => API Servers and scale horizontally. * Procter Engine =>We used to work on 6 underlying models => Orchestrated it through Docker Compose => 32GB of GPUs. Lot of data movements 
+3) For monitoring, Data Drift and others => EvidentlyAI => recently tried to work with them => has a huge potential for us. APIs also allows to dump output in JSON format. Build separate dashboards for every purpose 
+4) Model Cards and training: Used MLFlow but even though we went into establishing practices => not a lot of models get screened. DONT REQUIRE TRACKING MODEL VERSIONS much. Use a combination of DVC and then use GCP.
+5) Internal demoing part: Built on StreamLit. LabelStudio - did POC with them. Spent 1.5 months with them => won't waste my time. Started with streamlit and built the entire platform."	"Monitoring was a big need - started using Evidently. 
+Before Evidently, was building own using PyChart etc. No point of building anything from scratch. It took a lot of engineering efforts otherwise- UI was also ready. There are places where it is not able to track Multi-variate (Milti-label or multi-classes) distributions, only binary distributions. (OPEN SOURCE PROJECT => If using for commercial purpose, you need to open source) "	"Have had discussions with other start-ups on trying to use the platform.
+There was this issue of Data privacy => What are the options that will be available? Just like we use GCP, we can spin up instances and we can use it as a cloud. While inferencing, code is also pushed and deployed in one of the pods in Kubernetes. 
+
+What are the options to keep the data in particular region? Eg: We want to keep the data in USA and Europe. Can we keep data in region? 2ND and 3RD OPTION work best --  We will want our GCP. You take the infra and set-up whatever you want to set-up. Updates can be pushed."	"Honestly, all the 3 components you are integrating - it will be very useful for us. At iSchoolConnect, we don't have big DevOps teams. A lot of time gets wasted asking for permissions and all. You have terraform and spin up things, we also use Terraform to automate a lot of internal things. 
+
+
+If we want to spin up an instance just like we do in SageMaker, I will spin up and works. Something could integrate all the things we have. My role should be solving problems and ship things faster => Solving problems. Staging, Production, Release. 
+If someone new comes, with their access keys, we can restrict permissions for resource => No worry about Cost. 
+
+Last bit: UI side => it depends on project to project. Different dashboards built and gets integrated at the end. Used streamlit and built everything including annotations etc."	"What I can do: I can definitely talk with Head of AI. Could put us in touch with him. Share the Documentation and there is a video as well. 
+hmaurya@ischoolconnect.com
+Moving to UK soon ==> Will not be with ISchoolConnect, there are a lot of good people. And they will help with POCs. 
+
+With my word, I will be able to get one meeting ==> Ashish : He will be actually brief and put insights into whether this thing can be done. 
+POINTS: * Price Point - this is make or break point => discuss with leaders * Flexibility.
+
+Be one of the Beta user: Himanshu "	
+8871402132	Attention.tech	Nikunj	Matthias Wickenburg		Founder			"- Focusing on NLP problems. 
+- Just hired an MLE, 2 full-stack, 0.5 frontend engineer.
+- Good number of design partners - few between Series A and enterprise. 
+- Main model that we are deploying is a huggingFace model and we are doing typical out of box deployment. 
+- Not doing any training, any evaluation and we are about to start fine tuning versions of it. 
+- We are about to get to a point to alleviate a lot of headache on our end. 
+-"	"- Only huggingFace. 
+- worked most with Amazon Sagemaker for most purposes. 
+- Also have worked with MLFLow and Kubeflow as well. 
+- Mostly tracking experiments. 
+- Use colab for training. 
+"		"1. Soc2
+2. What if we have our own Kubernetes cluster. Its cool to be out of the box on the cluster. How does it interoperate with existng infra. 
+3. Some amount of caching some result as well. We are caching results and dealing with real time predictions. 
+4. We expose two endpoints and prediction endpoint does not. 
+5. We anticipate that we might have some hierarchical models vs a simple sentence similiarity model. 
+6. How do you add extra value from pure MLFlow and pure Kubeflow. 
+7. How do we rely on an alpha product. Stability or security. 
+8. Custom graph logging  
+9. Deploying of a service"		"- They will discuss internally and try it out for sentence similarity model.  ETA June 16. 
+- Asked about monitoring as well to which Nikunj said July end. 
+- Asked about logging custom graphs to which Nikunj said June 23."	https://drive.google.com/file/d/1R6wZs4P7EX0_TsRrYAg9k_uDgHO4gw5o/view?usp=sharing
+7922298281	Jupiter.co	Nikunj	Aarshay		ML Engineer		"- Ad personalisation at Spotify. 
+- 8 engineer at Jupiter."	"- Worked with a few startups helping them build. 
+- Honestly, I didnt get a time to explore TF. 
+- What would I use right now. We are building a lot of Airflow and data pipelines. And we dont have strong monitoring on them. 
+- We have data pipeliens which run weekly. We have some ML model that read those data pipelines. 
+- Everything is running by Airflow. 
+- Something should be outside of Airflow which will tell me here is a data that I expect to be there and if things fail report to me. I just want quick feedback. 
+- Data drift or pipeline breaking is what I was going to report. 
+- These pipeline would geenrate tables with statistics, predictions hapen in real time. We dont want to aggregate everything and we want to make those estimations uikc. 
+- Evrry Sunday night we run something and Tuesday 3 PM user faces the order. Last statistics of the pieplien. 
+0 Ther eis an ML Backend service which will read the latest stats, what the user did , create some featurs and pass it to a heuristic or ML model. 
+- FastAPI based - backend engineers maintains the Terraform setup. I just create a docker container and they figure out. 
+- We have a few applications. I think all of them have at least one ML model in them. Usually some model and heuristics. ML models - I am using XGBoost only. 
+- We have a lot of categorical data and use XGBoost. We dont jave advanced features. 
+- Get retrained every week. We dont track the versions of these models. If te mdoel gets trained every week- its going to go to a cloud storage bucket. Whenever a request comes it reads the latest model. Its a hot swap. 
+- Because the models don't block the user UI. As we move towards more UI stuff. I have worked on MLOps a fair bit."	"- Tech stack- Google cloud, - Data pipeline, - Airflow for deployment"	- What would I use right now. We are building a lot of Airflow and data pipelines. And we dont have strong monitoring on them. 		- Data pipeline monitoring outside of Airflow. 	- Found the product interesting for experiment tracking. Will discuss with his wife if she needs it because she is a freelancer. Follow up by mid July. 	
+9560226332	GreenHouse	Nikunj	"Trian, Mona"		ML Engineer & Lead			"- Deployment is not a concern currently.
+- Experiment tracking is. 
+- Might be awayed a bit because of minitoring as well. 
+
+"	- Use notebooks for training. 	"- Large language models, like BERT. Want to be able to track both for short term and long term. 
+- Give explanation of how we are better than WandB / Neptune / MLFlow etc. Factors- ease of use, cost. Dont want a lot of features. Simple logging, reliable, shareable, searchable.  
+- Actually okay with public cloud. Need to mention about VAPT. 
+- Dont necessary need a lot of magic. Okay to do their own logging. Want checkpoints, metrics, hyperparameters, Git sha- ideally have those things connected neatly. 
+- Should work from both Jupyter notebooks & python scripts. 
+- Show demo of the product in the meeting/ "				
+9407683220	MindsAI	Anuraag	Abhinav		ML Engineer & Lead		"Bengaluru: 10 people, 20 worldwide
+2018- Since 2018, ML
+Mostly a backend engineer till i joined MindsAI. 
+Build a prduct similar to New Relic
+Earlier on system side."	"We have our ow product which is a training platform built on top of Ray.
+On top of that, building domain specific product for Semiconductor fab scheduling problem.
+Taking our platform and customizing it for them. Our product is called DeepSim. 
+More work was on training side as well as inference"	"Stack: RayServe => Inference. Not yet anything for Monitoring and deployments.
+Kubernetes - cloud agnostic. "	"- Big part of problem for us is that its windows. Support of all these things on Windows. Most of cusotomers tooling is on Windows.
+- Support for Ray is not great on Windows. Have to do hacks like keep minimal stack on Windows and use GRPC kind of thing."	"* Do you handle fractional GPUs. Can see multiple teams using it. For a staging kind of a use case, they may want to share GPUs within the team.
+"	"* If comparing to our platform, it is nor productised and its not API first. Use case is for internal usage. 
+We don't offer the platform as an offering on its own. 
+* It looks really cool. Can be used in places that are ML Shops."	"* I may not be the right audience as I don't work in ML Company that is on that kind of workloads. 
+CAN check with arun for platform efforts ==> Will have to get sign-off from Bus Dev. "	
+9407683477	XOPA	Anuraag	Kenny Chong		Data Science and ML Engineer			Focus on Human resources Insights data. 	"Using TFServe. Want to keep models as simple as possible. TF 1.0 is a bit of a pain. Now, they have added Keras. 
+We are very traditional - mostly excel for tracking. Report all the findings. 
+We just have TFServe. Serve is as a GRPC Object. Still trying to figure out. Earlier, was not using docker. Right now, dockerizing it. We have a simple docker compose file and we run those commands.
+For Inferencing, use CPUs. For training - we have own set of computers to train models.
+We don't do tracking on the DS side. When engineering has issue calling our models, they call us. TFServe - GRPC report has been quite sable."	"* When we create a model, too many parameters involved and we do Brute Force manner. One pain-point is what tool to optimize.
+* The way we have data, it is not well. For new data coming in, hard to marry the data. 
+* Optmizing the model is problem. 
+* We are Microsoft partners and hence it makes sense to use Azure products. Cost and logs is quite easy to see. Applications Insights => quite useful to us.  
+* Validation is very tricky. We don't have the global minimum but we have the local minimum. 
+"	"* Code syntax in MLFoundry seems to be similar to Keras. Do you use Keras under the hood?
+* Sign-up on app.truefoundry.com and will try on free time "	"* Major concern for us is private cloud. That will be a huge cost for us. Pipeline for creating models and deploying models.
+* Even when we ingest data, you can use our own storage ==> Control plane or Data plane. "	"* Next month - will tinker and play around it. Have to send him access and documentation 
+* If like, will share the demo with the team. "	
+6688376748	Housing 	"Anuraag, Abhishek"	Anil Goyal		DS Lead 		"4 Months - Buddy in HC Sector. Germany for 2 years. Before that, doing PhD."	"Multiple domains: 1) Recommendation Engine, Fraud Detection etc. Other projects related to 360 virtual tool. Have DataBricks in place.
+Every company has their own systems ==> Build models using Pre-trained models etc => Take models in Prod with AWS. We dockerize and convert models into APIs. And deploy in the form of dockers. Either in EC2 . Also trying out diff things related to DBricks -- Experiment tracking etc."	"Currently, deployment is handled by our team and trying to have MLOps guys internally in our team.
+Kubernetes : Not using right now. 
+DataBricks: Started POC few months back, using it for 1 of the projects. DS - who has deployed using DBricks ==> there are some challenges. I am not a very big fan of AutoML Solutions."	"DataBricks provides good AutoML. They don't provide any IDE kind of stuff as integrated with DataBricks and that is something I don't like.
+Are you using Spark internally? For inferencing pipeline, we will try to use Spark in near Future. All our code is in Python. Also use DBricks for our deployment. Create Feature Store in DBricks itself. We use Feature Stores quite a lot. Can deploy APIs using DBricks. 
+For feature stores, not sure exactly how that is being done. 
+PREDICTONS: Both Online + Batch predictions. DBricks doesn't handle real time deployments well. "	"* Data Drift/Feature Drift: Will it be supported?
+* Could we define the Custom Metrics in the monitoring dashboard?
+* Does it power the deployments via Docker?
+* Suppose there is a training data problem or data drift: Could I set a threshold on what level of threshold should I re-train the model? How frequently do I need to measure Data Drift ==> Alerting part of it. 
+* We want to have IDE Support, support for custom files etc. We don't provide the editor part of it. As of now, you can use Collab or etc. "		"Send out the Video.
+Send out the PPT to him 
+
+Ask to set-up a call with the Engineering team as well if needed to take this ahead + Discuss with Chirag."	
+10238582319	MaqV(Individual User MLFlow)	"Anuraag, Chirag"	Arsh Sidana		DS		Based in India - malout. 	"* It was about last year - discovered MLFlow. Doing POC with another company => structured tabular data. 
+Didn't have time to cover the best practices with respect to reproducibility etc as well. 
+That's when we looked at tools: Lightweight, easy ===> Started using MLFlow. MaqV- incubated by MTX. Also proposed using this to the Director of AI and team leads. "	"Still defining MLOps and it will be priority in 3-4 months. 
+Be ready for future when need comes. 
+DEPLOYMENT: Doing manually - use KServe or Flask. We are mostly on GCP, But also using AWS for business decisions. All of the models deployed are for customers in the own cloud. 
+
+MONITORING: Using Grafana - only system/resources monitoring.
+
+Only one using it - Doing in a local instance"	"One of the concerns raised: 1) RBAC - Role based access control. 
+2) Teams work on different tasks - collaboration makes a lot of sense. 
+3) One of the requirements was set-up a Model Zoo. 
+Model Registry compoenent of MLFlow would be a good solution. 
+
+Features missing: RBAC, If want to use it in dev CI/CD Pipelines. Any dev can do something and it can create havoc. Others felt personally - use 1 instance for one project. If you want to do this centrally. If we want to deploy central MLFlow Server, in that case, there's no good way native to the way it is designed."	"* CI/CD Integration is most important.
+* They do deployment themselves with some help from DevOps teams.
+* Could we do logging of images at a bigger Scale? Could we do something that DVC does. Note: UI takes space and hence might be difficult. Under the hood, ours is the same thing. BENCHMARK: Metrics and Images we should check as to what happens if we log a lot of things. 
+* Do we support for all the integrations that MLFlow has? Eg- Optuna, H20 etc. ===> Lightning integration is on the way and we are adding integrations that MLFlow supports. NOTE: We don't have support for these."	"* Model Registry along with Model lifecycle Management is important. Note: We will have this by end of month 
+* MqaV- Building and integrating with MLOps. Eg- MLFLow provides a RestAPI for everything. Do we have python APIs or do we  have Java APIs or SDK etc? Suggestion: Python SDK for now. Haven't standardized the documentation interfaces for the REST Interfaces we have added. (INTEGRATION FOR CUSTOM MAQV PLATFORM) . We can plan to expose the other APIs but it will be a lot of work - they are undocumented. Other languages we are not considering  now. 
+* Could we visualize the CSVs? We can add the visualiaitons. Helps in better visualizations. => Note: This is now available "		
+9407967410	SquadStack	"Anuraag, Badal"	Pranav		DS		"Working for 5 years => Lead the efforts on DS side. Lead efforts on DS Side. How to go about product, features to helping deploy all those pieces."	"QUESTIONS: * Is it batch inference? You don't host the model as an API => We will do it when we make things realtime. 
+Current blocker is actioning system itself is not good.
+
+* Old or new architecture? Signal processing or neural Nets? Some are Deep Learning Models. "	"When we start an account with an idea, whatever use cases => Jupyter Hub. Has security access. 
+Start with experimentation of data on Jupyter Hub. Audio needs to be brought on the server itself. Files can get corrupted.
+
+Exploration: 1) Experimentation => Start with analytics => DeepDive using ML. Start using simple models and then do state of art (Hyperparameter tuning starts coming into play) 
+
+Best Model: Set out to put into Production ==> How we do it? GitHub Pipeline. Use SageMaker to push model into it. Goes into Engieering team. They use spot instances to run batches of pipeline. PostGres SQL DB. Workflow starts with sometihng ==> else we pick up calls from that through sampling algorithms. (5-7 PIPELINES that are live)
+
+Tracking: * Things in AWS Configured * Are the models running fine. Error messages etc.
+Actionable part: Data also needs to be presentable. DS Team does the monitoring => use MetaBase for ML Monitoring. Coverage ."	"1) As we scale => we have to keep changing the batch sizes to make it optimal. X Hours have to be maintained as we grow. 
+2) As number of pipelines increase, ML Engineering effort keeps on increasing. 
+3) We did explore ML Tools but never went into moving forward => Engg team will take the chalelnge"	"Questions: 
+* Do we have to expose the data to our servers?"			
+8988169640	LoadSmart	Anuraag	Rodrigo		Senior Head of Engineering		"Computer Engineer, Master in PhD"			"* Lower cost of APIs. They have a cheaper crude single end point concept ==> Data Science do not need to be backend engineers. Want a way to Productize some analytics. VOLA - reporting tool on top of jupyter notebooks. Still a Jupyter Notebook. Don't have that as a service
+
+* Data Governance 
+* When you call deploy, how do you know the service is up and running? Is it synchronous or asynchronous "	"Disadvantage for us: Is we are 70% of what you have. 
+Really interested in is the Automatic wrapping from Jupyter to FastAPI Container."	"Right now, you are priortizing control in the Jupyter notebook. Have you considered using the Cell magic support so that it can hide bit of the boiler plate. Offering both would be an interesting pitch. 
+
+We can give you images that you deploy on your cloud. Don't see before Q3 ==> Any clearance to buy software. 
+MID Q3: Defining the OKRs ==> As soon as I see the ML Team ====> We can do a SandBox. We can do a Paid experiment."		
+9464831632	CopyAi	"Anuraag, Badal"	Phil Jama		ML Leader			"Natural Language Generation - blog article generation. 
+How we use large language models - HFace and OpenAI models. We are also in a lot of their data programs"	"Largely self serve. Team of engineers who do the backend etc. 
+ETL Pipelines - GCP, Kubernetes Cluster that runs and scheduler. Unconventional. 
+Goes into the data warehouse that feeds the lot of research stuff. 
+R&D and ML - A lot of predictive models around user conversion and user churn etc. 
+We also have proprietary online experimentation engine that we use to split test variance of models. Randomization and allocation of users. We have a handful of metrics that we monitor + secondary and tertiary metrics as well. 
+We use custom analysis as well. 
+"	"Experimentation is what is interesting for us ==> That is of core value to orgs.
+One of the early employees.
+We are better than most other competitors. 
+Increasing the cadence of the tests on the experimentation side of ML ==> from 1 to 10 to 100 of experiments per day. 
+Scheduler - built it out with KubeFlow as it supports experimentation
+
+When you get generative models from GPT, you handpick? Does it run offline or the end user has application? ==> No these experiments are all online."	"We limit the blast radius if things get wrong. We are in 1 Mn user base range.
+KubeFlow does operates in batch. Well designed, scalable. If it needs to be distributed, it has the capacity to do it.
+Metric is - is the user happy?
+How do you host these models? Backend - OpenAI but support 3rd party vendors for that. We manage a lot of models overall - managed at the source control, etc. 
+Typically do 2 variants for a model ==> Is it like a control plane, data plane ==> Where the control plane decides which one goes to Model 1 or Model 2 ?? Allocation to expriment groups is done randomly."	"KubeFlow - have you put that up? Or planning to put. I just push code and it fires off. 
+What is the blocker in going to 100 experiments? What is the blocker? It is just time constraint and in meetings all day.
+> Firing the model
+> Fine-tune the model
+> Deployment : Its not yet integrated into my application. No end point ==> Engineering resources that need to be allocated
+> Analysis => Observation"	We need to send him the live recorded demo of the platform as to how it works. 	
+9559498413	Polynomial.Ai	"Anuraag,Badal"	Pramod		Co-founder at PolynomialAI				"1) We are more of a MSFT shop => GitHub, we are on Azure, etc. We have GitHub actions and things coming in, Deployment has become easy. Until and unless we run out of GithubActions free quota.
+2) We are working on CLoud Native architectures - Kubernetes, Docker ==> removing dependencies ==> Latest tech direction.
+3) We need more people to know about Deployments - coders who haven't been trained on deployment. How easy is it for developers to come and start using the Product."	"""Wants to move to Cloud Native way of deployment - cross-cloud strategy is very common these days => We used to be on app services. Connect GitHub to apps service => costs significantly went up so we had to take up another strategy (PRE-SALES etc) ==> Customers are on different cloud. We allow you to go cloud native!
+(1 effort for deployment of a containers - 3 to 4 days) ==> It could go up if people don't know."""	"DevOps is becoming an integral part of every service provider. How are we adding value in terms of differentiation from Azure?
+Most platforms will let you do one click deployment and will allow things like Splitting between Models, A/B Testing, etc. We are trying to make that experience as fast as possible.
+We support 14 programming languages and combinations."		"Three possible modes of Collaboration in terms of using our platform for deployment for their clients. 
+Pricing needs to be worked out better 
+"	
+7677937509	OnlineSales	"Anuraag,Badal"	Nitesh		CTO at OnlineSales			"Problems we are solving: 1) Recommendation problem, 2) Estimation, 3) Optimization. Market basket etc as well that is needed in the advertising industry."	"Use algorithms in-house and running as a python code in different platforms.  (Stack is AWS Boxes - some other servers).
+In our use case, it is not always needed that we have to expose the things in real-time. 
+Heavy computation happening in the offline job. Can't model and predict at the same level. 
+Experimentation and making the impact of it is missing - A/B Testing. 
+Kubernetes is not incorporated into the ML/Data Science pipeline. 
+Eventually we will be adopting it. 
+>> DevOps team: They do initial and every engineer is enabled to do them. "	"Kubernetes is not incorporated into the ML/Data Science pipeline => Resources issues => Eventually we will be adopting it.  
+Obviously that is definitely better than previous approaches of deployment. It is very easy to go there. 
+If we can get SandBox access and can try it out. 
+On Kubernetes, are you using Helm Charts to deploy? Lot of algorithms running on offline mode. "	"* If I have my inference function, how much time will it take for me to deploy? It will take 15 minutes. Notebook experience is fastest. 
+Let's look at the deployment log and see how much time it took to deploy. 
+(3-5 minutes + 5 minutes ==> 10-15 minutes to deploy) 
+
+* How do we handle the failures in deployment? 1st thing - your pod will not come up. You will be able to see the stack trace. 
+* Call went into experiment tracking a bit. 
+
+* This platform is towards exposing the entire platform as real time metrics?
+
+* How do we estimate the cost of the service? Could we estimate it before hand ??"	"* Cost insights before the deployment 
+* 60% is still as is how it is? I will want to try out once as to how it will help us in terms of deployment and monitoring? Splitting the experiments with training percentage"		
+9181477197	Animall	"Anuraag,Badal"	"Naveen, Hemambh"		DE and Data Science team			"Building a couple of CV models. Sort of a 5-6 models in a pipeline. What is the TAT of one model. What is the performance for 50% of the load etc, whats' the performance of 100% load."	"Current, we need 30 minutes delay, that is fine. So we don't need real-time. 
+We batch process the listings every 5 models. We orchestrate using Prefect. Flow everything using Prefect. 
+We have taken a VM and then we use Prefect for Orchestration. 
+Model runs on CPU - no GPU. You mentioned you use Docker - are you using AWS EKS. We haven't started it and moving entire thing into Kubernetes, but some cost issue came up. (GCP is used, kubernetes Control plane was charging something). 
+Scale - 5 minutes, 30-40 listings ==> 80*12 ==> 300 to 600 listings.
+We are using label studio for labelling the data."	"** If you have any orchestration set-up for active learning, that would really help us. In active leanring, we are building for monitoring the inference data. 
+** We are doing everythign at VM Level, there are lot of issues. If we move to serverless, then it would also help us ==> We are using multi-processing to do it. Sometimes, the other containers are not up.  In a day, it happens twice or thrice. We don't run it as a service but run it as a batch. ==> This is dynamic CPU and memory allocation. If you ahve deployed 4th model and you are loading 5th model, we will dynamically load. 
+** Cost of moving to kubernetes"	"* How many services could I deploy in a single WorkSpace?
+* Let's take an example - I have a large model. If I hit a lot of load, what if it exhausts the whole 4 GB Memory. Will it auto-scale? 
+* Can you go to create WorkSpace? I can only see upto 8GB Workspace.
+* Will this be Kubernetes or something? We can also attach it to your own Kubernetes cluster"	I like how easily you have orchestrated everything in the interface. I really feel this is very useful wrt deployment.	"I will try the workspace and see how I can deploy the model. 
+"	
+9559782444	Emaar	"Anuraag,Badal"	Rajesh		"Head, Data Science at Retail Group"		"We went on to introduce ourselves. IIT Madras - 2009 (13 years) ==> then in Airbus, started DS in AirBus. Then Emirates for 6 years. Emaar - owners of Burj khalifa. Lead the entire DS agenda (10 colleagues) ==> 1.5 years
+
+Bossed kept changing in Emirates: Not a stable team."	"We were attempting a start-up sometime - 4 business lines (Property, Malls, Hospitality, Entertianment) . Biggest chunk is with properties and retail, which is malls. Record sales in properties ===> How do you price the properties?
+
+Property sales team wants to know how the sales is going to look like? Property sales forecast. 
+When want to sell properties - there's a customer acquistion channel. Which agency is likely to increase leads.
+How to generate leads - marketing campaigns etc.
+
+Dubai Mall has a marketing platform => how do we bundle offers, how do we personalize offers. How do we forecast footfalls in the malls? Shopkeepers- how do you price the shop rent. Forecasting problems.
+
+Personalizaiton: Which offers is going to be more appealing to the users? Its' not distinctive."	"* Tech Stack: Plain DataBricks ==> We have made tech investments ==> Migrated to real cloud solutions. AzureML Studio - migrated. 
+* Azure notebooks. Deployment also happens through Azure platform.
+* To save costs, instead of real time, we run it in batches. We pre-catche what is relevant to customer. 
+* Do a lot of A/B Tests ourselves . Have some bit of monitoring
+* When we choose Azure v/s DataIku, Oracle, AWS are competing heavily ===> Enterprise level architecture ==> there is a bias to choose MSFT. 
+* Do you use Azure Studio - Drag and drop? Yes. We use the feature store concept on Azure Platform ==> 80% time goes not in model building, but doing things around it. Feature engineering, pre-processing, etc to making models production ready for deployment. 
+* We use SnowFlake and Azure Synapse too. Data Cleaning and customer 360 degree - Informatica is being used."	"* I have kind of bootstrapped - run in start-up mode. Person is able to do end to end.
+* No dedicated DevOps team. Structure is more aligned so that folks are focussed on delivering 1-2 projects. As of now, this is how it is."	* If I had to compare to an open source framework like KubeFlow => it has its own logging and monitoring. It has A/B Testing etc. It took me 3 days to deploy Kubeflow and you will spend time in understanding the system. Developer Experience. We also have model registry and things that integrate tightly with training. (Our Learning curve is very small - User journey is defined to be very simple)	"If I am a cloud resident, will TrueFoundry help me in reducing the cost of my cloud?
+For the parts of the platform that Anuraag showed, I will have to lean back. 
+I will not be able to do away with my cloud costs ==> think it as a question. If somebody is already invested, then how would you get adoption?
+* If TrueFoundry can show a great pre-processing part, as to how do I reduce the pre-processing time, I will want to buy.
+* Models in Prod. Different versions - how do I do versioning on top of that. 
+* If you are only giving me monitoring, then my main cloud costs are still there ==> the business case of monitoing then is not very useful.
+* If the Product is too close to Open Source and very complicated to the Cloud base, your set of customers will be restricted. "	"* Want to understand the pricing of AzureML ==> What will save the cloud costs? 
+* Set-up call next week and see how we can work together"	
+#N/A	BrightMoney(Feedback)	"Anuraag,Badal"	Varun		CTO at BrightMoney						"* Deployment in a Production set-up: Both Online and Offline Use cases. 
+Right now, deploying a model takes weeks. And we are enabling that in 15 minutes.
+* How are you deciding the Data Pipelines? What's the boundary? Our focus is on deployment - offline training, Batch inference and real time. 
+* Platform comes to the developers code as a library ==> Package from python notebook/CLI 
+* Suppose you are deploying a particular algorithm - there is a model => both offline and online. For training, it takes user data as input. For exisitng users, you want offline production so its catched and online cache, you want a copy of the mode."	"1) Spark Pipeline 
+2) Take the model as a service => Just explain within this example. 
+3) We are developing ingress graph APIs - as of now you will only deploy it as a service. 
+
+Complete Pythonic way -> deploy it as a service or CronJob . On top of it, if you want to take data from S3 and pass that, you can define it in a complete pythonic way. 
+
+Taking code and plugging into production - harder problem is when you put into produciton, lot of new cases that need to be handled. Is it related to the transformation code? Or is it related to the input? When doing offline, there are a lot of assumptions that some input won't be 0. 
+
+The engineer needs to have a lot of cases to put that into Production. If its a live service, you still need to handle the requests. Where we see maximum Gap: Parallel Logging => Model 1 I have put a service, now I want to put Model 2 live ==> I want to comapre the output etc. Real life feed - Model 1 ==> Shadow trafficking. A/B Testing is different. MODEL CONTROLLER: You can do random traffic or you can do random at a certain stage. 
+
+A/B Testing: 
+Income Prediction or CTR Prediction : To put a model out is very revenue impacting => there will be a 2nd order effect. I want to comapre a model 2 that I have evaluated in the past compared to model 1. Log inputs => compare offline. LOG => RUN => OFFLINE PROD. A convenience whcich a lot of companies do - in Online service itself, I log another model ==> Live Dashboards that will compare Model 1 and Model 2.
+I built this for InMobi (this is something around 2015) => In ad networking scenario, SMA for prediction is very small. A framework called NLeap => a lot of modelling was happening in Spark and it supported pythonic use case. Supppose XGBoost - a predictor class where you will have a lightweight version"	"The problem comes when there are custom transformations.
+One time mapping of all new transformations was done by engineers.
+
+* Rather than saying there is a fixed golden dataset => take a random uniform sample of it so it covers even 1% of the cases. Have own definition of failures. (Basic test dataset - we have seen been used) ==> Full uniform sample : Haven't seen much
+
+* Any company you go : They will have their other services ==> spawning the infra will be well developed. DevOps is just human blocking - all engineers will be going to that. CI/CD will also be common. 
+Any ML Engineer will have to create the structure around Monitoring ML Performance - we have to emit true value, SLAs etc. You will like to understand what is my p(99). Model Performance metrics, Model Controller - Experimentation framework. 
+
+* Deploying a trained model => Pipeline of deployment. (All the data cubes around it, eg - logs around it to get accuracies - DataCube creation )   
+* We were figuring out how to put recommendation system in Glance. QPS is quite decent. Cost optimization opportunities. 
+* All the infra that is there => has to be homogenous. What will you solve for is tough that they have to build anyway? MODEL MONITORING - Compare models - Offline simulation framework."	"* POC is very fast for a Data Scientists - they can test latency etc.
+* Are non python dependencies also handled? We load the code in a sandbox and intersect all the requirements. 
+
+* How will you get non-python libraries? ==> XGBoost - it was a case (had to deploy a lib something) 
+
+* Its a perfect fit for POC - 0 to 1 is where I want to try it out.
+When you deploy, there is a test-suite ==> Define a Test Suite. Fall Back to a default model in case of Model failures, go back to this model
+* ROI of Production system is very high: Speed matters less and the gains matter most - perfomrnace is better. Due diligence will have to be better."
+9595273362	WakeFit 	"Anuraag,Badal"	Puneet	https://www.linkedin.com/in/puneet-tripathi/	"Head, Data Science"		"Based out of Bangalore - next time can meet in person in office. Started going to office. Only shut down when there was peak. Lot of business depends on operations. // Data and analytics background - primarily worked in retail for 10 years or so. I have been working on retailer side or CPG side or manufacturers etc. 
+Heading DS for 2 years - 5 year old company.
+Significant share of market in furnitures and home decor. Working to establish ourselves as a complete home solution."	"Tech as a vertical is not very old - before that, the scale was pretty low and hence not worried about how to process the orders. Data as vertical is only 2 years old. Journey - adhoc requests to a lot of collusion of requests and blending into reports - tableau for the same. 
+
+TYPE OF MODELS:
+Forecasting and estimation models - used for capacity planning, strength planning, raw material planning. Daily models for Last mile logistic planning - how many days do we need for handling? How many inventory days are there? Daily fulfillmnet models are also there. Minimum inventory needs are also there with 90% adherence. 
+Intent Model: Working with Product team to deploy - possibility of a customer to conversion.
+Product affinity: Probability of conversion from X to Y. 
+Recommendation Model: Product ranking models, recommendation models.
+Impact analytics for models that have gone live => models for this.  A/B Testing is not posisble in many cases."	"Replicas created for Production - we started looking at data warehouse, resides on - RedShift. Not using kubernetes. 
+The Production: OLTP - Legacy (more of a solution etc) ==> RDS (AWS primarily) 
+Every order that comes from marketplace comes from RDS. Dashboards - tableau. 
+We have onboarded another tool called DataChannel to pull data from various APIs => allows us to download data into our system and give us a 360 degree view. 
+Library - supports Data Engg and dev needs. 
+Model building came 1 year back.
+
+Do you run models in a run-time mode or Live ? Process is there - Sales and Ops planning. That is monthly exercise. Everyone meets and agrees on a demand. Every month we project for next 3 months. Everything is stored in database.  
+Personalization is restricted to the CRM - minor tweaks here and there. Search analytics is part of development. 
+(MOST Models are offline - but pipeline is ready and it is deployable as an API etc)  
+What is in pipeline is Product based recommendation.
+
+Dedicated EC2s and managed services like DynamoDB."	"* Roadmap I have: Driven based on needs of the organization => a lot is happening on pipeline side. A lot is happening on CX.
+* Other problem we face is optimization of budgets. Recently on-boarded a person as brand ambassador.   
+* Forecast models were not working well - all our parameters - MAE etc was too high. We used Prophet and that was giving a high RMSE. WakeFit FB Prophet. 
+
+Members in DS Team: 12 members in the team. About 4-5 months back, make it 20 members. After 6 months, all of them are data engineers."	"* As of now, we don't have support for Offline. Deploying as a Cron job and deploying as a job - that feature is coming in 2 weeks."	"All the use cases I asked is asked because team has built a lot of APIs and all of them can be deployed as a rest service, even if its not a model.
+"	"Set-up a follow-up call in the coming week with Puneet.
+Showcase and demo the platform + answer his questions. 
+Time for call is already decided in the video.
+
+
+@Anuraag could try to give Data Drift related funda. 
+Can ask for getting started using Experiment Tracking. "	
+#N/A	OCBC	"Anuraag,Badal"	Abhishek Mishra		"Lead, Data Scientist"		"Was with IHS Markit for 8 years and around the end of last year, got an opportunity to lead a team of DS. 
+I am part of the SLACK group and i wanted to experiment with TF. Will be more than happy to have a walkthrough."	"A lot of cases where we don't experiment much and just try a few versions and choose one.
+Some teams use Hyperparameter testing tools. 
+Experimentation Tracking: MLFlow and improves on a lot of things. We are adding integration for Minio - Kubernetes native. Internally building a pythonic library on top of MLFlow. "	"OCBC Bank - it is South East Asia focussed bank ==> they are more like the ICICI or Axis of India. Given the domain they are in, they are completely OnPrem 
+Enterprise Data Platform: Bought from Cloudera => Runs on our server. 
+
+Because its on Prem, a lot of tools are coming from Apache DataFrame // Apache Ozone - equivalent to S3 // FLink as well. Managed by IT. These tools talk to Cloudera Python Platform. 
+
+Deployment Process: Data Platform is similar to a SageMaker. Does Cloudera provide direct support for Jenkins and WorkSpaces? Cloudera mainly provides the data science interfaces. WorkBench is on top of Kubernetes? Create a Kubernetes cluster - on top of this, the Cloudera Application runs.
+
+Ray to distribute the overall training piece. 
+There are 2 Facets to it. For some domains, the performance of models is not high of priority. All Products don't need performance side."		"* Let's say I want to publish my model training as a Service itself? As a service because it should have the ability to take an input and give out the output. (We will be able to do simple job - name your job as autojob and provide some stuff) ==>  Can I parametrize the Job? In Enterprise especially in Banks : One enterprise is FB, Google etc// And then there are orgs starting to adopt this technology. We are building HyperParameter sweeps. 
+
+* Even in terms of deployment of Services - (department within OCBC: ChatBot) - The way we deploy is take a model and deploy in a  service. If you are expecting a heavy load on the service => say we have multiple clusters running on the service.  Will the infra be able to support that? 
+We have built a better solution - autoscale=""true"" "	"Suppose you don't have few models. You have 20 teams building the models. 
+
+You are a data scientist - do a bunch of experiments. You have the whole script of model training etc. Every week, you train the model. All models are approved through a feature training workflow. (MENTIONED ABOUT ANOTHER WORKFLOW) - We showcased the Pipeline deployment. 
+
+Which features are important? 
+View will be biased: Training jobs will take priority, Pipeline should be at last.
+Once you have a trained model, every thing becomes repetitive. People don't do Hyperparameter tuning every month. 
+A/B Testing and Shadow Traffic - It is good thing and is done in conjunction with business line. 
+
+FEEDBACK:
+If I start overlaying how we are using Cloudera today => There is a disconnect between training and deployment. 
+1) Training and Deployment should be in the same layer ==> Environment is different but production has a CMM that it is running. WORKSPACE : could it be generic enough that it has a jupyter notebook, connect to database and within the same environemnt, I can deploy the service. 
+
+2) Distributed thing is very important if you are doing 64 GB of RAM. Using Ray for distributed training. Data processing - Spark."	"Another catch-up End of August. 
+Possibly meet in Singapore 
+
+Send him details to try out. Very good person for use cases and detailed feedback. ALthough his environemnt is On Prem Kubernetes.
+
+"	
+9662134384	Xebia	"Anuraag,Badal"	Ananda Roy		Principal Consultant		"Growing organically and inorganically - Sizeable presence in Middle East.
+Personal Employee of the company. We offer Consulting and professional services - Financials and Telecom. We do a traction in other services as well. 
+
+Working majorly as a ML Engineer - we have good presence in Data Engineering. "	"Present Use Cases that the team is working on - building solutions that are similar to Google lens. When open, access the objects => Similar kind of product for one of our clients. 
+B2C Product: For that, we are trying to get the data and building a solution that can detect household objects. Object Detection Part.
+
+Building ML is a pain point - Lack of annotated data is the biggest Problem. We tried to use data available in Open Source. Accept somewhat okay model - we have to deploy this to mobile. We have to deploy it to applications that are built using Flutter. Considering how do we automate that."	"We are using AWS in the current project - that is the platform where we are building our solutions. Model deployed in the Mobile application - using Flutter application, deploying it. We are not exposing model as a web srvice.
+Deploying the model as a service will come much later. On the edge model - very light model. We can't have a big model here.
+We are using PySpark and Kafka. A lot of data is tabular. 
+
+We are using MLFlow for Experiment Tracking. For Orchestration purpose, we are considering to use KubeFlow.  We deployed it in AWS. We are getting different tracking information. 
+Right now, we are training on AWS GPU. That process, we want to also go to KubeFlow. We are going to make it as Cloud Agnostic as possible.    "	"If we get a lightweight system that can help us orchestrate, that will be great. 
+We are using Kubernetes, but not for ML WorkFlow. Using it for Backend Meta Services. The way - FastAPI, Docker etc and deploying using Kubernetes. 
+
+The reason for not using Kubernetes? This is still in progress. We considered running in different CPU/GPU instances. We might have to use KubeFlow for that. 
+
+We are planning to Deploy the Model: How do we get all the information and how do we re-train the model. We are using KubeFlow but not sure where it will be useful. "	"* What are the advantages of using your Platform over MLFlow as Anuraag said?
+* Is there anything we are providing for automating labelling?
+* Someone can use the service for free? 
+* Are you using platform as well? Say entire service. "	"Wanted to recommend it to his management and team. We can get members from the team and give them a demo. 
+
+Where do you see utility? Is it possible to provide only specific Piecemeal support. We can provide individual parts and not want the infra. 
+
+Feedback on the deployment System: I wouldn't be able to take the decision from my company's perspective.  
+Should we connect in 2 weeks ? I may have to push it by sometime."	"Interested in trying out the Product - we would want to use it out of your company account. More interested in Experiment Tracking part. 
+Send out the account details - do Onboarding and set-up a follow-up call. "	
+9662272573	Holcim	"Anuraag,Badal"	Kashif	https://www.linkedin.com/in/kashifsaiyed/	MLOps Consultant		"MLOps at Holcim. I was at Unilever - DS there. Moved more towards MLOps. I have been working in this initiative - Plans of tomorrow. Industry 4.0 vision => large line of products. TrendSetters in Industry.
+Sold off the Indian arm as well as Russia arm."		"Some on AWS as well as some on GCP.
+Rest Dockerized and not on Cloud.
+Using BigQuery etc . Also have a global data center - we push data output to GCS/BigQuery for pushing the predictions etc.
+
+Model is in the edge. Compute is in the edge environment but batch output gets pushed to a cloud environment. 
+
+For one product, for training: using AWS. Rest, DataRobot and scripts.
+
+Flows of deployments - 
+* SAGEMAKER: SageMaker pipeline => it has SageMaker experiments. 
+ 
+* Edge Deployment: Test environment and then Edge deployment.
+Only problem with Edge deployments - experimentation tracking is a problem.
+How is the Edge deployment done? Sensor data collected.  
+
+  "	"* Deployments being edge oriented. 
+How we can use the plant's infra in their virtual infra. We cannot move completely to the cloud as others are able to do. 
+
+* DataRobot - being used .Sagemaker - for model monitoring
+Have had conversations with Weights and Biases, Neptune, Truera. We have been in conversations with lot of vendors but haven't found a solution that fits our needs. 
+
+* Monitoring is one key aspect where they have explored solutions. Experimentation and tracking is version 2 => that's second priority.
+* Reason for Weights and biases not getting up: Not being able to be flexible. We have variety of different infrastructures. Not very PLug and Play. Good for Citizen DS. Not ready for an enterprise application. 
+Monitoring: To be honest, still in talks with vendors."	"* Are their enterprises using the Product?
+* How do you package the Product?  => It depends on the number of Users.
+* What's the experience been with AutoML Solutions like DataRobot. How is it different from MLFlow? => What will be the benefit over that? 
+* Can I run some tests using the library? We will send you a demo account where we have logged a few things. 
+* Could I integrate the deployment piece with my own cloud provider? We are using Kubernetes, so everything is dynamic. We are using Google Artifact registry - could you integrate with that? "	"Besides the deployment, what would be the benefit for me to not use MLFlow over this?
+Lot of benefits we provide on top of MLFlow: 1) MLFlow doesn't have multitenant system (RBAC first class), 2) Dataset logging, Image logging is not in MLFlow, 3) One Click Deployment"	"Will like to try it out.
+If some sort of documentation, will like to give it a go => Compare it with MLFlow and see what benefits are over that. I like some of the features + enhancement to what I have seen in most of the tools. 
+Its a good start. Will be using the Dummy data. 
+
+Mid/End August: Connect and discuss the experience. "	
+8823797373	G2	"Anuraag,Badal"	Chirasmita	https://www.linkedin.com/in/chirasmitamallick	ML Leader		Past context from G2 Calls there. Using this to get a progress update on how they have progressed on this.	These are already discussed in the past. 	Progress in ML Pipeline from last time we spoke	"Progress from last time: 
+*  From the last time we met, not much has changed internally => Still deployment is using AWS Data Pipeline.
+* Stakeholder Mgmt and Experiment Tracking side: Lot of mgmt => consistent feedback. Don't know exactly what each person is doing. 
+* From a deployment side, since we don't have a lot of models, it is not a problem much. Gradio and StreamLit interaction. ML Team is still using AWS Data Pipeline => there was a delay as many folks were on sabattical. "	"Mgr is not hands on in Data Science but good at setting up metrics etc. 
+It becomes difficult to manage all the projects => Log files don't help him much => Tracking the experiments help him. 
+
+>> FIGMA Design - we have done. We could have something similar. Track all the experiments. 
+All our Recommendation models are based on Language Models -> what does Hugging Face mean?
+MLFLow : Siloed activity that we are doing => Using it locally => Plan is to deploy it in G2."	"One thing MLFlow doesn't have is Role Based access Control. 
+How is it different from MLFlow?
+
+* Not everything can be handled by the framework => whatever framework magic you can provide. 
+* It becomes very difficult to understand.
+
+Current ML Team is very small: Experiment issues + Stakeholder issues.
+What kind of drift do we do in terms of NLP Models today? Just basic data drift. 
+
+* We can visualize nouns etc. and Docan - Annotation platform   "	"SEND OUT THE PRESENTATION - For sending to VP 
+
+August 15th -- Create a case. Its a tough thing to convince Senior Mgmt. 
+
+One Suggestion: 
+* If we can include Monitoring in the Presentation => if there is a data of certain distribution and if we move away from that distribution. If we go into categorizing shirts into more shirts => How will the models overall behaviour in categorizing changing?"	
+9595273362	WakeFit  - 2nd call	"Anuraag,Badal"	Puneet	https://www.linkedin.com/in/puneet-tripathi/	"Head, Data Science"									
+9559782444	Emaar  - 2nd call	"Anuraag,Badal"	Rajesh		"Head, Data Science"									
+9855466074	ClearFeed (InBound through HubSpot)	"Anuraag,Badal"	Ankit	https://www.linkedin.com/in/ankit-ahlawat/	Founding member at ClearFeed		"IIT Patna - One of the founding member at ClearFeed. Extract info from different frameworks and present insights to customers. 
+All models are NLP Models.
+Data Science - only 1 person, Engineering team: 12 members"	"Most models are classification, Other is text generation Model."	"We have 3-4 models in Production.
+Deployment side: We deploy to ECS. Docker image => Push to ECR Registry => Deploy the ECR image into a ECS Task. 
+Already we are using AWS - we actually took service from another company - they implemented the DevOps side of the framework. Button in the AWS Cloud build. (Key Value systems - for DevOps) .
+Model Training is on GCP and deployment on AWS side. We started with GCP and actually Software dev part shfts to the AWS.
+All models are real-time.  We process messages in Real-time. 
+Data Pipeline: We use DVC => inHouse datasets we have built. S3 bucket is managed by DVC."	"Main pain-point is monitoring of the models. 
+We don't have access to the customer data and we don't know what is going on the customer side. 
+
+Other than storing the data, what all things do we need on top of data? Text data is unstructured - most monitoring tool is for Tabular data. What are the things you will need to make sense of the data? Model output probabilities across the distribution, Compare distribution across ground truth. Want to be able to detect if something wrong is going on. 
+You want to be able to monitor at the label as to what is predicted. 
+
+Currently, we are using DagsHub to manage the experiments and they connect to the GitHub. They monitor the training of the model. "	"* DEPLOYMENT OF COMPLEX ML MODELS: While its actually very simple function to deploy. If we have a complex Deep Learning model and it has a weights file associated., how will it work?
+
+* In this Product, do you also have experimentation side of the product? We can showcase you the demo for the same as well. 
+Would this work if we manage the models through MLFlow registry?
+
+* We have test, staging and Production environment. How do we manage Dev and Production Services separately ?  
+* Does the product contain user level access control so that one one can touch the other Parts?
+
+* Could we connect TrueFoundry with the GitHub Repo? Most of our code is on GitHub repo. We are working on a feature where you give us a repo link.
+
+* Does this also support the monitoring part by itself? 
+* Our data is sensitive - how will it work for us then?
+* How do we manage Keys in your system ? We have a way to store secrets!   
+"	"Deployment framework is really good.
+Is it possible to try it out? There is a lot of complication when we deploy at our end. In the way we deploy, there is a lot of steps. 
+We can manage multiple models like v1,v2, v3 etc. In current deployment side, if you want to create another environment, it is very difficult. 
+
+* Could we copy the workspaces? Like create a clone of the services to different workSpaces. We can map the WorkSpace to different Environments. Other than environment level, you can also divide at team level. 
+* How do we manage Code? Is their any system for reviewing the code etc
+
+* One more problem is there: How do we store/log the model as a python function so we can directly call the model as needed. We allow you to store it as a serialisation function.  
+* MLFlow supports logging the model. Does TF support logging the model/artifacts etc?"	"* The person came in on lookout for monitoring.
+* When we showcased, got interested in deployment as well. Wanted to see if we can directly connect with the GitHub repos to then deploy. 
+* Wanted set-up for Test, Staging and Production Environment. 
+* Deployment: They want to use deploy by using the Source Code => that's how they do it currently. 
+
+HIGH INTENT USER"	
+9855467015	geeklurn.ai	"Anuraag,Badal"	Preetham		Data Science Associate			"We have built a web applications, haven't deployed yet. 
+Currently we have 1 model - want to deploy it. 
+Total of 7 members are there in team.
+One of the pickle format models - done for the sensor format of data. Live streaming data => Need a cloud platform and can track it. Currently its batch mode - but will want to be Real-time mode."			"- ProcFiles and all : Do we need to write our own or will it work automatically?
+- Could you show me the CLI demo? Folder structure etc. "			
+6688376748	Housing - 2nd Call	"Anuraag, Abhishek"	Anil Goyal + Harshul		DS Lead 		Harshul - Found cool ways to integrate with DataBricks and spin off on IDE. They do allow remote pairing of Hosting clusters - POC with DataBricks went well. We are using DataBricks a lot - all Data Lake etc. 	"We have a Project on Fraud Detection where we need Data Drift Capabilities => What is it we are trying to do in this model? API or platform on Housing.com => If we want to do credit card payments, its high fees and people try to make Fraud transactions using Stolen cards, etc. API is up and running and helped us reduce the frauds - 1.5-2% earlier and decreased to 0.3% now. We have deployed a ML Model to solve this problem. Happens for every Single transaction that is happening."	"API Call for the Fraud detection- REST EndPoint is exposed by another endpoint we have built => we then clean and pre-process and then send to MLFlow. BACKEND SERVER: Will clean up the data and respond to the user. Backend server is written in Python and FastAPI or FlaskAPI. Do you work with dedicated Customer success person from DataBricks? ///  Fraud detection: Model serving feature is supposed to be in Beta ==> Shouldn't be using Model Serving in Production. Even if requests hit 10 APIs/sec  - - > It seems like a critical application. For FRAUD DETECTION, MLLib or Skicit learn libraries. USER FLOW - when transaction got blocked or got unblocked => Red, Yellow, Green - Red is for sure Fraud. Yellow Being borderline case. Green - good. PRODUCT team decides whether to let go through or Block. 24 hours hold - Someone is recording the fraud or not. Ultimately this data is being recorded to re-train the model."	"Data Drift => Why the need? // * What's the feature set we are talking about? - 20 to 30 features is when the categorical features using one hot encoding etc. No text features that you have to convert to encoding - No. Cardinality - Can be high as well, but will have to check.   * Model Type - Outsampling or Insampling?  * How much requests are we talking about? - During Training time, we did POCs to understand Data Drift etc. Re-Training pipeline after 3 months. We did it experimentally. No of transactions would be a few millions. PRIORITY:  As behaviour keeps on changing, output space and behaviour keeps on changing => Frauds have decreased. Originally trained model might not work is highly possible."	What characteristics do you need in a Product? Have tried some open source tools - used FB algo. Its a post on Linkedin. Don't have the Data Drift Pipeline in Production - we do know how to solve the Problem. Asking to take some help from people like us and if we can integrate the system. END EXPERIENCE: Offline and Online - we did offline measuring the data and came up with thresholds - we should then re-train. Might change after few months. Online - can tell the DS the window for re-training. It gives a push notification over email and then using the Push notification. 	WHAT'S THE TRANSFORMATION YOU WILL SEE? 	Need to concretely do the next step from our side before our meeting with them. 	
+9855466074	ClearFeed 2nd Call	"Anuraag,Badal, Nikunj"	Ankit and Joydeep	https://www.linkedin.com/in/ankit-ahlawat/	Founding member at ClearFeed					"Ankit - What's your biggest PainPoint? Provide a way to deploy the code from the Experiment part ===> If we log the model, we should be able to log/version and deploy directly from there. GOVERNANCY: Deployment needs a change approval process. There has to be a change control in most companies!! "	"* Could I run the model several times - could I stop and resume the run?  // * Do we have the tie-up between the experimentation branch and the deployment? (What I find discomforting is - Act of deployment is different from the act of Experimentation => by the time you get to end point, you will find that something is different) * Suppose we have multiple customers- could we add a 3rd dimension and see how the features are performing across multiple customers? Could we compare how the data drift is happening across customers? Do we want 1 v/s all."	"Never say that you don't need to push it to GIT when talking to someone who comes from such a good engineering mindset. We use DVC to pull the model /// Q) Could we annotate some of the data from Production environment in this tool?  The reason I am asking this is that to calculate the data drift, you need the ground truth. "	"Talk to Ankit once again and see if he would be willing to try this out himself. 
+For now, use case wise - they have not showed the interest that we thought they will show. 
+We thought good fit but they don't want it. Discuss this with Abhishek and Nikunj as to why. "	
+9855467553	GoodRX	"Anuraag, Nikunj and Abhishek"												
+9902102078	Polymerize	"Anuraag, Nikunj and Abhishek"	"Deepanshu, Pranjal"				"Deepanshu - working with MLOps team (Model Deployment, retraining) , adding more features, improvement of features.
+Pranjal - Works on Data Science problems
+Solving Client Problems "	"Model Complexity: Simpler models - collection of models => multiple simple models and averaging them out to generate results. What we have different types of data => we get different versions of Models (each version is trained on a different dataset). 
+We have multiple level of versioning in models. How many models get generated in 2-3 iterations => got dataset from client that has 10 data points. For each output, have 6-7 internal models."	"We have to configure each model - configurations related to each one so that we can train/re-train. We create configs for each structure - these are the models we have trained, these are the S3 location. If there is an optimized way to handle this. 
+
+Does training happen parallel? No its sequential. Once we have this, how do we deploy them. 
+Customer makes API calls to the models. For hosting these models, we create custom APIs? If we have 2 customers, are we going to create 2 different learners for them? 
+
+Models are not hosted directly - they are not directly deployed. How many models would you have that are serving inference?"	"We are in an EC2 instance - facing scalability challenges. 
+If multiple users start training simultaneously, we have issues. 
+We also provide Optimizations - you want these sort of properties, you can use these sort of things. 
+
+Right now, we are upscaling our resources. Looking for microservices etc. If we can separate out the training part separately and if inferences can happen at a separate place. Training is asyncrhonous => we let the user know that the model is trained and you can use them now.
+
+Expected Inference time: 2-3 seconds. 
+How do you do re-training?  Hyper-parameter tuning - when we train the models  . When we train, we get the logs => Single place for monitoring all the training logs"	"How do we handle if simultaneously trigger predictions?
+Where are the models stored? It is stored in a model registry. We provide Python APKs. 
+Right now, it is deployment focussed? 
+
+COULD WE UNDERSTAND WITH AN EXAMPLE: Start with a User flow - Linear Regression model trained => What are the different ways in which the pickle file is available to me?  You can call our SDK and tell MLFoundry.save . It will automatically store model in SDK bucket. "			
+9913843716	WayCool	"Anuraag, Nikunj and Anubhav"	"Chetan, Sumanth"		Mix of Data Scientists + ML Engineers		"Sumanth has experience of 2 years, Chethan has experience of 2 years. Akhil - Fresher (June), Amal - Data Scientists (Joined in June), 4 Folks including Sydney - we can get started. Manu and others - all joined in June. ( Love to discuss a few problems you are trying to solve) . Sumanth and Prashanth have more experience in terms of deploying."	"SUMANTH - Currently, we are working on 1 project using ML - Volume Forecasts. Doing in a modular way through code itself. Pre-processing followed by forecasts. Eventually we will need pipelines, like AirFlow and DAG. 
+AMAL - We try to read up and try to deploy some stuff. Its something outside of our daily duties. Its not something we want to be bothered about. 
+If we can get away by just writing DS and ML Code and not worry about how to scale it. Don't want to ML Engineer.DevOps team is also very young and we are doing it ourselves. Volume forecast is still in dev ==> Pipe forecasting ==> Prescriptive analytics (3 MONTHS) : 3 to 4 diff applications."	"Hosted Notebooks - We tried using DeepNote (allotted resources are very minimal) => Will have to go premium.
+We continue to use Google Collab. 
+Prefer Local machines or VMs for those reasons ==> We are using Azure. VMs - we create it there. COMPANY IS CURRENTLY MAKING USE OF AZURE. "	"** Problem is data is updated everyday - you have to train the model everyday ==> Taking data into local => getting it done. 
+** When we go ahead with Fraud and Descriptive, it will be close to Real-time scenarios. 
+** Being able to schedule a few jobs as soon as data is there. 
+** When data is changing on a daily basis, how could we build the pipeline well => Keep the margin of error low. 
+"		"* Is there timeout configuration for Batch deployment? These configurations are also available to you as a YAML File
+* Self-hosting on AWS is fine"	"* Set-up another call for follow-up
+* Data Scientists don't want to be taking up the job of deploying as that obstructs the creative work from their end. They want to make it easier and seamless. 
+* Their use case is Batch inference and how they can set-up the re-training pipeline for their Batch inference so that it does it automatically rather than manuallu"	
+9984747349	CommerceIQ (Qualification Call)	Anuraag	Mohit Dhawan		Senior DS			"DS Sales team - Manage MarketShare, Other is DS Advertising. Both use same tech stack - 2nd team's tech stack is mature. 
+Data Scientist: 3 Data scientists => CLassification part I am the full owner. Delivery is managed by another DS. 2 Intenrs and few product analysts"	"Most solutions are based on SageMaker. Created our own CLI and environments. Setting up automated pipelines - lot of things happening here and there. Models depend on a lot of other models. SageMaker instances are doing pretty well for us. 
+Tech Stack: Python, Queries: SnowFlake, Everything is set-up on Sagemaker
+Amazon is so dynamic - Dataset is too dynamic. Majority going for unsupervised models - mostly on Sagemaker notebook instance. Given Dynamic data, we will have issues on scalability
+Didn't have an idea on Kubernetes. EndPoint is hosted on the UI managed by UI Team. 
+
+Store the models on S3 => The communication of SageMaker to S3 is pretty fast."	"What happens is the model output is not given. Sales estimate, classification => then combine the models. 
+For each client, the model changes - Do you host separate models for different clients? 
+RESOURCE ALLOCATION: We were struglling. 
+Set of scripts running manually. 
+"	"The issues of adopting new platform is people are from engineering backgrounds and people are comfortable with SAgeMaker, unless models expnd and it becomes complicated. "		Nikunj to listen to this Call and Qualify/DisQualify them and work with Akshay. 	
+7819022152	AccreteAI	"Anuraag, Chirag"	Pradip		Senior ML Engineer		"We are building the Product - we have to dockerize, creating the FastAPI, deploying on cloud. Around 100 DS and ML engineers"	"Convert code to Python and then deploy .
+Depends on the client - if we are getting data from client. If HC or finance related thing, they share access on their envrionment. 
+USE Cases: Mainly related to Forecasts, but not on the basis of the data. For example - expert person available in HC => then from data, how to build a model. 
+We can deploy on our cloud or their cloud. Mostly batch based models . It depends on how data drift happens. "	"We have created EndPoints => clients can interact there and we get the feedback. 
+One clarification to ask: Once the models are ready, are they hosted on Accrete's infra or client gives access
+"	"Building FastAPI endpoints and dockerization is a problem. We want to give them image that they can directly use in their system. 
+Generally, end points will work. "		"Wanted the Product to be more modular and see and do everything from the Notebook itself. 
+Someone is developing, someone is packaging, etc. If everything is in one place and one person is able to do. 
+He wanted to see eevrything in the same place ie. in Jupyter notebook, doesn't want to come to the UI Interface. 
+If UI, then everything should be on UI. If Jupyter notebook, then there itself. Could we have a Jupyter section here, would be useful. 
+He is also not appreciating the amount of effort going into building things. "	"Company seems good but the user is hard to understand and communicate. 
+Should try and connect to more users in the organization. 
+Do a batch deployment demo for the platform for him. 
+
+CHIRAG - 
+>> Each of our Product feels like a Separate Product - there is no connectivity between them. Linking is not there. 
+>> Entities need to change "	
+9984644130	Nexus	"Anuraag,Badal"	"Yibin, Julian, Daniel"		Senior ML Engineer		"Was earlier Senior DS at Uber - it seems they build the platform for SC. 
+Nexus is banking as a service platform - They partner with e-commerce companies. Bukuwarang eg. Using Nexus, other companies. 3 Members in the DS Team.
+150 Members in the Nexus - Was started within SC Ventures. Central team is in Singapore."	"In terms of growth, just launched Product in the public domain: Getting users to sign-up. With data collected, can build data products. 
+
+* Churn Prediction: Given transactions of users, how will they churn.
+* Built a number of dashboard to monitor metrics for the business. 
+* AirFlow for scheduling, Super
+* Customer Lifecycle Prediction 
+* How will the user transition from a high value to a low value customer.  "	"Models are tested in local environments. These models will be real-time. Built as a micro-service. 
+Stack: Rope in the data engineers but in a nutshell - our Data Lake is on S3. We use kubernetes platform to deploy our micro-services. 
+Interested in our solution and how it can be used. HAVE you worked in a bank? They are actually quite dfferent and what you can do in banks is not as easy. 
+We do micro-service in a local environment and pass it to DevOps to deploy it to Cloud. 
+Mostly doing the training locally - its done locally. 
+Framework - ScikitLearn => currently not using GPUs."	Looking at for example - for DS ==> Modelling aspect. Data Engineers and DevOps => DEngineers and DevOps will be tied up with different other tasks. 	"* We have a real time model and we update the model in 1 week? We test and deploy the new model to Production => what kind of workflow do you have for this kind of scenario. I am fine with doing re-training every few weeks. We have both. 1st one => schedule a training job and can be done easily in our platform. 
+
+Building a complete approval loop is something we are working on. UI for the platform and then do a real-demo with your team. 
+
+* Suppose I say I see the result is good and I want to deploy the new one? The old one is already running. Standard procedure - you will want to do it using CI/CD. We have examples in our documentation as to how we are using GitHub actions. Once you committ your changes, it will automatically commit your changes. Go to UI - click a model and click deploy. 
+
+* When models are running in production, do you have a tracker which models are running in Production => How many customers are on new models and how many on new models. All your instances will get updated quickly. You need to make sure a gracious exit of all models. OLD Models might still be serving some models - we don't want connection to be stopped. 2 Ways to handle it ==> 1) Adding a hook in the code meaning we will not force-kill your system. It will not be a forcekill - it will be a gracious kill."	"Do you support multi-Kubernetes system? It could be private cloud but different locations. 
+You could have different Kubernetes clusters as you like and have Kubernetes Clusters from different platforms. 
+
+Maybe you can also send the slides => if interest from them, we can get them into the call. There are various competing tools. Bank has been using DataRobot, DataIku, H20 - AutoML Platform. 
+
+Few parameters where we are different: Solely focussed on Deployment and making it very deep and different. We have HC companies as clients."	"Very Suitable Customer - They are a mix of Start-up and big client (Need Multi-kubernetes Cluster) 
+
+Qualified 
+* Set up next call with product demo -> Will get the Data Engineers. 
+Looking at a ML Platform - improve our development better. 
+
+Next Steps 
+* Send out a PPT
+* Set up time for a Demo next week "	
+10097841502	"Simpplr (Qualification Call)
+Also did a follow-up 2nd call."	Anuraag	Achintya		ML Engineer		"- [x] AI Industry for 4 years => NSIT 2018. During that time, involved in research in IBM etc. After that, personally interested in start-ups. 
+- [ ] Had joined SkitAI earlier -> Exciting company, working on VoiceAI. Solved a number of ML Problems, wanted to solve ML Problems and hence joined Simpplr. Solutions at Vernacular were client specific. Hence wanted scalable solutions."	"- [ ] Started ML journey 1 year back - 7 people ML Team. Trying to solve a range of Problems. Employee experience company. Intranet where company can put organisation level announcements. We were working on Problems like - Sentiment Analysis to analyse overall sentiment of Employees, trying to find topics they are talking about, What people want with the help of ML. Earlier just facilitating conversations. (JIRA, Confluence, Atlasssian, Drive, Teams, Slack) , Attrition rates - the biggest problem when it comes to scaling ML Models 
+- [ ] Clients: Companies like Zoom, Nutanix. The kind of conversations for both these companies would be different. 
+- [ ] 400 Customers => Individual models per client. Train, Deploy and Monitor a model is a challenge."	"- [ ] Till last year, ML trained on data from all orgs, but fine tuning the data. Data sits on SnowFlake Infra (Platform is based on SalesForce and data aggregated to SnowFlake). 7 DS, D Engineering team is different, SE Team - works on Deployment side of things. We are designing the infra. Which AWS Service would be best to deploy the model? SE Team also does integration of models onto the main platform. Need to get a ML Engineer to do MLOps work. 
+- [ ] Integration: Sentiment Analysis model - they will deploy and do CI/CD Pipeline - integrate with backend service. 
+- [ ] Right now - Experimentation part and building the end Point. GPUs for training - AWS Instances like EC2 Instances. Started with hosted notebooks, but better pipelines. We are using dumps - dumping something on S3. Scripts that picks the data, train and dump the model ==> DVC for versioning the model and data. (Using DVC for linking it to GitHub repositories)
+- [ ] Phase of exploring MLFlow, NeptuneAI, etc. Targets in quarter to finalise the MLOps platform (Model Experimentation) // (Deployment) // (Monitoring). Was exploring Triton but haven’t adopted. APIs are deployed on EKS - Kubernetes but we are not exploiting benefits of GPU based infra. Have a person who understand Kubernetes - Engineering team part."	"- [ ] Combination of Scalability in Deployment and Monitoring. Generally, general model and then fine-tuning the model. How do we ensure we have 400 different models and how to monitor the quality of these models. ==> Alerts mechanism of the same, Improving the results of the services. KUBECTL - Data Scientists are used to using KubeCTL
+
+- [ ] Monitoring is Ad-hoc. We are doing offline evaluation of batches. That is something we are trying to roll out. Data out of the system, get the metrics etc. Small team and don’t plan to expand size of team. (MONITORING - CloudWatch + Grafana for the system monitoring)
+
+
+DevOps team writes the Helm Charts when deploying. Using GitHub for mgmt. 
+BENTOML: How was the experience? Yet to ship a service using BentoML . Just using the open Source Solution. Use the model registry - then programatically fetch it. 6 services in Production ==> DEVOPS: It takes them 2 weeks to deploy a service. 
+
+MULTI-MODAL in a single Service : This use case will keep on coming quite Often. 400*7 GB RAM always ==> Very un-optimal"	"- [ ] We have started experimenting with Airflow but not sure if we are going forward with it. Using it for creating these pipelines - Mostly doing NLP. Standard transformations that are happening with data. We host a different service and then things flow. Looking to do parallelisation to reduce latency of the system. 
+
+- [x] TOOLS EVALUATING: Want to be able to use it for next 5 years and will it be relevant. Makes the adoption process a bit slow. Most of the Evaluation has been for Single tools. Evaluated - MLFlow and NeptuneAI ==> Model Mgmt tools - how easy is to do versioning, experiment tracking. How is the UI? How is it to do resource monitoring? Follow trends a lot. Product has a continuous support - most tools are Open SOURCE tools that are community supported and how actively versions are being released. THINKING  of trying out SageMaker and haven’t tried it out so far - no flexibility."	"Features need to be fine-tuned for every client of ours - 400
+
+There was a suggestion to try PREFECT. Was exploring AirFlow but it didn't work well. 
+Treatment of ML Service is not different from that of a Backend Service. We want to explore GPUs and make use of it well. 
+Started to use Amazon Elastic service - that gives flexibility.
+We were exploring BentoML and using FastAPI."	"High Relevance Customer - Super Good Fit. 
+
+Need to connect with Kaushik on September End. 
+Try to also find another connect here. 
+
+Rest - everything maps well + looking for ML Tools and platforms. 
+Set-up a demo call with the ML Engineer coming friday on 9th"	
+10097873824	TangentAI	Anuraag	"Nitesh,Mayank"		CTO		"Worked with Mayank in the 1st org earlier. Services start-up, end to end apps. ECommerce and personalization data space - acquired by Flipkart. 
+
+Have worked on Engineering side of technologies."	"B2B SaaS company - Ecommerce store owners. Beauty is 90%. AI Selfie solution - Zero party data personalization. 150 data parameters => personalization layer on top. 
+
+AI has been a strong selling segment for us. Makes us stand out and apart from competition. 
+
+AI Models - SKin condition detection, some for hair segmentation, etc. InHouse Kubernetes Cluster where we deploy. AI will be a part of our product as we go forward. It will be the enabler. AI will have some share of it. 10 People here - AI Researchers: Couple of them. DevOps and Backend - I take care."	"AI Researchers put models in production themselves - how and where we should deploy? Have shared access to them and they do it themselves. 
+
+What made you choose Kubernetes? Ideally we will keep on adding these models - some will have more load depending on requirements and we will need small microservices. Docker Swarm and Kubernetes - Kubernetes is easier to manage. We are currently on Azure and not on AWS. Helm Charts are not updated that frequently - Any new model to be trained and deployed takes months => to take it to Production Quality. 
+
+We have few test machines where we used to do any kind of scratchpad work . After we have tested things on separate machines, then do it. Push to Docker hub and then deploy on Kubernetes. 
+
+We recently made dev space and prod space. Jupyter notebooks live on the same machine? Right now, we use the normal IDEs instead of Jupyter Notebooks. Not using it for scripting. USE More of command line. GPU requirments are there and they are not fulfilled on local machines . "	"Models in Production are a combination of CPU and GPUs . Real-time or Batch? Mostly RealTime. Do you use Inference servers or use FastAPI etc. 
+ 2 cases: Models and services scale differently OR where they scale together. 
+We haven't found a need where we have to do it separately. Haven't found the need to scale it separately. 
+
+Pros for scaling it separately: Say you have GPU Model and then transformation happens on CPU. If you get a request, you have to make sure GPU is at full capacity. People will take the part that runs in GPU and extract in a separate service. (LISTEN RECORDING: 21 minutes to 26 minutes) 
+
+Which framework? Django, Flask, Fast etc. Mostly Flask or a Falcon server that is pretty light for model inference. Cloud Charge as of now - is it very small? 1500-2000$ per month. Don't expect Cloud costs going up a lot from here. Product not expanding on AI side as much. 
+
+You know you have to do it eventually - migration becomes a problem later on. We have talked to customers that you will reduce cost by 30% if you migrate. But too big to migrate. DO you also have any inference monitoring? Do you label, sample etc to improve the model in anyway? For us, the data is majorly selfies. When re-training, how do you do model evaluation?"	"2-3 Problems - 
+While training, we keep on tweaking these hyperparameters => if go to something older, try on that. 
+
+This is something that can be tried out at our end. Other things are not a problem for us."		"Very happy with the Kubernetes based set-up they have for deployments. 
+Next steps:
+1) Try out the Experimentation Piece of the Platform 
+2) Do a follow-up for the deployment demo and feedback. Won't be a customer."	
+10097842831	Turtlemint	Anuraag	Ashish Gawali		Head of Engineering and Data Science		"Connect via Linkedin - MLOps is pretty hot space. Look at the entire ML Journey of Turtlemint. 
+
+Ashish - Late last year through acquisition joined Turtlemint. Been in Software product for more than 20+ years. Earlier product was in Cloud Analytics space. 
+
+Large enterprise experience. Joined to start off Data Science and Data Engineering - was there basic level."	"Data science: CV for recommendation and NLP based problems - Performance improvements. 
+Open problems around Finance - fintech (Insuretech). Open problems as well. Business Centric and highly aligned to business. 
+Statistical things, Core ML Algo and Deep Learning also in picture. Reinforcement - nothing yet. 
+
+Fintech with major focus on Investment through MFunds - but small part. Turtlemint pioneered B2B insurance through brokers."	"Primarily based out of AWS Stack - we use Kubernetes, everything is managed. Good team in DS and ML. 
+Primarily applied - lot of things in production. 
+
+Intent: Can't answer or share all data. Benefitting - Team wise: < 10 Members in DS. More focus on Quality rather than Quantity. 2000+ Employees, 200 Engineers. 15+ Data Team (Small team) 
+
+Models in Production: Everything is applied. Can write papers on XIV - Emphasis has been on putting models in Production. K8S for deployment, EKS => SAme thing. Deploy on Pods and can scale them. Through APIs gets into Production. Backend Data pipelines. 
+
+Thing could be - at juncture of company, you might not worry about scaling using K8S. Some use pHP and remain on PHP for many years. Data Scientists will come from non-CS background. Data Engineering team is well positioned to handle it. 
+
+Both real time and batch inferencing. Not using SageMaker - was tried and maybe we could use it later. MLFlow, EKS could be used. Would like to see TrueFoundry."	"You cannot imagine DS to be writing YAML. 
+Looking at ZenML, SageMaker. 
+Was not giving concrete answers - seemed to be fearful.
+
+K8S is not seeing adoption but based on the company, it could be different. 
+
+Checkins on the KubeFlow side have stopped. 
+Egress and Data Security both are important"	Good Questions Overall- Couldn't record this though		"Right persona that we have targeted in this case. 
+
+Little reluctant to share details, but later on, went into asking a lot of good questions.
+Set-up another call for 14th Sep - 1) UI Overview 2) Product Overview 3) Technical Architecture"	"1) https://app.fireflies.ai/view/Ashish-Gawali-and-Abhishek-Choudhary::CATuttpErL
+
+2) 2nd call: https://app.fireflies.ai/view/Turtlemint-TrueFoundry-2nd-Call::pqsOG7inyu?ref=recap&track=pqsOG7inyu&sg=nb&utm_content=view_recap_cta&utm_source=notifications-ff&utm_medium=email&utm_campaign=meeting-recap 
+Video recording: https://drive.google.com/file/d/1d3_nzkQkWR5MtsBDOj7KJDZWgA_7Lb8P/view"
+	SkitAI (Turned out to be discovery call instead) 	"Anuraag, Abhishek"	Abhinav Tushar	https://www.linkedin.com/in/abhinav-tushar/	ML Lead 		"Skit - lot of work with ML Models. Text to speech, Speech to Text. One Product. Before 2018, doing ChatBots. Collecting a lot of data for Indian Languages. Now we are focussing on US for a while."	"Base system is same, Separate system for Orchestration, Python is used by most folks and Go, Don't have preference on frameworks on ML - PyTorch. 
+
+We are using EKS - Amazon (was earlier on GCP). Most things are inhouse because of the way things have been historically. We started with Kubernetes only initially - the decision was taken early on. It has worked out well for us as well.
+
+Recently started using Kubeflow for Pipelines. Deployment - OnPrem => moved to OnCloud. Everything is real-time. In Voice, need to be real-time. We do have a lot of systems that we want to have. Systems for Anomaly and Drift Detection. 
+Earlier we had a role called MLSolutions Engineer. "	"We are not solving anything new in the ML as of now.  We have strong ML as well as ML Engineering Team. 
+
+All Models we have been wrapped around something: B2B System - have to customize it for every client and ship. There we have faced challenges in terms of mgmt of models for different clients. We have faced issues with how we manage models, how we roll out. 
+
+We also have an evaluation system that we trigger from Slack. Those things are also running KubeFlow Pipelines. 
+Are you using KFServe? We mostly wrap the models in custom stuff. We used Flask, then blackship. We use C++ for ASR. The server is actually Open Source. For SLU - We have a python based system - has been optimized sufficiently. 
+
+Make the Model, dump it on S3, someone else can then use it. Docker Image => Load Testing => Deploy it via the regular process
+Core ML Team - they will select the right Docker Images. This team is integrating your thing in their system."	"1) How do we ensure that we upgrade the models well?
+2) How do we roll out the models faster?
+3) At one point, we were seeing issues with Quality of annotation => we needed to build our own platform. 
+
+* What has worked for us: Gradient, DataBricks => they are trying to do everything and that doesn't work for us.. ASR kind of things. We have found Data Annotation to be a major problem and we are looking to explore solutions there. LABEL STUDIO: 200$ per member per month. 
+* Where ML acceleration is possible, we have gone out and found vendors. 
+* Spoke to Snorkel.AI => It would be good if there was something that works for company like us. 
+* We don't do Drift detection and all - monitoring has been a problem for us => Setting up stuff around System monitoring as well as ML Monitoring. INPUT is voice and transcription 
+
+We have a framework that we have built in-house => It tracks training, testing and validation data.There is no versioning happening. QA/QC is not that great. Not good CI/CD for the model systems."			"If monitoring is provided, will be happy to switch and try it out. 
+If we find depth in the approach that someone can do it better than us, then we will be interested. 
+Eg: Voice Specific Anomalies. "	
+7677797490	WhatFix 	"Anuraag, Abhishek, Badal"	"Abhishek, Rohit"		Data Science Head		"Been at WhatFix for 10-12 months. AI Consultant to a Data Engineer. Leading team of DS and insights team.
+
+Abhishek: Senior DS with Whatfix for 2 years. Engineering side of things. Use models and monitoring - Deployment/ Retail side of things.
+
+WHATFIX"	"Kind of Use Cases: We don't have Supervised learning use cases. Most use cases are Recommendation (but doing it in an unsupervised learning way) or NLP Based models. Use cases for Supervised models are minimal. 
+
+Today, we don't have anything that runs on client side. Tomorrow we might have. "	"Multi-Node Hadoop set-up to do all the development. All models had Batch models deployments. Artifacts are scheduled, they run overnight and they are used in the product. 
+Batch Inference - do you use Spark or something else? 
+
+A lot of the use cases we have - We need a architecture: 1) CREATE easily deployment code and package it well and create service out of it 2) SERVICE should be fault tolerant. 
+
+STACK ON CLOUD: We have an infra where we do experiments (Hadoop clusters) // All the VMs are Azure (I think we would want it in Azure) // For same company, it could be different account. 
+
+Availability of the infra and engineering team - we have to wait for months to get their availability. If there was a method through which we could generate the APIs. Model goes through the changes. I want to make sure we have the ebst things avaiable at hand to reduce time to production. 
+
+B2C World - this is very relevant."	"Aim is to give Data Scientists an API. Supervised learning model, Python Script, Unsupervised learning model. 
+Inferencing framework. Have you seen any solution - almost about to finalise a vendor.
+
+It is about the use - what other vendor?We can do a Quick POC - Azure POC was not smooth. "				https://drive.google.com/file/d/1DBMcbIMPbqNw_R9bY1O7GA_jpqQFYr8c/view
+	Cargill	"Anuraag, Abhishek and Jeya"	JeyaBalaji		ML Head		"Based in Bangalore - 3.5 years. Last 1 year, leading initiative of setting a ML Platform -> we have done a few things. 
+Start-up focussed on Supply Chain Financing before that. 
+
+I have seen the newsletter. Its okay/good :)"	"When we started, we didn't want to go down the vendor purchase route. We wanted to understand how to solve them in the most optimal manner. AWS - Preferred partner for Cargill. If possible to enable the SAgeMaker stack itself. 
+
+There is no 1 Team. There are a lot of DS and non DS Teams. There is a Digital Foundry team - building solutions for identifying pests in grains.  
+
+Functional Use cases as well: Lot of needs that we are unable to satisfy. Semantic Segmentation - advanced problems. 
+Total DS : 200-250 People including analysts, DataOps, DS Teams, deployments 
+
+ML Platform team is small: Entire team - Solutions architect from AWS assigned to us. I am leading the team. SE, ME, DS- 3 people for advisory sort of role (customer advisory)"	"2 Use cases: 1) Proof of Value 2) Funding Stage
+
+1st one - people don't care about MLOps. 2nd - Production ready way of catering. 
+Proof of Value - set up SageMaker Notebook + set-up storage. If they want to explore, they are able to explore and connect to internal Cargill data platform. You can also deploy the model but its in data science side only. All of this can be done by the users themselves. They can't set up resources themselves - S3, EKS, etc. They can launch things. 
+
+2nd : Funded Projects. GitHub enterprise repository - MLFlow Pipeline or SageMaker pipelines. 
+We also provide them bridge notifications. There is another repository based pipeline. Sets up Production API gateway for them. They can specify: 1) Give API EndPoint 2) Give me serverless. You can observe 3x-4x Errors. They can choose what monitors they want for the model. 
+
+API is protected with rate limitation, firewall, security. We have set-up the Waf accordingly. API accessible from API key. 
+
+Everything is single click registry Ops - With one click, it will deploy. We have used SageMaker runtime - it provides Canary deployments as well. People can specify what % needs to be changed. It also monitors Operational monitors and then it replaces. If alarms are triggered, it rolls back as well."	"Tried to connect to Cloud Platform Team - tried to connect to see if we can piggyback on their solution. 2 Months wasted there. 
+Did everything after that ourselves. Connectivity to Data Platform, setting up VPCs, Setting up infra in a way that people can do hybrid multitenant kind of work. 
+
+VPC and infra bit is common to everyone but access control is there at the team level => They can choose compute as well to a certain level. Training jobs, data wrangling jobs etc. 
+
+DEPLOYMENT: For deployment, they don't write Sagemaker related code. Someone who writes the code - that's completely abstrated out. Model building or MLFlow pipeline - that's something that they can do. In the codebase, it will invoke the MLFlow. They can use Prophet etc as well. They can bring their own kernels or if they want to bring their own inference images, they can use that as well. Model sitting on device use cases as well available. 
+
+
+Training pipeline stops with Build. We enforce Registry Ops. You have to bring your MLFlow runs, you can deploy it. 
+
+Bringing up Airflow as a Service - its in the pipeline. Bringing it in - its in the roadMap. Or use Managed Airflow as a service. Could be a vendor - Astronomer etc."	"* Material sciences - You have to draw and detect objects in a microscopic images. 
+Sometimes I feel shitty that I am not doing innovation. 
+
+* Do you have use cases where Model is there => there are a lot of pre-processing and Post processing use cases. We provided a solution to them. From infra perspective, we have enabled based on what is called Pipeline Model. When request comes, 1st container will do pre-processing. THERE IS NO ONE SOLUTION FOR IT. Even the SageMaker pipeline - you have to make multiple containers, docker files. We want to be able to put this solution outside the purview of the Data Scientists. 
+
+Maybe its time for Feature Store. However, its not easy in a Big org. Sometimes, size of the project also matters. 
+
+At Cargill, if you wanted to build a kubernetes based app, you can easily do it. You need a deployment spec and GitHub repository - SQS, SES, etc. You can even get a database- Dynamo DB. 
+
+WHAT IS THE IMPACT YOU JUSTIFY INTERNALLY? Earlier, even for deployment, they used to take couple of days. In a matter of an hour, they have model registered in registry. Now, in one hour, they will get the API out. If you go and buy Domino or DataIku, 5000$ per user per year => if have 100 => $500K $ .
+
+Want to provide Airflow with DBT as a service. DE+ ML platform or Data Warehouse + ML Platform. Managed MLFlow - we are exploring. Swap that with openSource MLFlow."	"We decided to go over Kubernetes: 
+
+* How has it been going with SageMaker? You have extracted everything and people don't realise. DS - they don't care if it runs in Kubernetes or not. 
+We have talked to a few vendors as well - Pachyderm, KubeFlow. 
+If you focus there, the end to end experience goes for a toss. 
+You need a really good onBoarding experience. 
+Instead of going piecemeal, let's go full time. 
+
+* Stayed away from going anywhere near Kubernetes - its going to consume Engineering hours. Whatever you do, endpoint runtime is SageMaker. Recipe is ready to put into a Kubernetes requirements. 
+
+
+Motivation was end to end feature complete. As techies, its exciting that Kubeflow is there. Whatever people will be doing in platform, let's enable that end to end. 
+Monitoring is coming in next. 
+
+OUR Heavy work - multi-tenant, role setting, CICD pipeline. Whatever we offer as Products are also going through CI/CD pipelines. Model should be available as an API. "	"One of the most advanced ML Infra. 
+
+Try to do following - 
+
+1) In person meeting to review our system 
+2) Go and see their architecture overall 
+3) What is the overall Vision from beginning 
+4) You have built another ML Platform on top of SageMaker => We have talked to a few companies and they are just using SageMaker. We have a philosophy of abstracting out. 
+
+PLATFORM ON TOP OF PLATFORM - Could we build what Cargill has built?
+
+@Anubhav/Chinmay: Could we write a Case Study on Cargill? It seems to be a perfect example of transformation they have seen in ML Journey"	https://drive.google.com/file/d/1KHVc8v5LHJF2gTxHIXIZXRXdBTLmicTO/view?usp=drive_web
+9407683116	EnquireAI	"Anuraag, Abhishek"	"Arnaud, Omar"		Engineering Head			"1) People update resume, we have to keep the embeddings. We have the model - but we have a model. That model doesn't change. But what changes is the embeddings of the explainaton. When we want to match the question to best explanation, we get a score for each. 
+
+How many embeddings are you talking about? 20-40K embeddings. Every query we get - it will go over, rank them and return. Now, on these 20K => these are updated 100 times a day. 200 of them change each day for example. 
+
+Why do you want to use TrueFoundry? COST OPTIMIZATION 
+RapidAPI - We would love to sell our endpoint outside of our own universe. You have API, You have security, etc. If its a use case you already have (RapidAPI)"	"A good documentation to integrating a RapidAPI on top of our Hosted Endpoint. Could we have a paid API ?
+3 Days - 1 Week to write the documentation. Arnaud - the payment per API call is the only part that needs to be handled. 
+How do I integrate TrueFoundry with RapidAPI?"	"Models are having memory issues: Right now - T3A, 2/8 Slacks. Memory was not that big before. 
+2 Models - Summary and takeaways. It takes quite a bit of our memory. 
+It takes around 500MB memory. We have multiple models at the same time. It is about 16 GB. 
+
+You can put multiple models in a single container or you can put 1 model in one container. If models are getting high amount of traffic, then you put it in different containers. 
+
+You are using multiple workers and then it creates the problem. Everytime, it will multiply the memory. If we operate on one worker, we lose information. 
+SpringBoot API and the AI Models. 
+
+If we want to do some form of clustering etc etc - we can do it at our end or different end. If I do some work at our end and then some at our end. 
+When I update the code => how easy is it to modify code? YOU CAN ALSO GET THE CI/CD SET-UP"	"Deployment on our cluster for now. 
+Will you deploy on your cluster? Or use ours? 
+Security side. We are not big enough yet. 
+
+AWS Machine type: CPU, T3A 2X Large, Do you need GPU? Wondering how you would do the model without GPU that I sent."	"* Could you give us a Dummy Model? Request that is working == > We can ask them to put any of the transformer models from Hugging Face and we can replace it. 
+
+* You can deploy it. We can give access to the account, we can play with it. If we are able to integrate it easily with what we are doing. 
+
+* POC: We re-train our models in a Weekend. I would love if it was a single repository, but inside 1 repository would be great. 
+Re-train the model via CI/CD. We have a FrontEnd, API Backend => the layer communicates to the AI Model.  
+
+* DEPLOY in US East one - Could IP Filter the access request?  We can do that. => Not needed at the second."	"1) Take the model - Get it deployed - Show the demo, code , CI/CD => Next meeting you do it online.
+2)  https://huggingface.co/philschmid/bart-large-cnn-samsum => I was thinking of Stress testing and try and break it. In reality, it doesn't get triggered that way. Would love to say how much power I could get per hour. 1000s per minute. 
+3) What is the Production traffic you are seeing? Reason I was asking => Flask/FastAPI, Really want to do really optimized - you can use a model Server. 
+How much inference time is fine for you? Say, 100 Ms is fine. If you need something like 10Ms, FastAPI will not cut it for you. 
+We can do the SLA. FastAPI where it breaks down, Pytorch server. 
+
+Pricing - We can discuss the Pricing conversion. It will be cheaper than what you are paying AWS. 
+
+* Need Slack connect. enquireai.slack.com
+ 
+* The Model I sent doesn't work on CPU and will take more time. It will need GPUs. HUGGING FACE has their own GPU machine"	
+	Wipro (InBound)	"Anuraag, Srihari "	"Adhiraj, Samir"		GTM Person for Wipro Innovation Labs 		Wipro Accelerating Innovation Team 	You deal day-in and day-out with AI Initiatives. Collateralls - Stakeholders. AI Practices - Banking and financial services. 						
+10323043378	BlackBuck 	"Anuraag, Abhishek, Chinmay and Nikunj"	"Pappala, Deepak, Pranat "				"4 folks from Data Science team including leaders. 
+We have in-house MLOps Platform. 
+
+Set-up context a bit on TrueFoundry => 2-3 mins overview."	"Lambda - ETL written (AirFlow is trigerring Lambda) => Time is not a constraint. 
+There is a data on S3 => ETLs."						
+10323043405	PhableCare	"Anuraag, Bhavesh"	"Bhavesh, Abhinay"				Bhavesh and Abhinay - PhableCare. Abhinay - KGP 2016	"Lot of enterprise application - b2b to b2c. Data Science and Data Engineering.15 member team. Working on AI Problems in HealthCare. 
+
+Would like to see our offering - much value right now to talk about what our set-up is. 
+
+6 Member team in Data Science team, Fresh out of IITs , Abhinay comes with HealthCare Background. Problem Statement perspective - Computer vision and NLP. There are other things like Ecommerce problems - like recommendation and marketplace"	"DataBricks + AWS Combination we use. We will look at in terms of building our processes. We only got very recently. 
+Dev and model training on EC2 platform. We haven't completely transitioned on it. 
+Depending on PS, we will look at those opportunitues.  
+
+Do you use Kubernetes at any point? Software Engineering 
+One of the models is in Production => it will be used by Internal teams. It is Batch Mode, Real Mode."	"Abhinay: Working on some initiatives. 
+
+* Volume and Scale - Deployment, will look at Scale.
+* In the real sense of world, it will not be huge. Will not need heavy infra behind it
+* Eventually we will increase capabilities and features. 
+* Bunch of initiatives we have on paper 
+
+
+Deployment of the Model was fairly easy - it was not complicated. All the pieces of puzzle built in. 
+Obviously I am sure there is a lot of opportunities. "	"EC2 Auto-scaling? DevOps helps the different kind of configurations. Based on load and traffic, they manage.
+
+How varied our Deployment process will be?"			
+8814139237	ShopUp	"Anuraag, Abhishek"	MuthuSelvan				"Use cases : We repriortised. Focus is on reporting and Business Intelligence. Did deployment for models in Text recognition. 
+We revamped some of the busienss Operations. 
+Focussing on getting the things done - see need for Location based prediction. Start with BI and then go to building Models. 
+
+Central Data team - work on. Citizen data scientists.Current focus is on dashboards and BI. Trying to get some of the data that we might need for models. Customer data etc. "	"Stack remains the same - GCP over Kubernetes. 
+Application side - MySQL DB / MongoDB as well, GCP - Kubernetes (Central data warehouse) , Using BigQuery as primary data base, Use MetaBase for Dashboarding. For deployment, we do batch deployment on Kubernetes. Text AI and Custom models.
+
+VertexAI is used to build models. Why not use Vertex AI for hosting models. We have a Production cluster and hence it is easier. Kubernetes is much easier. 
+
+We are using HevoData for most of the Pipelines. For data warehouse, we use schedule before usign Big Query. 
+Many platforms are targeted for large teams. Both from cost and operations perspective! Makes sense for a bit larger teams. "	"Mostly use cases will take time to evolve - Doing only based on Need basis. Some of the Products are evolving and still evolving new features. 
+We are taking any critical need. Otherwise focussed on data Ops. 
+In 3-4 months, wil see more traction on the DS side. 
+
+BUSINESS: Don't understand the use cases. Being ops driven business. Constant thing between Business and tech. 
+
+A number of companies invest in Platform => 9 months. ML Engineers - start building the platform themselves. 
+When data collection is itself becoming an issue => Basic Data Platform or ML Platform."	"A little bit about the Deployment Stack: Mohan and team currently working on the deployment side as well. 
+We have some ML Engineers - kind of data analysts trying to learn ML. 
+There, some of the data tools we are trying to bring up to speed. 
+
+Till now, our idea is to use off-the shelf ML Models with our customization. Next step - identifying a lot of use cases, pick up models and then start using them. DEVOPS Team - Core thing is in kubernetes. 
+There is a centralised DevOps team that handles that. We have mainly 3 frameworks - Go, Ruby, Node. All frameworks have been set-up. 
+When it comes to ML or so, its collaborative etc. SRE Team - collaborative thing => JIRA task etc."	"* Could we use it for any deployments or is it generic to Python? (Service, Job, Model => If you select a model, library of models we will keep adding) 
+
+What do I need to provide to deploy a Model and create a service on top of it? 
+
+* How is the cost controlled for the Infra?"			
+9591002216	IN-D 2	"Anuraag, Abhishek"	"Abhishek Mishra, Rahul - CBO, Rebin - Product, Jyothi AND arvind - DS."					"We have clients take out data from unstructured data - documents, invoices. We understand data sources and try to create Models. 
+Challenges: 1) Figure out which model to choose 2) How do we re-train or orchestrate it? 
+(We do our cloud, client's cloud and orchestration) 
+
+Whatever learning we get from a customer while working with them and not re-discovering. 
+RAHUL - Customers who are using the code in Production. How do you showcase automated training is happening etc. 
+We are aware of most recent things. Best Practices in terms of continuous training and deployment happens in UAT. 
+
+OUR: Its a truly horizontal capability. We end up targeting BFSI because of the background that Rahul and Abhishek has."	"In case a client is okay to use our own environment - samples are hidden. Everything has to be done in their environment (quite often). We do entire dev of the model in their environment. Except for the code, everything remains there. 
+
+How is the Deployment Orchestration? Jyoti can elaborate better => Entire solution we deploy using Docker. We develop the Docker containers. We don't have much expertise on Kubernetes clusters. Mostly limited on model side. Mostly deployment is via docker, either on client environment. CURRENTLY - Stack for Model building: Notebooks, ETL Pipeline etc? => We have dedicated notebooks on the dedicated environment and for running the traning. Our prediction environment is nothing but our Products. Evaluated models are deployed and integrated with the workflow. 
+
+Flask API is the major way of deployment. "	"We have moved to Docker based environment. We can support all te environments. 
+Do you use any tool? We have automations in our existing flow, but not 100 %. Annotations, Model training and deployment etc => not automation. 
+
+
+Base models are there: How the CI/CD could be integrated using MLOps. Do you use GitHub?
+Training code is also pushed to GitHub. 
+Model Registry: Using GCP as a model registry. 
+
+It is a SaaS product - so there is a GUI. Some cases, could be through that and some through API."	"Offline and Online Training: Offline is what is happening in a batch. Online is close to real-time use cases. 
+Best cases where Online can happen. 
+Is the platform support both offline and online ? 
+How do we see if the model is performing as per testing. 
+How is the testing managed? "			
+10439124882	6Sense	"Anuraag, Abhishek"	Samira GolsFied		"Head, DS"		"Connect via Deepak, who is an angel. 18 years ago, there was only Data mining. 
+Based in Iran and then worked in US for a couple of companies."	"6Sense: MidSize. In 6Sense, WB - Internal tool that we use to deploy models.
+DS Leader - 1) DS Team has a good pipeline for feature engineering. Good platform - do feature engineering, do testing. When you have this capability => installation would be 50ms, in 6sense- it could be for a day. 
+Need to have understanding about data - Descriptive analytics. Then you start to build a model. What if there is a tool - looks at the data and tells you what model is best to use.  2) Some sort of metrics in market eg ADC etc - I prefer to lose at the percentile analysis of the model. 3) Its important to monitor the model => Auto-training I don't like. Only if distribution of data is changing, then re-train the model."	"Data Engineering team does the Productionization in PayPal. In 6Sense, data scientists do it. 
+Industries where SLA is more important: That industry needs complicated platform. 
+My team writes SQL on a Hive. The Vinci is the internal system for deployment. In PayPal, we have something called TypeRest. 
+Imbalance classification is the hardest problem to solve in Fraud detection. 
+
+CanvasAI: PayPal start-up
+
+Industry which is tech oriented is hard to target. Industry where core is not tech. Don't spend too much on complicated the model."				"No next step. She clearly mentioned it won't work.
+One learning is: Even Head of Data Science is not the best persona for reach-outs. "	
+10439123494	SeatGeek	"Anuraag, Abhishek"	Brian London		"Head, DS"		We provide all the Production loads and DS. Tooling to help with offline experiments. 	"Data Science team is about 30 folks + 11 on engineering. Analytics is doing insight driven research. Domain for Insights - Marketing, product. Engineering - a lot of forecasting. Some personalization - delivery time predictor. 
+Popularity prediction etc."	"We are on Nomad - not on Kubernetes OR managed AWS version of something. A lot of what we are doing is fairly bespoke. Highly coupled into the Production or application code. 
+Actual application is written in GO. 
+Full Spectrum - AWS Compatible. Do you have Jupyter hub? Or SageMaker? Use Sagemaker only for compute supplements. We don't run things online in Jupyter hub. Increasingly, people are moving things to Hex. Hex connects to the data sources etc? We are very conscious of what we are giving HEX access to. Hex Data WareHouse and other data warehouse. 
+All of the application loads are running on Nomad. 
+
+There is no specific need - We have adopted tools as we found them :) Realised that they solve the problems. "	"Productionisation depends on Online or Offline - If Offline, we have a framework that the DS can themselves deploy something.
+Read from Data WareHouse, write back to Data WareHouse.
+Online one - DS Engineering on the outset. We give them the title ML Engineers. 
+
+Infra team gives a server. Use anything for tracking ? We have an internal A/B testing platform - we don't use that to re-train models. "	"How does the system integrate will all the Software Sysems? 
+We are on top of Nomad. 
+Monitoring could be one thing interesting - all is structured data. 
+Current metrics: Drift, Outlandish predictions => Would want to track what? 
+Volume of predictions you get: It differs significantly => highest volume of traffic ==> Avg - 300 predictions per event page field. 
+
+No of features: 10s -100s for each model."		"This is disqualified as its based and built on top of Nomad. 
+However, we have scheduled another call here to go over monitoring. "	
+	Astronomer	"Anuraag, Abhishek"	Viraj		Field CTO		They build on top of AirFlow. This is not expected to be a very relevant call. 	"THIS CALL IS useful to understand how they have built around the niche or getting started use case. 
+For users to get started, it is not easy => Often time, people will pick something else without ever talking to you. "		"What is your overall thing on top of Argo or KubeFlow? 
+What's your ICP? What is your target customer? 
+We had the advantage of the AIRFLOW Community - we backed into that. We were using Airflow as the backend and we became savvy at using it. 
+
+Start with small teams/Mid Market team: Platform could be a one stop shop. 
+The kubernetes users aren't going to be final users. INTEGRATION marketing is a good channel to go around. The more specific you can be is useful. 
+
+1st thing that was valuable: Multitenancy as part of our value Prop. We will help you run as many airflows as you want. Very very specifically. MULTITENANCY PROBLEM. That became the heart of our customer messaging"	"AIRFLOW - How did you get into it? AirFlow is the backend of the product we built. Hired a lot of their top committers. 
+Got the person from AirFlow as the advisor. It was very much earned. It was different - we have earned the right to commercialise a product we didn't start. 
+
+DEPENDING on timing - right now, only DataBricks model. It is just AirFlow in the backend. "			
+10443270777	NeuroBit 	"Anuraag, Abhishek"	Amiya		Co-founder and CTO		VERY GOOD USE CASE - We have to convert them 		"We have the GOOGLE bucket, we have all the config files in the same bucket. All models exposed through GRPC in the same box. 
+Right now, its just a box with Kubernetes connected. 
+CPU Inference time: Depends on the type of Model. The most similar one will be similar to inception network. Most complex ones have Million weights. Inference time is roughly how much? 1000 Batch requests - half a second to deliver the output in 1000 classifications. Not really real-time as the 1000 is available offline. 
+
+There are use cases where we do need real time as well. 
+
+Roughly - what is the memory consumption of these kind of models - None of the models would take more than 2GB. GPU is T4. It is a pretty normal standard machine with 16GB of RAM. 
+
+END USAGE: 1) Web Portal => Upload the data => Get a report (Support)  2) Wearables and Sensors - which you wear with our app => pushed to the cloud."	"* What is the Problem you are facing? 1) 100 Simultaneous requests if I do, it crashes immediately. Docker file has to re-start.  We don't know how much it can handle?
+Load testing and optimization has not been there. But its critical. If a clinical trial is running, ML Service fails, no report generated => 1000$ for someone doing the trial. 
+
+2) Authentication: I did a hack using Private and Public key. How do you ensure that GRPC end point is not open to anyone outside the Dev team. 
+
+APP Team is deploying on Kubernetes. 2 Questions here - Why not deploy on Kubernetes?
+Is the ideal state? One Service for Models? Or want different endpoints for each model?
+One AUTHENTICATION is fine. Optimize Money and Reliability - Clubbing some of the bigger ones together and then the smaller ones in another. 
+The Real time one could be a separate Box itself. There inference time matters. But in batch, it doesn't matter - takes upto 5 minutes. 
+
+Traffic pattern: Some models will have morning traffic. 
+
+Why not in Kubernetes? Within the company, very few people have access to the models. Only few people in development know deployment."	"Cost: Paying a $1000 bucks for a few customers.
+For me, it doesn't make sense. 
+100 Customers - We are paying 1000$ right now. 
+
+RPS: Very Few requests ==> Clinical folks will identify a lot of files together. 
+
+EVERY 6-7 months, it crashes a lot."	"I have tried Cortex - its only on AWS. It is like wherever the credits go, we follow. We got new credits on AWS, so we can move to AWS. 
+Was a year and half back - it wasn't as easy as the website says. "		
+10611765880	ProdigalTech	"Anuraag, Abhishek"	"Amit, Atul, Chintan, Praful"		Co-founder and Head DS		To see what we have built is useful for them or not. AWS+ Kubernetes Stack. Amit - leads the DS Team (NLP focus). 7-8 people who work full time with us. Biggest KPI is push models to Production.	"Atul - ML Engineer for 3 years. ML Pipelines. DS Part + Latency of deployments (2018) // Chintan - 5 years- lot of work on NLP and Semantic journey // Praful - 2022 grad => Intern - joined Full time and have been exploring full time. 
+
+Different Product lines: Major focus is on collections. Beyond collections, also open to other parts. Real time as well as Non real time - how agents performed in the call, etc. Recent additions: Real time capabilities to guide the agents in the call. How to navigate the conversations in the most optimal way. Transcribing it in real time. If deviations, we prompt agents on how to say. 
+Summarization model - that is purely powered by ML. Auto-submitted in the CRM system. There could be model to identify 1 marker or 10 markers at the same time."	"Most stack is inhouse. AWS Stack. PyTorch and TensorFlow. Everything is dockerized. Kubernetes is the only thing we attach the models to. All models are GPU Instances or Sagemaker notebooks. 
+
+We push the image to ECR and then DevOps team comes into play. We use those data points to pull to a EKS cluster. Most services in Production have logging enabled - that's where we use CloudWatch services. 
+
+We usually set a SLA for making the endpoint available in production from the time image is ready. Instance selection logic => does the DevOps team decide? "	"Everty model - test it against 6-7 machines using SageMaker notebook. The numbers are published and it gives info to the consumers of model. 
+For Non real time, we don;t care about The latency as much. 
+
+Do you use FastAPI? Or use Model servers? We have the backlog items for time. You work with things until that break. 
+
+Gold Standard is to train a model, containerize it and deploy it. Staging and Production environment? Does DevOps come in every piece ?
+Model Side: Data Drift, Model Drift and Concept Drift. Functional aspects - we realize mostly on users."	"We had been using EC2 instances for training =>started to adopt SageMaker as well. It saves us cost by charging us only for time when training the models. Sagemaker deployments - we tried, but it is higher than EKS. 
+
+We have used MLFlow and WandB as well for tracking experiments -> they are not a big part of our platform. 
+SageMaker doens't do well on the Data capturing for NLP tasks. We want to have a tool that is integrated with the entire system. Annotation - label studio. We need to label it, process it and then go to training. 
+
+Until now, we had public endpoints - Enterprise customers care about data privacy."	"Answers on bottleneck -  
+
+1) SageMaker - have tried out different kind of deployments it offfers => What better we offer than SageMaker. 
+Their Annotation tool and entire ML Pipeline - lot less offering on NLP side. 
+For NLP models - do we offer something where annotation is done on the same machine etc.
+Are you more Cost effective than SageMaker? Batch, Real-time, Synchronous 
+
+AMIT: 
+
+1) Integration of Systems or Cohesive environment to work in => Collaborative way of working in a Problem without having to share Notebooks explicitly. 
+2) Maintenance of models and improvement over period of time => Doing pretty well in terms of getting them on production. 
+
+CHINTAN: 1) Optimization of the Model Inference. ONNX or Trition or any route we are goi"	"Scale: Half a million for Non teal time, 100K for real time. Per call - 128 or 264 requests in parallel"	
+10611764294	Amagi 1	Anuraag	Srivatsa Srinath		"Head, Data Science"		"Have been in work for 20+ years. First was in process engineering. Then did technical mkting for Kodex. Came to know about the audio-video space. 
+
+Then realised that happy to know what happens in the marketing space. Wanted to be more technical. 
+
+Started with Network company, then with Stylumia - Vision and segmentation. 
+Then with Financial mgmt space - Document extraction etc."	"Video ML - Building ML Graphs, add descriptors for the videos. 
+Bread and butter is cloud based content delivery solutions. There is a lot of videos viewing that has been happening. A lot of people wanted to move to cloud on content side. 
+
+Over 500 channels that we deliver. 
+We don't deliver or control the final UI - Roku sons and tv ==> content owner comes that I want to monetize. 
+
+Data Science: Long Tail content => there is very less metadata. Looking at the video, what could you infer about the video. It could talk about a historical documentary etc 
+1) Where do you want to insert advertisements given a video? ==> Digital players - don't want to spend time
+
+2) Recommendation aspect - Nature of ad, Recommendation 
+
+(Current size is 5 members + offers for 3 more people)"	"We use AWS, GCP, SageMaker, VertexAI - There is a separate platform team that helps in scaling. 
+Delivering containers to the Infra team. They will build deployment containers on top. 
+
+Current use cases is batch - unless business need, not looking to move to real time. Video files -> do annotations -> add to knowledge graphs. Live ue cases - looking to start. 
+
+I don't hire people who come in with mindset that I only work on Jupyter notebooks. MONITORING PIPELINE, RETRAINING Etc. Hire people with CS skillset or people who are okay with taking these things up 
+
+Rarely work on Jupyter Notebooks. Mostly CLI using dockers extensively. Automated training - lot of parameter search. We are cloud agnostic - we haven't done distributed training. We use MLFlow, use DVC for dataset mgmt. For training, we use something wrapped around MLFlow - launch instances. "				"Set-up a call Next Friday for a further discussion 
+> Deeper Dive into ML Pipeline including what the central Infra team provides
+> Understanding of Monitoring and Re-training pipeline
+> Overview of TrueFoundry 
+> Discussion of Use cases where TrueFoundry can play a part 
+"	
+10611764602	UpStox	"Anuraag, Abhishek, Chinmay"	Indranil Chandra		Principal ML Engineer and Architect		"Would love to know about our offering and where we specialise in. Set up the entire ML thing from scratch. Transitioned from Principal Engineer to an architect role. 
+Recently also report to Chief Architect. Looking at other aspects of Platform engineering like Chaos Engineering etc. 
+Set-up practices, leave it upto the Individual teams to take it forward. "	"Started from Ground 0 => No way to interact with Company's data. How many trade orders were placed in the last week? Took 3-4 days to get access to the data. Very slow process was there. 
+
+The gap was produced because of the data exposure events. We ended up setting a Lakehouse from Scratch. AWS Cloud - Native AWS Services and frameworks we have built ourselves. From ML Side - actively from April, May and June of this year. 
+
+TIER 1 - 
+1) Associate Partner Incentivisation
+2) Trading Nudges program - Push the user in doing things (eg: Not understand the F&O Market)
+3) Loyalty Programs 
+4) RFM Cohorts - How much active a particular user is? User classification and MArketing campaigns 
+5) Churn Detection 
+6) Re-activation campaigns 7) CLTV Prediction 
+
+Search is painstaking. Abhishek is someone who is trading the Equities. Don't show him ETFs. 
+
+User Base of 11 Mn users - not possible for us to priortize."	"Search is not Typo Tolerant. Lot of personalization related objectives. 
+We are heavy on K8s- its the Green Field Project. Migrating all of our workloads to Kubernetes ==> Application part: Tier 1 services, more than 50% have migrated. 
+
+Data Science Team is Serverless - SageMaker Notebooks / BI is working out of Lambda Notebooks (EARLIER they were using R Studio) . Other application services - one of the top priorties for migreation to Kubernetes. 
+
+All of the models we have hosted are Batch Models and all the workloads are hosted on SAgeMaker. Why using SAgeMaker and not general Kubernetes Infra. Only have 1 MLOps engineer and rest all the team is Data Scientists. We want to see quick time to value - doens't matter if the infra is complicated or well managed. For setting up a new tribe, you need to show the ROI.  
+
+USER Flow and MLOps Pipeline look like? 
+WorkLoads are batch processes that run for 5-10 minutes in the day. 
+Everything is on SageMaker itself. 
+
+Request is Product and Data Strategy team - we sit together and deliberate on it. Exploration phase - figure out the model or data => Feature Engineering is needed or not? Once done --> Deployment strategy is pretty standard. Feature generation job that runs based on trigger. We don't have ML Offering exposed to API EndPoint. ML Offering is not integrated with Frontend. We can support easily using SAgeMaker Endpoints. There are also challenges in serving those kind of responses"	"One of the features that Data Engineering team made live - 45 Ms for the latency for Data Science team. 
+As your portfolio value grows, your net worth also keeps on fluctuating. 
+
+ML Engineer is the one that does it. There is no custom deployment for each of the models. You just configure the final script tht the DS team has given and then there is a CI/CD pipeline. 
+
+SageMaker notebooks => convert to script => commit to BitBucket. Jenkins automation jobs for CI/CD.
+
+We have not reached the stage - at a stage where we are proving the ROI. These kind of problems can be solved using ML. Have gone through the same journey in Data Engineering. 
+Cost incurred in infra? 1st part of the journey."	"NIMBLEBOX.AI => They have been in touch with us for the past year. They have also built something similar. 
+
+Understand the shortcomings of SageMaker - they are however not even relevant to us. Data Platform also we set-up => work with the AWS Service teams => we have a say in priortization of features as well. 
+We have a leverage working with AWS. 
+
+Why would I like to use TrueFoundry? Buy v/s Build => Its always because there is a time to market. 
+HOW are we different from other guys as well? What's our X factor? "		"NEXT STEPS: 
+
+1) Would love to see the live demo - Take an example 
+2) Data Residing at a certain place. How do you build features? Evaluate which is the right model? Exposing the endpoint? 
+SIMPLE batch jobs to show features --> Show a live demo
+3) SHOWCASE a live demo"	
+10611764294	Amagi 2	"Anuraag, Abhishek"	Srivatsa Srinath		"Head, Data Science"			"Major Questions going into the call: 1) Role of the platform team that maintains the central Infrastructure 
+2) Monitoring and Debugging Capabilities - how does the re-training pipeline look like 
+3) MLFlow, DVC for Dataset Mgmt. Something on top of MLFlow for Distributed Training 
+
+Overall: 500-600 Team members"	"1) Maintaining of Secrets in an easy way - who can launch machines, who can create more clones. Broadly as it stands now, we have unfederated access to GCP Resources. Platform team comes into picture in scaling. EVERYTHING related to Scaling is taken care of by the Infra team. 
+Containerisation: Itself is not a big task - whatever dev environment we have, we use. We don't have to use new containers.
+
+2)  Fully on Kubernetes? - Evaluating DataBricks right now. BROADER Data Lake - common umbrella. 
+
+3) We are not too much on Jupyter notebooks. Most of the work is on CLI"	"Videos is stored in cloud env. Most of it is CLI. Dev - mostly Remote. OnPrem GPU ==> Its only when work overflows the OnPrem GPU, we look to train on Cloud Env. Mostly use Spot instances for training. 
+How do you spin training? We go ahead and get started. 
+
+Mostly using state of Art Models. We use SageMaker and their Model API. And that works. Where we are at: If we get a 24 CPU Ram Machine - the moment it starts overflowing, we will look to have a separate server. 
+
+Internal infra to launch these runs. Video files are put on S3? You mount them and download them over the network. 
+
+
+There is a Job Queue => processing the jobs ==> In between capturing metrics that are stored in MLFlow. 
+
+OverFlow of the Models Memory during Inferenencing. Suppose there are several aspects we can get out of the Video. Currently the Overflow doesn't happen. 16GB Instance is good enough."	"Where does DBricks fall short?
+
+9902264196"		"Major Questions we want to know from them:
+1) Quequing system for Videos
+2) Batch Inference - How are they handling Scaling system? 
+3) How are they handling Multi-Cloud? 
+4) Secrets Mgmt: How are they handling Cross Cloud secrets? That is hard. 
+
+
+Ideal thing would be to talk to someone from the Infra Team - We can try to win this guy over and then get to the platform team. 
+
+VIDEOS: We don't have support for Videos related Use cases - we don't have support for Queuing based system of videos."	
+11185249632	Maveric Systems	"Anuraag, Chinmay"	Srivatsa		"VP, Analytics "		"Was earlier also at MU Sigma - Decision Sciences division. Abhishek - hands on Data Scientist kind of guy.
+Maverik - working with MuSigma. Will come to what we were doing at other places. "	"In other places, there was no platform - custom build models using python. Clean data, Univariate, BiVariate. 
+Here at Maverik - Partnership with AutoML Product Dataiku => getting people up to speed. 
+That adds a lot of value to businesses - EDA much better for businesses. We work with only banks. 
+
+
+Problems- 1) Predicting default for loans 2) Internally - Home Pricing prediction in the USA 3) Data gets updated, etc. 4) Cross sell, Upsell, Marketing analytics for Wealth Mgmt firm."	"Python and R 
+Dataiku - lot of wrappers around Python and R 
+Add a trigger in terms of deployment 
+
+Israeli company: BigPI => Help build pipelines 5-6 times faster. Visually driven. Showed a demo
+
+Do you serve the models to clients?"	"Banks have their own version of AutoML they use - H20, Dataiku, etc. 
+Pipeline based models? Data Engineers on the team - who builds pipelines. 
+
+Data Pipelines are also executed on Dataiku. 
+They have recipes - Azure teams // Teams who connect snowflake to Tableau.
+Data Side - will be 350 people 
+
+If you want to do heavy computation, do it on our own database. In 1 linux server, there is Dataiku for example."				
+	Exeevo	Anuraag	Ashish 		"Head, Platform Engineering "									
+11354392103	SugarCRM	Anuraag	Neven Sumonaja		"Manager, Data Science"									
+11655736993	Navi	Anuraag	Chanakya Gujju		"Manager, Data Science"	"20-23 People in Data science. 16-17 DS, 6-7 ML Engineers. 
+
+We use DataBricks for interactive computation purposes. Deployment on top of Kubernetes. 
+Model built on DataBricks => extract a file => Put on top of Kubernetes. 
+Every person has different Cluster/ Data is in Data Lake/ Model File => Pickle format or .mdl format. PMML format etc."	"Get the list of features => Library where it computes the features. Feature library is built from beginning. 
+
+Offline also - we recompute features. Feast is being used. 
+Dockerize => ? (Go CD pipeline is there, Everything is pushed to Git) 
+
+EndPoint is generated -> Engineering team integrates the APIs. 
+
+Dev, QA and Prod => Good promotion flows. Check for a few users and see. Even before going, Model evaluation process. "	"Model Evaluation: Business teams with statistic background. They will check and give a go-ahead. 1 month of Model evaluation phase. ==> Even before Dev => do the analysis. 
+
+
+Prod: Couple of days, it runs in Shadow, Monitoring and Drift. 
+Shadow => Roll out 
+
+Once deploy to Prod, everything is by Engg team. Once you deploy, dev effort is done. 
+We were using Drift ourselves - pipelines get triggered at end of day => performance metrics and Drift metrics 
+
+Let's take use case of lending // Re-training: We have automated the pipeline for daily re-training => acceptance crtieria is set. 
+We push the pickle file to S3 => CI/CD pipeline is triggered from DataBricks => As soon as it puhes to docker => then it will download, containerise."	"USE OF GPUS: Only for training, not for inference. Distributed training might be needed. 
+
+MODEL ENDPOINTS: Flask/BentoML. Few we do with Scala. Some cases, it will not work. Neural net complex model - wont work and we go ahead with BentoML. 
+Model servers are not needed. 
+
+MONITORING: Grafana, Prometheus, etc"	"Process is well set- underlying data => there is a problem or something. 
+Primary Use case: Lending use case - we will not see the results today; Results will come with a lag to us. 6 Months -12 months. 
+
+6-12 Months back data: We use for model training. 
+
+Pipelines have to adjust to the change to ingest the data. PIT data is very important => How do you ensure this? 
+
+DataBricks - Migrating to EMR Mainly. Being able to run daily jobs on EMR. 
+
+RESOURCE MGMT: Some tags assigned to every resource being assigned. 
+COST VISIBILITY: Everyday report for last 7 days to 30 days => what's the cost your team has incurred. 
+
+INFRA team is really good here. Visibility to things is really good. All business metrics, all ML metrics is published. Tableau, Metabase."			"They have built an exact platform that we are trying to build. 
+NEXT WEEK: A lot of meetings -> Catch-up to showcase the platform. "	

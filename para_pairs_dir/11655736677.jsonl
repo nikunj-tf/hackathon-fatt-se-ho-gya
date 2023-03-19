@@ -1,0 +1,5 @@
+{"prompt": "What is the structure of the data team at Kotak?", "completion": "uuid: 11655736677 There is a central data team which works with different business units."}
+{"prompt": "Do they work with external vendors for ML work?", "completion": "uuid: 11655736677 Yes, they do work with external vendors."}
+{"prompt": "How do they measure the ROI from the central data team?", "completion": "uuid: 11655736677 The structure is more of a federated structure where skills are at central level control but teams are embedded within the business functions to work closely with them on use cases and create value."}
+{"prompt": "What challenges do they face from a data perspective?", "completion": "uuid: 11655736677 There are significant opportunities for them to scale up and become better, but expectations are far higher as most businesses are becoming data-led businesses."}
+{"prompt": "What is the size of the True Foundry team?", "completion": "uuid: 11655736677 The True Foundry team is currently a 15 member full-time team with a few full-time contractors and interns. In total, it is a 24 member team."}

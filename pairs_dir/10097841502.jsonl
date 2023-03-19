@@ -1,0 +1,10 @@
+{"prompt": "How are you?", "completion": "uuid: 10097841502 I'm good, how are you doing?"}
+{"prompt": "May I record this?", "completion": "uuid: 10097841502 Yeah, please."}
+{"prompt": "What is the goal of talking to companies in the machine learning domain?", "completion": "uuid: 10097841502 To try and see what the use cases are and what kind of challenges they have been facing."}
+{"prompt": "What is the goal of Truefoundry?", "completion": "uuid: 10097841502 To make machine learning productionization simple and easy for companies to deploy ML models."}
+{"prompt": "What does Simpler do?", "completion": "uuid: 10097841502 Simpler is an employee experience company that facilitates communication within organizations and provides insights to leadership based upon employees' conversations."}
+{"prompt": "What channels is Simpler connected to?", "completion": "uuid: 10097841502 Simpler is connected to Slack, Confluence, Jira, Atlassian products, Microsoft Teams, and Google Drive."}
+{"prompt": "Where does the AI team get all the data?", "completion": "uuid: 10097841502 The AI team gets all the data on Salesforce and then the data is aggregated onto Snowflake for experimentation and building model stuff."}
+{"prompt": "What kind of infrastructure does Simpler use for training the models?", "completion": "uuid: 10097841502 Simpler uses AWS instances and GPUs for training the models."}
+{"prompt": "Do you use any models server to run your models?", "completion": "uuid: 10097841502 No, we are exploring triton but we haven't adopted it at scale. Most of our models are consumed by APIs that are deployed on EKS, so Kubernetes, and we have Auto scaling enabled."}
+{"prompt": "What is the biggest challenge that Simpler's AI team is facing?", "completion": "uuid: 10097841502 The biggest challenge is the combination of scalability and monitoring, specifically how to deploy 400 models, monitor the quality of these models, and have alert mechanisms to tell the team where there is a need to work upon."}

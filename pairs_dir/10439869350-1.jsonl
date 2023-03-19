@@ -1,0 +1,10 @@
+{"prompt": "What kind of logs are getting generated?", "completion": "uuid: 10439869350 The logs being generated are used for metrics dashboards, everything, lambda, API."}
+{"prompt": "Where are the logs being pushed to?", "completion": "uuid: 10439869350 They are being pushed to something like Grafana."}
+{"prompt": "What is the planned usage of Kaan?", "completion": "uuid: 10439869350 Kaan is planned to be used because there is a user layer written in Java that needs to go on Promises."}
+{"prompt": "Where is the monitoring happening currently?", "completion": "uuid: 10439869350 Currently, monitoring is happening on CloudWatch and laptop tracking."}
+{"prompt": "Is the current monitoring ML monitoring?", "completion": "uuid: 10439869350 No, the current monitoring is not ML monitoring."}
+{"prompt": "Are there plans for ML monitoring?", "completion": "uuid: 10439869350 There are currently no plans for ML monitoring."}
+{"prompt": "What kind of testing is done for deploying a new model?", "completion": "uuid: 10439869350 There is currently no use case for testing different models with different percentages of traffic."}
+{"prompt": "How is the roof platform built?", "completion": "uuid: 10439869350 The roof platform is built to make it easy to deploy models in a scalable way and offers other functionalities to complete the flow of a data scientist or ML."}
+{"prompt": "What is the major benefit of the roof platform?", "completion": "uuid: 10439869350 The major benefit of the roof platform is that it integrates training and deployment workload on the same service or box, resulting in cost savings."}
+{"prompt": "What is the primary use case being looked for at this point?", "completion": "uuid: 10439869350 The primary use case being looked for is experimentation with the roof platform in terms of tracking and comparing different versions of models."}

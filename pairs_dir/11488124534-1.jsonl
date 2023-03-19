@@ -1,0 +1,10 @@
+{"prompt": "What does the speaker mention about provisioning clusters?", "completion": "uuid: 11488124534 They provide clusters as needed."}
+{"prompt": "Has the team considered using AWS, Sage Maker, or Azure ML for ML operations?", "completion": "uuid: 11488124534 Yes, they have considered using Azure ML, but primarily for training."}
+{"prompt": "What was the main reason to move from Azure ML to Databricks?", "completion": "uuid: 11488124534 The requirement that the data does not leave basically a VPC as Azure required the use of a remote desktop or remote shell to hop into the VPC."}
+{"prompt": "Has the team evaluated Sage Maker?", "completion": "uuid: 11488124534 No, they have not evaluated Sage Maker."}
+{"prompt": "Were you part of the decision-making process to deploy on Kubernetes rather than a managed ML Ops platform?", "completion": "uuid: 11488124534 No, the decision predated the speaker's involvement."}
+{"prompt": "How many test cases does the team write for their models?", "completion": "uuid: 11488124534 Probably not as many as they should."}
+{"prompt": "What area stands out frequently as a challenge for model monitoring?", "completion": "uuid: 11488124534 Monitoring is an area that stands out frequently."}
+{"prompt": "Will Carlos be open to spending some time going through a platform demo and giving feedback?", "completion": "uuid: 11488124534 Yes, Carlos agrees to spend some time going through the platform demo and giving feedback."}
+{"prompt": "Do the team members work mostly remotely or from the office?", "completion": "uuid: 11488124534 They work mostly from home, but have scheduled office visits."}
+{"prompt": "Does the office remain empty throughout the year?", "completion": "uuid: 11488124534 No, the office is reserved throughout the year, but more people are coming back."}
